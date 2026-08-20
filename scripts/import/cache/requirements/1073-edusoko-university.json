@@ -1,0 +1,218 @@
+[
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CYBER SECURITY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MEDICAL LABORATORY SCIENCE",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "NURSING SCIENCE",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PUBLIC HEALTH",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ECONOMICS",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ACTUARIAL SCIENCE",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "TAXATION",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "FINANCE",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "DEVELOPMENT STUDIES",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BUSINESS ADMINISTRATION",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENTREPRENEURSHIP",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MARKETING",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "POLITICAL SCIENCE",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INTERNATIONAL RELATIONS",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PEACE & CONFLICT RESOLUTION",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PUBLIC ADMINISTRATION",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "POLICY & ADMINISTRATIVE STUDIES",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HUMAN RESOURCES MANAGEMENT",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SOCIOLOGY",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CRIMINOLOGY",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PSYCHOLOGY",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "title": "ENGLISH/INTEGRATED SCIENCE",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Literature in English, Biology and any\r\nArts/Science subject.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Literature in English, Biology and any Science subject.",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH/MATHEMATICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Literature in English and any other two\r\n(2)&nbsp; Arts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Literature in English, Mathematics and any other Arts/Science subject",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH/SOCIAL STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Literature in English and any two (2)\r\nof Economics, Government/History, Geography/Social Studies.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Literature in English and any of Arts/Social Science subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "INTEGRATED SCIENCE / MATHEMATICS EDUCATION",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics and any three (3) of the following<o:p></o:p></span></p><p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">1. Biology/Agricultural\r\nScience<o:p></o:p></span></p><p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">2. Chemistry<o:p></o:p></span></p><p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">3. Physics and<o:p></o:p></span></p><p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">4. General Science<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Mathematics and any two (2) of: Biology, Physics and Chemistry.",
+    "remarks": ""
+  },
+  {
+    "title": "ARABIC/ENGLISH",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas\" style=\"text-align:justify;text-justify:inter-ideograph;line-height:\r\n10.0pt\"><span lang=\"EN-GB\" style=\"color:windowtext\">Five (5) SSC credit passes\r\nincluding Arabic and English Language, Mathematics, Literature in English, any\r\nother subject.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Arabic and two (2) subjects from Arts/Social Science ",
+    "remarks": ""
+  },
+  {
+    "title": "PRIMARY EDUCATION STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"MsoNormal\" style=\"text-align:justify;text-justify:inter-ideograph;\r\nmso-layout-grid-align:none;text-autospace:none\"><span lang=\"EN-GB\" style=\"font-size:9.5pt;line-height:115%\">Five (5)SSC credits including English\r\nLanguage.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "English Language and any other three (3) subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "ISLAMIC STUDIES/SOCIAL STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Islamic Studies and any two (2) of<o:p></o:p></span></p><p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">1. Economics<o:p></o:p></span></p><p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">2. Government/History<o:p></o:p></span></p><p>\r\n\r\n\r\n\r\n\r\n\r\n</p><p class=\"nas\"><span lang=\"EN-GB\" style=\"color:windowtext\">3. Geography<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Islamic Studies, Government/History and any one (1)  Social/Arts Subject.",
+    "remarks": ""
+  },
+  {
+    "title": "ARABIC/ISLAMIC STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\"><span lang=\"EN-GB\">Five (5) SSC credit passes in English Language,\r\nMathematics, Arabic, Islamic Studies and any other subject.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Arabic, Islamic Studies and any other Arts subject.",
+    "remarks": ""
+  }
+]

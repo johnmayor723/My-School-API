@@ -1,0 +1,74 @@
+[
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CYBER SECURITY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INFORMATION TECHNOLOGY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "NURSING SCEINCE",
+    "department": "MED/PHARM/HEALTH SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PUBLIC HEALTH",
+    "department": "MED/PHARM/HEALTH SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMMUNITY HEALTH SCIENCE",
+    "department": "MED/PHARM/HEALTH SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENVIRONMENTAL HEALTH SCIENCE",
+    "department": "MED/PHARM/HEALTH SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

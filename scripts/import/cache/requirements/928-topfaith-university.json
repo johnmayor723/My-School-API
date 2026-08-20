@@ -1,0 +1,380 @@
+[
+  {
+    "title": "LAW",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Literature in English, and Mathematics.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Arts or Social Science subjects.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Any three Arts or Social Science subjects including Literature in English</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "TELECOMMUNICATIONS ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Mathematics, Physics, and Chemistry, and one Science or Social Science.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes from Physics, Chemistry, and Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Chemistry, and Physics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Mathematics, Physics, and Chemistry, and one Science or Social Science.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes from Physics, Chemistry, and Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Chemistry, and Physics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ELECTRICAL /ELECTRONICS ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Mathematics, Physics, and Chemistry, and one Science or Social Science.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes from Physics, Chemistry, and Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Chemistry, and Physics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "PETROLEUM & GAS ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Mathematics, Physics, and Chemistry, and one Science or Social Science.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes from Physics, Chemistry, and Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Chemistry, and Physics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "PHYSICS WITH ELECTRONICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English, Mathematics, Physics, and Chemistry.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Physics, Mathematics, or Chemistry.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Physics and Mathematics, Chemistry or Biology.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or it&sq;s equivalent) including English, Mathematics, Physics plus two other science subjects.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Mathematics in Science subjects including Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Physics and one of Biology, Chemistry, Agric Science, Economics and Geography.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or it&sq;s equivalent) including English, Mathematics, Physics plus two other science subjects.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Mathematics in Science subjects including Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Physics and one of Biology, Chemistry, Agric Science, Economics and Geography.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "MATHEMATICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or it&sq;s equivalent) including English, Mathematics, Physics, or Chemistry.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Mathematics and any other Science subject.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: English, Maths. and any two of&nbsp; Physics/Biology or Chemistry</span><span><o></o:p></span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BIOCHEMISTRY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) in English, Mathematics, Physics, Chemistry, and Biology.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Chemistry, Mathematics, Physics, and Biology.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Biology, Chemistry, Physics or Mathematics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BIOTECHNOLOGY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) in English, Mathematics, Physics, Chemistry, and Biology.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes chosen from Chemistry and any one of Physics, Mathematics or Biology.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Chemistry and two of Physics, Biology, and Mathematics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "MASS COMMUNICATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, one Science subject, Mathematics, and Lit. in English.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes to include Lit. in English and one other art subject.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Lit. in English, one other Art subject and another Arts or Social Science subject.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "CRIMINOLOGY & SECURITY STUDIES",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five credit passes at SSCE (or its equivalent) in English, Government, and two other Arts or Social Science subject.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two A level credit passes in Arts and Social Science subjects. Credit passes in NCE, OND, and Diploma in social work.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subject are: English, Government, and any other two Arts and Social Science subjects.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ECONOMICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five Credits at SSCE (or its equivalent) in English, Mathematics, one Science or Social Science subject and any other two relevant subject.<br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes chosen from Economics, Accounts, Business Management, Government, Geography or Statistics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Economics and one other subject.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BUSINESS ADMINISTRATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) in English, Mathematics, Economics, one Science subject plus any one from Accounting, Business Methods, Commerce, Govt., Geography and Statistics.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes chosen Economics, Accounts, Business Management, Government, Geography or Statistics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Economics and one other subject.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) in English, Mathematics,\r\nEconomics, one Science subject and any other one relevant subject.</span><br></p>",
+    "de_requirements": "<p><span>Two A level passes chosen from Economics, Accounting, Business\r\nManagement, Government and Geography.&nbsp;</span><br></p>",
+    "subjects": "<p><span>UTME subjects are: English, Economics, Mathematics and any Social\r\nScience subject.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "LAW",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Literature in English, and Mathematics.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Arts or Social Science subjects.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Any three Arts or Social Science subjects including Literature in English</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "TELECOMMUNICATION ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Mathematics, Physics, and Chemistry, and one Science or Social Science.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes from Physics, Chemistry, and Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Chemistry, and Physics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER ENGINEERING:",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Mathematics, Physics, and Chemistry, and one Science or Social Science.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes from Physics, Chemistry, and Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Chemistry, and Physics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ELECTRICAL/ELECTRONICS ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Mathematics, Physics, and Chemistry, and one Science or Social Science.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes from Physics, Chemistry, and Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Chemistry, and Physics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "PETROLEUM AND GAS ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, Mathematics, Physics, and Chemistry, and one Science or Social Science.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes from Physics, Chemistry, and Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Chemistry, and Physics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "PHYSICS WITH ELECTRONICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English, Mathematics, Physics, and Chemistry.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Physics, Mathematics, or Chemistry.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Physics and Mathematics, Chemistry or Biology.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or it&sq;s equivalent) including English, Mathematics, Physics plus two other science subjects.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Mathematics in Science subjects including Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Physics and one of Biology, Chemistry, Agric Science, Economics and Geography.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or it&sq;s equivalent) including English, Mathematics, Physics plus two other science subjects.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Mathematics in Science subjects including Mathematics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Physics and one of Biology, Chemistry, Agric Science, Economics and Geography.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "MATHEMATICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or it&sq;s equivalent) including English, Mathematics, Physics, or Chemistry.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Mathematics and any other Science subject.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: English, Maths. and any two of&nbsp; Physics/Biology or Chemistry</span><span><o></o:p></span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BIOCHEMISTRY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) in English, Mathematics, Physics, Chemistry, and Biology.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes in Chemistry, Mathematics, Physics, and Biology.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Biology, Chemistry, Physics or Mathematics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BIOTECHNOLOGY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) in English, Mathematics, Physics, Chemistry, and Biology.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes chosen from Chemistry and any one of Physics, Mathematics or Biology.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Chemistry and two of Physics, Biology, and Mathematics.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "MASS COMMUNICATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) including English Language, one Science subject, Mathematics, and Lit. in English.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes to include Lit. in English and one other art subject.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Lit. in English, one other Art subject and another Arts or Social Science subject.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "CRIMINOLOGY AND SECURITY STUDIES",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five credit passes at SSCE (or its equivalent) in English, Government, and two other Arts or Social Science subject.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two A level credit passes in Arts and Social Science subjects. Credit passes in NCE, OND, and Diploma in social work.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subject are: English, Government, and any other two Arts and Social Science subjects.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ECONOMICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) in English, Maths., Econ., one Science subject and any one of Accounting, Business Methods, Commerce, Govt., Geography and Statistics.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes chosen from Economics, Accounts, Business Management, Government, Geography or Statistics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Economics and one other subject.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BUSINESS ADMINISTRATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) in English, Mathematics, Economics, one Science subject plus any one from Accounting, Business Methods, Commerce, Govt., Geography and Statistics.</span><span></span><br></p>",
+    "de_requirements": "<p><span>Two â€˜Aâ€™ level passes chosen Economics, Accounts, Business Management, Government, Geography or Statistics.</span><span></span><br></p>",
+    "subjects": "<p><span>UTME subjects are: Mathematics, Economics and one other subject.</span><span></span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p><span>Five Credits at SSCE (or its equivalent) in English, Mathematics,\r\nEconomics, one Science subject and any other one relevant subject.</span><br></p>",
+    "de_requirements": "<p><span>Two A level passes chosen from Economics, Accounting, Business\r\nManagement, Government and Geography.&nbsp;</span><br></p>",
+    "subjects": "<p><span>UTME subjects are: English, Economics, Mathematics and any Social\r\nScience subject.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "CIVIL ENGINEERING",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Five Credits at SSCE (or its equivalent) including English Language,\r\nMathematics, Physics, and Chemistry and one Science or Social Science.</span><br></p>",
+    "de_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Two â€˜Aâ€™ level passes from Physics, Chemistry and Mathematics.</span><br></p>",
+    "subjects": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>UTME subjects are: Mathematics, Chemistry and Physics</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "MECHANICAL ENGINEERING",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Five Credits at SSCE (or its equivalent) including English Language,\r\nMathematics, Physics, and Chemistry and one Science or Social Science.</span><br></p>",
+    "de_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Two â€˜Aâ€™ level passes from Physics, Chemistry and Mathematics.</span><br></p>",
+    "subjects": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>UTME subjects are: Mathematics, Chemistry and Physics.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "CHEMICAL ENGINEERING",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Five Credits at SSCE (or its equivalent) including English Language,\r\nMathematics, Physics, and Chemistry and one Science or Social Science.</span><br></p>",
+    "de_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Two â€˜Aâ€™ level passes from Physics, Chemistry and Mathematics</span><br></p>",
+    "subjects": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>UTME subjects are: Mathematics, Chemistry and Physics.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "MECHATRONICS ENGINEERING",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Five Credits at SSCE (or its equivalent) including English Language,\r\nMathematics, Physics, and Chemistry and one Science or Social Science.</span><br></p>",
+    "de_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Two â€˜Aâ€™ level passes from Physics, Chemistry and Mathematics.</span><br></p>",
+    "subjects": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>UTME subjects are: Mathematics, Chemistry and Physics.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ARCHITECTURE",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Five credit passes in SSCE (or its equivalent) including Mathematics,\r\nEnglish Language, Physics and any other two subjects selected from Geography,\r\nEconomics, Chemistry, Technical Drawing, Fine Arts and Building Construction.</span><br></p>",
+    "de_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Two A level credit passes in Mathematics and Physics and five credit\r\npasses at SSCE (or its equivalent). OND in Architectural Technology or credit\r\nlevel and good SSCE result may be considered.</span><br></p>",
+    "subjects": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>UTME subjects are: English, Physics, Mathematics or Geography and any\r\nrelevant subject.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "MEDICAL LABORATORY SCIENCE",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Five Credits at SSCE (or its equivalent) in English Language,\r\nMathematics, Biology, Chemistry and Physics.&nbsp;</span><br></p>",
+    "de_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Two â€˜Aâ€™ level passes to include Physics, Chemistry and Biology or\r\nBotany/Zoology.</span><br></p>",
+    "subjects": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>UTME subjects are: Biology, Chemistry and Physics.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "NURSING SCIENCE",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Five Credits at SSCE (or its equivalent) including English, Mathematics,\r\nPhysics Biology and Chemistry.</span><br></p>",
+    "de_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Two â€˜Aâ€™ level passes chosen from Physics, Chemistry and Biology.</span><br></p>",
+    "subjects": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>UTME subjects are: Physics, Chemistry and Biology.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "PUBLIC HEALTH",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Five credit passes at SSCE (or its equivalent) in English, Chemistry,\r\nBiology, Physics and Mathematics.</span><br></p>",
+    "de_requirements": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>Two A level credit passes chosen from Chemistry, Biology and Physics.</span><br></p>",
+    "subjects": "<p><span style=&dq;font-size:14.0pt;line-height:107%;\r\nfont-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:\r\nminor-latin;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;mso-bidi-language:\r\nAR-SA&dq;>UTME subjects are: English, Mathematic, Biology and Chemistry or\r\nPhysics.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "MEDICINE AND SURGERY",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CYBER SECURITY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

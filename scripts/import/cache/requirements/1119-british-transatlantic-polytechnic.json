@@ -1,0 +1,155 @@
+[
+  {
+    "title": "Computer Science",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Computer Engineering Technology",
+    "department": "ENGINEERING",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Electrical/Electronics Engineering Technology",
+    "department": "ENGINEERING",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Statistics",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Accountancy",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER ENGINEERING TECHNOLOGY",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ELECTRICAL/ELECTRONIC ENGINEERING TECHNOLOGY",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "STATISTICS",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTANCY",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MASS COMMUNICATION",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HOSPITALITY MANAGEMENT TECHNOLOGY",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Hospitality Management Technology",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Mass Communication",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SCIENCE LABORATORY TECHNOLOGY",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MULTIMEDIA TECHNOLOGY",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "FASHION DESIGN AND CLOTHING TECHNOLOGY",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

@@ -1,0 +1,227 @@
+[
+  {
+    "title": "MICROBIOLOGY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BIOCHEMISTRY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CYBER SECURITY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PHYSICS WITH ELECTRONICS",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INFORMATION AND COMMUNICATION TECHNOLOGY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "NURSING SCIENCE",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MEDICAL LABORATORY SCIENCE",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENVIRONMENTAL HEALTH",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "RADIOGRAPHY",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MEDICAL REHABILITATION",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BUSINESS ADMINISTRATION",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ECONOMICS",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "POLITICAL SCIENCE",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MASS COMMUNICATION",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENTREPRENEURIAL STUDIES",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "TAXATION",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INTERNATIONAL RELATIONS",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MEDICINE & SURGERY",
+    "department": "MED/PHARM/HEALTH SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ANATOMY",
+    "department": "MED/PHARM/HEALTH SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PHYSIOLOGY",
+    "department": "MED/PHARM/HEALTH SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "LAW",
+    "department": "LAW/LEGAL STUDIES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH",
+    "department": "ARTS AND HUMANITIES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

@@ -1,0 +1,281 @@
+[
+  {
+    "title": "MEDICINE AND SURGERY",
+    "department": "MEDICAL",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HUMAN ANATOMY",
+    "department": "MEDICAL",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HUMAN PHYSIOLOGY",
+    "department": "MEDICAL",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "NURSING SCIENCE",
+    "department": "MEDICAL",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "NUTRITION AND DIETETICS",
+    "department": "MEDICAL",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MEDICAL LABORATORY SCIENCE",
+    "department": "MEDICAL",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "RADIOGRAPHY",
+    "department": "MEDICAL",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "DOCTOR OF PHYSIOTHERAPY",
+    "department": "MEDICAL",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "DOCTOR OF PHARMACY",
+    "department": "MEDICAL",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BIOMEDICAL ENGINEERING",
+    "department": "ENGINEERING",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CHEMICAL ENGINEERING",
+    "department": "ENGINEERING",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MECHANICAL ENGINEERING",
+    "department": "ENGINEERING",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ELECTRICAL AND ELECTRONICS ENGINEERING",
+    "department": "ENGINEERING",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER ENGINEERING",
+    "department": "ENGINEERING",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CIVIL ENGINEERING",
+    "department": "ENGINEERING",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ARCHITECTURE",
+    "department": "ENGINEERING",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "QUANTITY SURVEYING",
+    "department": "ENGINEERING",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MOLECULAR BIOLOGY",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "GENETICS AND BIOTECHNOLOGY",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BIOCHEMISTRY",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "APPLIED MICROBIOLOGY AND BREWING",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INFORMATION & COMMUNICATION TECHNOLOGY",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INDUSTRIAL PHYSICS",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PUBLIC HEALTH",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HEALTH ADMINISTRATION AND HOSPITAL MANAGEMENT",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INDUSTRIAL PHYSICS",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PUBLIC HEALTH",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HEALTH ADMINISTRATION AND HOSPITAL MANAGEMENT",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "RADIOGRAPHY",
+    "department": "MED/PHARM/HEALTH SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "APPLIED MICROBIOLOGY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

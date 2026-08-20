@@ -1,0 +1,326 @@
+[
+  {
+    "title": "PRIMARY EDUCATION STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"MsoNormal\" style=\"text-align:justify;text-justify:inter-ideograph;\r\nmso-layout-grid-align:none;text-autospace:none\"><span lang=\"EN-GB\" style=\"font-size:9.5pt;line-height:115%\">Five (5)SSC credits including English\r\nLanguage.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "English Language and any other three (3) subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "HISTORY (DM)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p><span lang=\"EN-GB\" style=\"font-size:11.0pt;line-height:\r\n115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;\r\nmso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;\r\nmso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;\r\nmso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-GB;mso-fareast-language:\r\nEN-GB;mso-bidi-language:AR-SA\">Five (5) SSC credit passes in English Language,\r\nHistory and any other three (3) subjects.</span><br></p>",
+    "de_requirements": "",
+    "subjects": "History and any other two (2) Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/ADULT & NON FORMAL EDUCATION",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics and three (3) subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "English Language and any three (3) subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/EARLY CHILDHOOD CARE EDUCATION",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics and three (3)&nbsp;&nbsp; subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "English Language and any three (3) subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/AGRICULTURAL SCI (DOUBLE MAJOR)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Agricultural Science and any two (2)&nbsp; of the following:<o:p></o:p></span></p><p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">1. Chemistry&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Geography.&nbsp; 3. Physics&nbsp;&nbsp;&nbsp;&nbsp;\r\n<o:p></o:p></span></p><p>\r\n\r\n\r\n\r\n<span lang=\"EN-GB\" style=\"font-size:11.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;\r\nmso-ascii-theme-font:minor-latin;mso-fareast-font-family:&quot;Times New Roman&quot;;\r\nmso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-latin;\r\nmso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;\r\nmso-ansi-language:EN-GB;mso-fareast-language:EN-GB;mso-bidi-language:AR-SA\">4.\r\nHealth Science/Biology&nbsp; 5. Mathematics.&nbsp;&nbsp;&nbsp;&nbsp; 6. Physical &nbsp;Health Education</span><br></p>",
+    "de_requirements": "",
+    "subjects": "Agricultural Science and any two (2) of Chemistry, Geography, Physics, General Science Mathematics and Biology.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/ARABIC",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Islamic Studies/Arabic and two (2)\r\nArts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Arabic and any two (2) other Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/CHRISTIAN RELIGIOUS STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Christian Religious Studies and any two\r\n(2) Arts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Christian Religious Studies and any two (2) Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/ENGLISH",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Literature in English and any two (2)&nbsp;&nbsp; Arts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Literature in English and any two (2) Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/FINE ART (D/M)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Literature in English and any two (2)\r\nArts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Fine Art and any two (2) Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/HAUSA",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Hausa and any two (2) Arts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Hausa and any two (2) Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/IGBO",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Igbo and any two (2) Arts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Igbo and any two (2) Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/HOME ECONOMICS (DOUBLE MAJOR)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Home Economics and any two (2) of the\r\nfollowings: Home Management, Biology, Chemistry, Needle and Dress Making.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Any three (3) of Biology, Chemistry, General Science, Economics, Mathematics and Commerce.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/INTEGRATED SCIENCE",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics and any three (3) Science subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Any three (3) subjects from Biology, Agricultural Science, Physics, Chemistry and General Science.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/ISLAMIC STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Islamic Studies and any two (2) Arts\r\nsubjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Islamic Studies and any two (2) Arts subjects.\r\n\r\n",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/MATHEMATICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics and any three (3) Science subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Any three (3) of Mathematics, Physics/Chemistry, General Science/Biology.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/MUSIC",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics and any three (3) Arts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Any three (3) Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/PHYSICAL & HEALTH EDUCATION",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics and any three (3) of the followings:\r\nBiology, Chemistry, General Science, Health Science, Agricultural Science and\r\nany other subject.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "One (1) Science subject and any other two (2) subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/SOCIAL STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Government/History and any two (2)\r\nSocial Science subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Any one (1) of History/Government and two (2) Social Science subjects.\r\n\r\n",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/POLITICAL SCIENCE",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Government/History and any two (2)\r\nSocial Science subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Any one (1) of History/Government and two (2) Social Science.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/YORUBA",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Yoruba and two (2) Arts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Yoruba and any two (2) Arts subjects",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/BUSINESS EDUCATION",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Economics and any two (2) from the\r\nfollowing: Government, Geography, Commerce, History, Business Method, Principle\r\nof Account and Typewriting, Office Practice, Secretarial Duties, Shorthand.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Economics and any two (2) of Commerce, Accounts, Business Methods and Mathematics.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/BIOLOGY",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Biology and two (2) other Science\r\nsubjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Biology and any two (2) of Geography, Chemistry and Physics.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/COMPUTER SCIENCE",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Physics and two (2) other Science\r\nsubjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Mathematics, Physics and Chemistry.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/FRENCH",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, French and two (2) Arts subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "French and any two (2) Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/THEATRE ARTS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Literature in English and two (2) Arts\r\nsubjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Literature in English and any two (2) Arts subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "PHYSICS (DM)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p><span lang=\"EN-GB\" style=\"font-size:11.0pt;line-height:\r\n115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;;mso-ascii-theme-font:minor-latin;\r\nmso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:minor-fareast;\r\nmso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;\r\nmso-bidi-theme-font:minor-bidi;mso-ansi-language:EN-GB;mso-fareast-language:\r\nEN-GB;mso-bidi-language:AR-SA\">Five (5)SSC credit passes, in English Language,\r\nMathematics, Physics and any other Science subject</span><br></p>",
+    "de_requirements": "",
+    "subjects": "Physics and any other Science subject.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/ECONOMICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<table class=\"MsoTableGrid\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" style=\"border: none;\">\r\n <tbody><tr>\r\n  <td width=\"315\" valign=\"top\" style=\"width:236.25pt;border:solid black 1.0pt;\r\n  mso-border-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:\r\n  text1;padding:0in 5.4pt 0in 5.4pt\">\r\n  <p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\n  passes in English Language, Mathematics, Economics and two (2) Social Science\r\n  subjects.<o:p></o:p></span></p>\r\n  </td>\r\n </tr>\r\n</tbody></table>",
+    "de_requirements": "",
+    "subjects": "Economics and any two (2) Social Science subjects.\r\n\r\n",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/GEOGRAPHY",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Geography and two (2) other Science\r\nsubjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Geography and any two (2)  of Science subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION/CHEMISTRY",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics, Chemistry and two (2) other Science\r\nsubjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Any three (3) of Chemistry, Physics/Mathematics, General Science/Biology.",
+    "remarks": ""
+  },
+  {
+    "title": "CULTURAL & CREATIVE ART (DM)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<table class=\"MsoTableGrid\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" style=\"border: none;\">\r\n <tbody><tr>\r\n  <td width=\"315\" valign=\"top\" style=\"width:236.25pt;border:solid black 1.0pt;\r\n  mso-border-themecolor:text1;mso-border-alt:solid black .5pt;mso-border-themecolor:\r\n  text1;padding:0in 5.4pt 0in 5.4pt\">\r\n  <p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\n  passes in English Language, Mathematics and any other three Arts subjects.<o:p></o:p></span></p>\r\n  </td>\r\n </tr>\r\n</tbody></table>",
+    "de_requirements": "",
+    "subjects": "Any three (3) subjects from Arts or Social Science.",
+    "remarks": ""
+  },
+  {
+    "title": "CULTURAL & CREATIVE ART / POLITICAL SCIENCE",
+    "department": "ARTS",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CULTURAL & CREATIVE ART / GEOGRAPHY",
+    "department": "ARTS",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CULTURAL & CREATIVE ART / ECONOMICS",
+    "department": "ARTS",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CULTURAL & CREATIVE ARTS / HISTORY",
+    "department": "ARTS",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CULTURAL & CREATIVE ART / SOCIAL STUDIES",
+    "department": "ARTS",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION / TECHNICAL EDUCATION",
+    "department": "ARTS",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

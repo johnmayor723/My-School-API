@@ -1,0 +1,29 @@
+[
+  {
+    "title": "EARLY CHILDHOOD CARE & EDUCATION",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"MsoNormal\" align=\"justify\" style=\"margin-bottom:0.0000pt;mso-layout-grid-align:none;text-autospace:none;\r\ntext-align:justify;text-justify:inter-ideograph;\"><span style=\"mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:SimSun;\r\nmso-bidi-font-family:'Times New Roman';font-size:9.5000pt;\">Five (5) SSC credits including English Language.</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"mso-spacerun:'yes';font-family:Calibri;mso-fareast-font-family:SimSun;\r\nmso-bidi-font-family:'Times New Roman';font-size:9.5000pt;\"><o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "English Language and any other three (3) subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "PRIMARY EDUCATION STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"MsoNormal\" style=\"text-align:justify;text-justify:inter-ideograph;\r\nmso-layout-grid-align:none;text-autospace:none\"><span lang=\"EN-GB\" style=\"font-size:9.5pt;line-height:115%\">Five (5)SSC credits including English\r\nLanguage.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "English Language and any other three (3) subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "ADULT & NON FORMAL EDUCATION",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics and three (3) subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "English Language and any three (3) subjects.\r\n\r\n",
+    "remarks": ""
+  }
+]

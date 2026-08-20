@@ -1,0 +1,92 @@
+[
+  {
+    "title": "SPECIAL NEEDS EDUCATION",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas1\" style=\"line-height:10.0pt\"><span lang=\"EN-GB\">Five (5) SSC credit\r\npasses in English Language, Mathematics and any three (3)&nbsp; subjects.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Any three (3) subjects.",
+    "remarks": ""
+  },
+  {
+    "title": "TECHNICAL EDUCATION",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p class=\"nas\" style=\"line-height:9.7pt\"><span lang=\"EN-GB\" style=\"color:windowtext\">Five\r\n(5)SSC credit passes in English Language, Mathematics, Technical Drawing,\r\nPhysics and Chemistry.<o:p></o:p></span></p>",
+    "de_requirements": "",
+    "subjects": "Mathematics and two (2) of Physics, Chemistry, General Science/Technical Drawing.",
+    "remarks": ""
+  },
+  {
+    "title": "AGRICULTURAL EDUCATION (DOUBLE MAJOR)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BUSINESS EDUCATION (DOUBLE MAJOR)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HOME ECONOMICS (DOUBLE MAJOR)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER EDUCATION/BIOLOGY",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INTEGRATED SCIENCE/CHEMISTRY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INTEGRATED SCIENCE/PHYSICS",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INTEGRATED SCIENCE/MATHEMATICS",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MATHEMATICS/PHYSICS",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

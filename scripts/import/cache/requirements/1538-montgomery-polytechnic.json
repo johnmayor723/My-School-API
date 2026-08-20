@@ -1,0 +1,47 @@
+[
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "SCIENCE",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SCIENCE LABORATORY TECHNOLOGY",
+    "department": "SCIENCE",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER ENGINEERING TECHNOLOGY",
+    "department": "ENGINEERING/TECH/ENV",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ELECTRICAL & ELECTRONIC ENGINEERING TECHNOLOGY",
+    "department": "ENGINEERING/TECH/ENV",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTANCY",
+    "department": "SOCIAL SCIENCE",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

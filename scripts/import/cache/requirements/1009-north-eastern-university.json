@@ -1,0 +1,434 @@
+[
+  {
+    "title": "INDUSTRIAL CHEMISTRY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language,&nbsp;<span>Mathematics, Physics, Chemistry, and Biology.</span></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level passes in Chemistry and any one (1) of Physics, Mathematics, or Biology.&nbsp;</p><p>(ii)&nbsp; &nbsp;ND/NCE with&nbsp;<span>good grades in relevant &sq;O&sq; Level subjects.</span></p>",
+    "subjects": "<p>Chemistry and two&nbsp;<span>(2) of Physics,&nbsp;</span><span>Biology, and Mathematics.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "COMMON LAW",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five&nbsp; &nbsp; (5)&sq;O&sq;&nbsp; &nbsp; Level credit&nbsp;<span>passes include English Language, Literature in English, and Mathematics.</span></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level&nbsp;<span>passes in Arts or Social Science subjects.</span></p><p>(ii) NCE/ND/First Degree (Second Class Lower).</p>",
+    "subjects": "<p>Literature in English and any two (2) Arts&nbsp;<span>or Social Science subjects.</span></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "COMMON AND ISLAMIC LAW",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5)&sq;O&sq; Level credit&nbsp;<span>passes in Arts or Social Sciences to include English Language and Islamic Studies or Arabic.</span></p>",
+    "de_requirements": "<p>Two (2)Aâ€™ level passes&nbsp;<span>to include Islamic Studies or Arabic</span></p><div><br></div>",
+    "subjects": "<p>Any three (3) Arts&nbsp;<span>or Social Science subjects including Arabic or Islamic Studies</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "URBAN & REGIONAL PLANNING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five&nbsp; (5)&nbsp; SSCE&nbsp; credit passes&nbsp;<span>include English&nbsp;</span><span>Language, Mathematics, and Geography.</span></p>",
+    "de_requirements": "<p>&sq;Two (2) &sq;A-Level&nbsp;<span>passes including&nbsp;</span><span>Geography.</span></p>",
+    "subjects": "<p>Geography and&nbsp;<span>any&nbsp; &nbsp;two&nbsp; (2)&nbsp; Arts&nbsp;</span><span>subjects.</span></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in&nbsp;<span>Mathematics, English Language, and Physics and any&nbsp; two (2) of Chemistry, Biology Geography, and Computer studies&nbsp;</span></p>",
+    "de_requirements": "<p>&sq;A-Level passes in Mathematics, Physics, and Chemistry or ND/HND in Computer Science.<br></p>",
+    "subjects": "<p>Maths, Physics&nbsp;<span>and any one of&nbsp;</span><span>Chemistry, Physics, Biology or Geography.</span></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "INFORMATION TECHNOLOGY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in&nbsp;<span>Mathematics, English Language and Physics and any&nbsp; two (2) of Chemistry, Biology Geography and Computer studies&nbsp;</span></p><div><br></div>",
+    "de_requirements": "<p>&sq;A-Level passes in Mathematics, Physics, and Chemistry or ND/HND in Computer Science.<br></p>",
+    "subjects": "<p>Maths, Physics&nbsp;<span>and any one of&nbsp;</span><span>Chemistry, Physics, Biology or Geography.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "CYBER SECURITY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in&nbsp;<span>Mathematics, English Language, and Physics and any&nbsp; two (2) of Chemistry, Biology Geography, and Computer studies&nbsp;</span></p>",
+    "de_requirements": "<p>&sq;A-Level passes in Mathematics, Physics, and Chemistry or ND/HND in Computer Science.<br></p>",
+    "subjects": "<p>Maths, Physics&nbsp;<span>and any one of&nbsp;</span><span>Chemistry, Physics, Biology or Geography.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in&nbsp;<span>Mathematics, English Language and Physics and any&nbsp; two (2) of Chemistry, Biology Geography and Computer studies&nbsp;</span></p>",
+    "de_requirements": "<p>&sq;A-Level passes in Mathematics, Physics, and Chemistry or ND/HND in Computer Science.<br></p>",
+    "subjects": "<p>Maths, Physics&nbsp;<span>and any one of&nbsp;</span><span>Chemistry, Physics, Biology or Geography.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "ENVIRONMENTAL MANAGEMENT & TOXICOLOGY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language,&nbsp;<span>Mathematics, Physics, Chemistry, and Biology.</span></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A&sq; Level passes in Chemistry and any one (1) of Physics, Mathematics or Biology.&nbsp;<span>(ii) ND/NCE with&nbsp;</span><span>good grades in relevant &sq;O&sq; Level subjects.</span></p><div><br></div>",
+    "subjects": "<p>Chemistry and two&nbsp;<span>(2) of Physics,&nbsp;</span><span>Biology, and Mathematics.</span></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "QUANTITY SURVEYING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Physics, and any of Fine Art, Geography, Technical Drawing or Wood Work, Biology, Economics,&nbsp; Further Mathematics., Introduction to Building Construction, Bricklaying/Block laying, Concreting, Wall, Floors and Ceiling Finishing, Joinery, Carpentry, Decorative Painting, Lining, Sign and Design, Wall Hanging, Colour Mixing/Matching and Glazing, Ceramics, Graphics Design, Graphic Printing, Basic Electricity.<br></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level passes chosen from Mathematics or Physics and Chemistry, Geography Technical Drawing or Fine Arts. (ii) ND/HND upper credits in relevant field.<br></p>",
+    "subjects": "<p>Physics, Mathematics, and any Chemistry, Geography, Art, Biology, and Economics.<br></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "BUILDING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Physics, and any of Fine Art, Geography, Technical Drawing or Wood Work, Biology, Economics,&nbsp; Further Mathematics., Introduction to Building Construction, Bricklaying/Block laying, Concreting, Wall, Floors and Ceiling Finishing, Joinery, Carpentry, Decorative Painting, Lining, Sign and Design, Wall Hanging, Colour Mixing/Matching and Glazing, Ceramics, Graphics Design, Graphic Printing, Basic Electricity.<br></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level passes chosen from Mathematics or Physics and Chemistry, Geography Technical Drawing or Fine Arts. (ii) ND/HND upper credits in relevant field.<br></p>",
+    "subjects": "<p>Physics, Mathematics, and any of Chemistry, Geography, Art, Biology, and Economics.<br></p>",
+    "remarks": "<p>New Programmes</p>"
+  },
+  {
+    "title": "ARCHITECTURE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Physics, and any of Fine Art, Geography, Technical Drawing or Wood Work, Biology, Economics,&nbsp; Further Mathematics., Introduction to Building Construction, Bricklaying/Block laying, Concreting, Wall, Floors and Ceiling Finishing, Joinery, Carpentry, Decorative Painting, Lining, Sign and Design, Wall Hanging, Colour Mixing/Matching and Glazing, Ceramics, Graphics Design, Graphic Printing, Basic Electricity.<br></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level passes chosen from Mathematics or Physics and Chemistry, Geography Technical Drawing or Fine Arts. (ii) ND/HND upper credits in relevant field.<br></p>",
+    "subjects": "<p>Physics, Mathematics, and any of Chemistry, Geography, Art, Biology, and Economics.<br></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "MASS COMMUNICATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes&nbsp;<span>to include English&nbsp;</span><span>Language.</span></p>",
+    "de_requirements": "<p>Two (2) &sq;A-Level&nbsp;<span>passes in relevant&nbsp;</span><span>subjects.</span></p><div><br></div>",
+    "subjects": "<p>Any 3 Arts and/orSocial Science Subjects<br></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "PUBLIC ADMINISTRATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSCE credit passes to include English&nbsp; Language, Mathematics, Economics, and any other two&nbsp; &nbsp;(2)&nbsp; &nbsp;other relevant subjects from any of Principles of Accounts, Commerce, Office Practice, and Secretarial Studies.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes were chosen from Economics, Accounting, Business Management, Government, and Geography.<br></p>",
+    "subjects": "<p>Mathematics,&nbsp;<span>Economics plus any Social Science subject.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "INTERNATIONAL RELATIONS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes to include English Language, Government, and Mathematics and any other two (2) relevant subjects.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes in any of the following subjects: Government, Economics, History, and French.<br></p>",
+    "subjects": "<p>Mathematics and any two (2) of the following:&nbsp; Economics, History, Government, Geography, Literature in&nbsp; English, Commerce, History, and French.<br></p>",
+    "remarks": "<p>New programmes added</p>"
+  },
+  {
+    "title": "",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Economics, and any two (2) Arts or Social Science subjects.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes in Economics and any one of Mathematics, Statistics, Accounting, Business Management,&nbsp; History, and Government.<br></p>",
+    "subjects": "<p>Five (5) SSC credit passes in English Language, Mathematics, Economics, and any two (2) Arts or Social Science subjects.<br></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "BUSINESS ADMINISTRATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSCE credit passes to include English&nbsp; Language, Mathematics, Economics, and any other two&nbsp; &nbsp;(2)&nbsp; &nbsp;other subjects. For NBC holders, the other two (2) relevant subjects could be from any of the Principles of Accounts, Commerce, Office Practice, and Secretarial Duties.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes were chosen from Economics, Accounting, Business Management, Government, and Geography.<br></p>",
+    "subjects": "<p>Mathematics,&nbsp;<span>Economics plus any Social Science subject.</span></p>",
+    "remarks": "<p>New programmes added</p>"
+  },
+  {
+    "title": "PROCUREMENT MANAGEMENT",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSCE credit passes to include English&nbsp; Language, Mathematics, Economics, and any other two&nbsp; &nbsp;(2)&nbsp; &nbsp;other subjects. For NBC holders, the other two (2) relevant subjects could be from any of the Principles of Accounts, Commerce, Office Practice, and Secretarial Duties.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes chosen from Economics, Accounting, Business Management, Government, and Geography.<br></p>",
+    "subjects": "<p>Mathematics,&nbsp;<span>Economics plus any Social Science subject.</span></p><div><br></div>",
+    "remarks": "<p>New programmes added</p>"
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSCE credit passes to include English&nbsp; Language, Mathematics, Economics and any other two&nbsp; &nbsp;(2)&nbsp; &nbsp;Subjects in relevant subjects could be from any of Principles of Accounts, Commerce, Office Practice, and Secretarial studies.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes chosen from Economics, Accounting, Business Management, Government, and Geography.<br></p>",
+    "subjects": "<p>Mathematics,&nbsp;<span>Economics plus any Social Science subject.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "INDUSTRIAL CHEMISTRY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language,&nbsp;<span>Mathematics, Physics, Chemistry, and Biology.</span></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level passes in Chemistry and any one (1) of Physics, Mathematics, or Biology.&nbsp;</p><p>(ii)&nbsp; &nbsp;ND/NCE with&nbsp;<span>good grades in relevant &sq;O&sq; Level subjects.</span></p>",
+    "subjects": "<p>Chemistry and two&nbsp;<span>(2) of Physics,&nbsp;</span><span>Biology, and Mathematics.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "COMMON LAW",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five&nbsp; &nbsp; (5)&sq;O&sq;&nbsp; &nbsp; Level credit&nbsp;<span>passes include English Language, Literature in English, and Mathematics.</span></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level&nbsp;<span>passes in Arts or Social Science subjects.</span></p><p>(ii) NCE/ND/First Degree (Second Class Lower).</p>",
+    "subjects": "<p>Literature in English and any two (2) Arts&nbsp;<span>or Social Science subjects.</span></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "COMMON AND ISLAMIC LAW",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5)&sq;O&sq; Level credit&nbsp;<span>passes in Arts or Social Sciences to include English Language and Islamic Studies or Arabic.</span></p>",
+    "de_requirements": "<p>Two (2)Aâ€™ level passes&nbsp;<span>to include Islamic Studies or Arabic</span></p><div><br></div>",
+    "subjects": "<p>Any three (3) Arts&nbsp;<span>or Social Science subjects including Arabic or Islamic Studies</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "URBAN AND REGIONAL PLANNING:",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five&nbsp; (5)&nbsp; SSCE&nbsp; credit passes&nbsp;<span>include English&nbsp;</span><span>Language, Mathematics, and Geography.</span></p>",
+    "de_requirements": "<p>&sq;Two (2) &sq;A-Level&nbsp;<span>passes including&nbsp;</span><span>Geography.</span></p>",
+    "subjects": "<p>Geography and&nbsp;<span>any&nbsp; &nbsp;two&nbsp; (2)&nbsp; Arts&nbsp;</span><span>subjects.</span></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in&nbsp;<span>Mathematics, English Language, and Physics and any&nbsp; two (2) of Chemistry, Biology Geography, and Computer studies&nbsp;</span></p>",
+    "de_requirements": "<p>&sq;A-Level passes in Mathematics, Physics, and Chemistry or ND/HND in Computer Science.<br></p>",
+    "subjects": "<p>Maths, Physics&nbsp;<span>and any one of&nbsp;</span><span>Chemistry, Physics, Biology or Geography.</span></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "INFORMATION TECHNOLOGY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in&nbsp;<span>Mathematics, English Language and Physics and any&nbsp; two (2) of Chemistry, Biology Geography and Computer studies&nbsp;</span></p><div><br></div>",
+    "de_requirements": "<p>&sq;A-Level passes in Mathematics, Physics, and Chemistry or ND/HND in Computer Science.<br></p>",
+    "subjects": "<p>Maths, Physics&nbsp;<span>and any one of&nbsp;</span><span>Chemistry, Physics, Biology or Geography.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "CYBER SECURITY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in&nbsp;<span>Mathematics, English Language, and Physics and any&nbsp; two (2) of Chemistry, Biology Geography, and Computer studies&nbsp;</span></p>",
+    "de_requirements": "<p>&sq;A-Level passes in Mathematics, Physics, and Chemistry or ND/HND in Computer Science.<br></p>",
+    "subjects": "<p>Maths, Physics&nbsp;<span>and any one of&nbsp;</span><span>Chemistry, Physics, Biology or Geography.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in&nbsp;<span>Mathematics, English Language and Physics and any&nbsp; two (2) of Chemistry, Biology Geography and Computer studies&nbsp;</span></p>",
+    "de_requirements": "<p>&sq;A-Level passes in Mathematics, Physics, and Chemistry or ND/HND in Computer Science.<br></p>",
+    "subjects": "<p>Maths, Physics&nbsp;<span>and any one of&nbsp;</span><span>Chemistry, Physics, Biology or Geography.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language,&nbsp;<span>Mathematics, Physics, Chemistry, and Biology.</span></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A&sq; Level passes in Chemistry and any one (1) of Physics, Mathematics or Biology.&nbsp;<span>(ii) ND/NCE with&nbsp;</span><span>good grades in relevant &sq;O&sq; Level subjects.</span></p><div><br></div>",
+    "subjects": "<p>Chemistry and two&nbsp;<span>(2) of Physics,&nbsp;</span><span>Biology, and Mathematics.</span></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "QUANTITY SURVEYING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Physics, and any of Fine Art, Geography, Technical Drawing or Wood Work, Biology, Economics,&nbsp; Further Mathematics., Introduction to Building Construction, Bricklaying/Block laying, Concreting, Wall, Floors and Ceiling Finishing, Joinery, Carpentry, Decorative Painting, Lining, Sign and Design, Wall Hanging, Colour Mixing/Matching and Glazing, Ceramics, Graphics Design, Graphic Printing, Basic Electricity.<br></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level passes chosen from Mathematics or Physics and Chemistry, Geography Technical Drawing or Fine Arts. (ii) ND/HND upper credits in relevant field.<br></p>",
+    "subjects": "<p>Physics, Mathematics, and any Chemistry, Geography, Art, Biology, and Economics.<br></p>",
+    "remarks": "<p>New Programme added</p>"
+  },
+  {
+    "title": "BUILDING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Physics, and any of Fine Art, Geography, Technical Drawing or Wood Work, Biology, Economics,&nbsp; Further Mathematics., Introduction to Building Construction, Bricklaying/Block laying, Concreting, Wall, Floors and Ceiling Finishing, Joinery, Carpentry, Decorative Painting, Lining, Sign and Design, Wall Hanging, Colour Mixing/Matching and Glazing, Ceramics, Graphics Design, Graphic Printing, Basic Electricity.<br></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level passes chosen from Mathematics or Physics and Chemistry, Geography Technical Drawing or Fine Arts. (ii) ND/HND upper credits in relevant field.<br></p>",
+    "subjects": "<p>Physics, Mathematics, and any of Chemistry, Geography, Art, Biology, and Economics.<br></p>",
+    "remarks": "<p>New Programmes</p>"
+  },
+  {
+    "title": "ARCHITECTURE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Physics, and any of Fine Art, Geography, Technical Drawing or Wood Work, Biology, Economics,&nbsp; Further Mathematics., Introduction to Building Construction, Bricklaying/Block laying, Concreting, Wall, Floors and Ceiling Finishing, Joinery, Carpentry, Decorative Painting, Lining, Sign and Design, Wall Hanging, Colour Mixing/Matching and Glazing, Ceramics, Graphics Design, Graphic Printing, Basic Electricity.<br></p>",
+    "de_requirements": "<p>(i) Two (2) &sq;A-Level passes chosen from Mathematics or Physics and Chemistry, Geography Technical Drawing or Fine Arts. (ii) ND/HND upper credits in relevant field.<br></p>",
+    "subjects": "<p>Physics, Mathematics, and any of Chemistry, Geography, Art, Biology, and Economics.<br></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "INTERNATIONAL RELATIONS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes to include English Language, Government, and Mathematics and any other two (2) relevant subjects.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes in any of the following subjects: Government, Economics, History, and French.<br></p>",
+    "subjects": "<p>Mathematics and any two (2) of the following:&nbsp; Economics, History, Government, Geography, Literature in&nbsp; English, Commerce, History, and French.<br></p>",
+    "remarks": "<p>New programmes added</p>"
+  },
+  {
+    "title": "MASS COMMUNICATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes&nbsp;<span>to include English&nbsp;</span><span>Language.</span></p>",
+    "de_requirements": "<p>Two (2) &sq;A-Level&nbsp;<span>passes in relevant&nbsp;</span><span>subjects.</span></p><div><br></div>",
+    "subjects": "<p>Any 3 Arts and/orSocial Science Subjects<br></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "PUBLIC ADMINISTRATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSCE credit passes to include English&nbsp; Language, Mathematics, Economics, and any other two&nbsp; &nbsp;(2)&nbsp; &nbsp;other relevant subjects from any of Principles of Accounts, Commerce, Office Practice, and Secretarial Studies.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes were chosen from Economics, Accounting, Business Management, Government, and Geography.<br></p>",
+    "subjects": "<p>Mathematics,&nbsp;<span>Economics plus any Social Science subject.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "ECONOMICS & DEVELOPMENT STUDIES",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Economics, and any two (2) Arts or Social Science subjects.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes in Economics and any one of Mathematics, Statistics, Accounting, Business Management,&nbsp; History, and Government.<br></p>",
+    "subjects": "<p>Five (5) SSC credit passes in English Language, Mathematics, Economics, and any two (2) Arts or Social Science subjects.<br></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "BUSINESS ADMINISTRATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSCE credit passes to include English&nbsp; Language, Mathematics, Economics, and any other two&nbsp; &nbsp;(2)&nbsp; &nbsp;other subjects. For NBC holders, the other two (2) relevant subjects could be from any of the Principles of Accounts, Commerce, Office Practice, and Secretarial Duties.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes were chosen from Economics, Accounting, Business Management, Government, and Geography.<br></p>",
+    "subjects": "<p>Mathematics,&nbsp;<span>Economics plus any Social Science subject.</span></p>",
+    "remarks": "<p>New programmes added</p>"
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSCE credit passes to include English&nbsp; Language, Mathematics, Economics and any other two&nbsp; &nbsp;(2)&nbsp; &nbsp;Subjects in relevant subjects could be from any of Principles of Accounts, Commerce, Office Practice, and Secretarial studies.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes chosen from Economics, Accounting, Business Management, Government, and Geography.<br></p>",
+    "subjects": "<p>Mathematics,&nbsp;<span>Economics plus any Social Science subject.</span></p>",
+    "remarks": "<p>New Programmes added</p>"
+  },
+  {
+    "title": "PROCUREMENT MANAGEMENT",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSCE credit passes to include English&nbsp; Language, Mathematics, Economics, and any other two&nbsp; &nbsp;(2)&nbsp; &nbsp;other subjects. For NBC holders, the other two (2) relevant subjects could be from any of the Principles of Accounts, Commerce, Office Practice, and Secretarial Duties.<br></p>",
+    "de_requirements": "<p>Two (2) â€˜A-Level passes chosen from Economics, Accounting, Business Management, Government, and Geography.<br></p>",
+    "subjects": "<p>Mathematics,&nbsp;<span>Economics plus any Social Science subject.</span></p><div><br></div>",
+    "remarks": "<p>New programmes added</p>"
+  },
+  {
+    "title": "MICROBIOLOGY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BIOTECHNOLOGY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MEDICAL LABORATORY SCIENCE",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "POLITICAL SCIENCE",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PETROLEUM CHEMISTRY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "DATA SCIENCE",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "NURSING SCIENCE",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PUBLIC HEALTH",
+    "department": "MEDICAL",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MICROBIOLOGY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ISLAMIC/SHARIA LAW",
+    "department": "LAW/LEGAL STUDIES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

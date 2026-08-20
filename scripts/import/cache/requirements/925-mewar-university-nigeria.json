@@ -1,0 +1,254 @@
+[
+  {
+    "title": "PHYSICS WITH ELECTRONICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Physics, Chemistry, Mathematics and any other Science subject from Further Mathematics and Biology or Agricultural Science. &nbsp;<br></p>",
+    "de_requirements": "<p>NCE/Two (2) &sq;A&sq; Level passes in Physics and Mathematics or Chemistry. &nbsp;<br></p>",
+    "subjects": "<p>Physics, Mathematics and Chemistry or Biology.<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BANKING & FINANCE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>&nbsp;Five (5)SSC credit passes including &nbsp;English Language, Mathematics, Economics and two (2) other relevant subjects.<br></p>",
+    "de_requirements": "<p>(i) Two (2)&sq;A&sq; Level passes in Accounting or Economics and one other subject. &nbsp;</p><p><span style=&dq;font-size: 0.875rem;&dq;>(ii) NCE merit in relevant subjects. &nbsp;</span></p><p><span style=&dq;font-size: 0.875rem;&dq;>(iii) ND credit. &nbsp;</span></p><p><span style=&dq;font-size: 0.875rem;&dq;>(iv) Foundation International exam such as ICAN, ACCA, ICMA, GPFA.</span></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Mathematics, one Social Science subject and any other subject</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ECONOMICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5)SSC credit passes in English Language, Mathematics, Economics and any two (2) of Arts or Social Science subjects. &nbsp;<br></p>",
+    "de_requirements": "<p>Two (2)&sq;A&sq; Level passes in Economics and any one of Mathematics, Statistics, Geography, Physics, Chemistry, Agricultural Science, Accounting, Business Management, History and Government. &nbsp;<br></p>",
+    "subjects": "<p>Economics, Mathematics and any of Government, History, Geography, Literature in English, French and Christian Religious Studies/Islamic Studies.<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "PUBLIC ADMINISTRATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes including English Language, Mathematics, Economics and two (2) other relevant subjects. &nbsp;<br></p>",
+    "de_requirements": "Two (2)&sq;A&sq; Level passes including Economics. &nbsp;<br>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Mathematics, Economics and any other Social Science subject</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ENTREPRENEURSHIP",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes to include English Language, Mathematics, Economics, one Science subject and one other Social Science or Commercial subject. &nbsp;<br></p>",
+    "de_requirements": "<p>Two (2) &sq;A&sq; Level passes to include Economics and at least one of, Accounts, Business Management, Government, Geography or Mathematics. &nbsp;<br></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Economics, Mathematics and one other Social Science or Commercial subject.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes to include English Language, Mathematics, Physics plus two (2) other Science subjects. &nbsp;<br></p>",
+    "de_requirements": "<p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>(i)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Two (2) &sq;A&sq; Level passes in science subjects including Mathematics</p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>&nbsp;</p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;></p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>(ii)&nbsp;&nbsp; NCE merit in Mathematics and one (1) other Science or Social Science subject.</p>",
+    "subjects": "<p>Mathematics, Physics and one (1) of Biology, Chemistry, Agric Science, Economics and Geography.<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in Mathematics, English Language and three (3) other Science subjects. &nbsp;<br></p>",
+    "de_requirements": "&sq;A&sq; Level passes ND/NCE at Credit/merit levels and HND lower credit in relevant programmes into 200 and 300 levels. &nbsp;<br>",
+    "subjects": "<p>Maths, Economics and any one of Chemistry, Physics, Biology or Geography.<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "INDUSTRIAL CHEMISTRY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Chemistry, Physics and Biology/Agricultural Science. &nbsp;<br></p>",
+    "de_requirements": "<p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>(i)&nbsp;&nbsp;&nbsp; Two (2) &sq;A&sq; Level passes in Chemistry and Mathematics</p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;></p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>(ii)&nbsp;&nbsp; ND in Science Technology or ND in relevant programmes with the UTME requirements.</p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Chemistry, Mathematics and any of Physics/Biology/ Agricultural Science.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BIOTECHNOLOGY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC Credit passes in English Language, Mathematics, Biology, Chemistry and Physics. &nbsp;<br></p>",
+    "de_requirements": "<p>Two (2) &sq;A&sq; Level passes in Biology/Botany/Zoology and Chemistry or Physics. &nbsp;<br></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Biology, Chemistry and any other Science subject.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "LAW",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5)&sq;O&sq; Level credit passes to include English Language, Literature in English and Mathematics. &nbsp;<br></p>",
+    "de_requirements": "<p>(i) &nbsp; Two (2)&sq;A&sq; Level passes in Arts or Social Science subjects. &nbsp;</p><p>(ii) &nbsp; NCE/ND/First Degree (Second Class Lower).<br></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Any three (3) Arts or Social Science subjects.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "CYBER SECURITY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes to include English Language, Mathematics, Physics plus two (2) other Science subjects &nbsp;<br></p>",
+    "de_requirements": "<p>(i) &nbsp; &nbsp;Two (2) &sq;A&sq; Level passes in science subjects including Mathematics &nbsp;</p><p>(ii) &nbsp; &nbsp;NCE merit in Mathematics and one (1) other Science or Social Science subject&nbsp;<br></p>",
+    "subjects": "<p>Mathematics, Physics and one (1) of Biology, Chemistry, Agric Science, Economics and Geography<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "Five (5) SSC credit passes including English Language, Mathematics, Economics and two (2) other relevant subjects. &nbsp;<br>",
+    "de_requirements": "<p><br></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399998664855957px;&dq;>Mathematics, Economics and any other Social Science subject</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "PHYSICS WITH ELECTRONICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Physics, Chemistry, Mathematics and any other Science subject from Further Mathematics and Biology or Agricultural Science. &nbsp;<br></p>",
+    "de_requirements": "<p>NCE/Two (2) &sq;A&sq; Level passes in Physics and Mathematics or Chemistry. &nbsp;<br></p>",
+    "subjects": "<p>Physics, Mathematics and Chemistry or Biology.<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BANKING AND FINANCE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>&nbsp;Five (5)SSC credit passes including &nbsp;English Language, Mathematics, Economics and two (2) other relevant subjects.<br></p>",
+    "de_requirements": "<p>(i) Two (2)&sq;A&sq; Level passes in Accounting or Economics and one other subject. &nbsp;</p><p><span style=&dq;font-size: 0.875rem;&dq;>(ii) NCE merit in relevant subjects. &nbsp;</span></p><p><span style=&dq;font-size: 0.875rem;&dq;>(iii) ND credit. &nbsp;</span></p><p><span style=&dq;font-size: 0.875rem;&dq;>(iv) Foundation International exam such as ICAN, ACCA, ICMA, GPFA.</span></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Mathematics, one Social Science subject and any other subject</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ECONOMICS",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5)SSC credit passes in English Language, Mathematics, Economics and any two (2) of Arts or Social Science subjects. &nbsp;<br></p>",
+    "de_requirements": "<p>Two (2)&sq;A&sq; Level passes in Economics and any one of Mathematics, Statistics, Geography, Physics, Chemistry, Agricultural Science, Accounting, Business Management, History and Government. &nbsp;<br></p>",
+    "subjects": "<p>Economics, Mathematics and any of Government, History, Geography, Literature in English, French and Christian Religious Studies/Islamic Studies.<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "PUBLIC ADMINISTRATION",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes including English Language, Mathematics, Economics and two (2) other relevant subjects. &nbsp;<br></p>",
+    "de_requirements": "Two (2)&sq;A&sq; Level passes including Economics. &nbsp;<br>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Mathematics, Economics and any other Social Science subject</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ENTREPRENEURSHIP",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes to include English Language, Mathematics, Economics, one Science subject and one other Social Science or Commercial subject. &nbsp;<br></p>",
+    "de_requirements": "<p>Two (2) &sq;A&sq; Level passes to include Economics and at least one of, Accounts, Business Management, Government, Geography or Mathematics. &nbsp;<br></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Economics, Mathematics and one other Social Science or Commercial subject.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes to include English Language, Mathematics, Physics plus two (2) other Science subjects. &nbsp;<br></p>",
+    "de_requirements": "<p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>(i)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Two (2) &sq;A&sq; Level passes in science subjects including Mathematics</p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>&nbsp;</p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;></p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>(ii)&nbsp;&nbsp; NCE merit in Mathematics and one (1) other Science or Social Science subject.</p>",
+    "subjects": "<p>Mathematics, Physics and one (1) of Biology, Chemistry, Agric Science, Economics and Geography.<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in Mathematics, English Language and three (3) other Science subjects. &nbsp;<br></p>",
+    "de_requirements": "&sq;A&sq; Level passes ND/NCE at Credit/merit levels and HND lower credit in relevant programmes into 200 and 300 levels. &nbsp;<br>",
+    "subjects": "<p>Maths, Economics and any one of Chemistry, Physics, Biology or Geography.<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "INDUSTRIAL CHEMISTRY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes in English Language, Mathematics, Chemistry, Physics and Biology/Agricultural Science. &nbsp;<br></p>",
+    "de_requirements": "<p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>(i)&nbsp;&nbsp;&nbsp; Two (2) &sq;A&sq; Level passes in Chemistry and Mathematics</p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;></p><p style=&dq;margin-bottom: 1rem; caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>(ii)&nbsp;&nbsp; ND in Science Technology or ND in relevant programmes with the UTME requirements.</p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Chemistry, Mathematics and any of Physics/Biology/ Agricultural Science.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "BIOTECHNOLOGY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC Credit passes in English Language, Mathematics, Biology, Chemistry and Physics. &nbsp;<br></p>",
+    "de_requirements": "<p>Two (2) &sq;A&sq; Level passes in Biology/Botany/Zoology and Chemistry or Physics. &nbsp;<br></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Biology, Chemistry and any other Science subject.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "LAW",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5)&sq;O&sq; Level credit passes to include English Language, Literature in English and Mathematics. &nbsp;<br></p>",
+    "de_requirements": "<p>(i) &nbsp; Two (2)&sq;A&sq; Level passes in Arts or Social Science subjects. &nbsp;</p><p>(ii) &nbsp; NCE/ND/First Degree (Second Class Lower).<br></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399999618530273px;&dq;>Any three (3) Arts or Social Science subjects.</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "CYBER SECURITY",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "<p>Five (5) SSC credit passes to include English Language, Mathematics, Physics plus two (2) other Science subjects &nbsp;<br></p>",
+    "de_requirements": "<p>(i) &nbsp; &nbsp;Two (2) &sq;A&sq; Level passes in science subjects including Mathematics &nbsp;</p><p>(ii) &nbsp; &nbsp;NCE merit in Mathematics and one (1) other Science or Social Science subject&nbsp;<br></p>",
+    "subjects": "<p>Mathematics, Physics and one (1) of Biology, Chemistry, Agric Science, Economics and Geography<br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "None",
+    "status": "Pending",
+    "utme_requirements": "Five (5) SSC credit passes including English Language, Mathematics, Economics and two (2) other relevant subjects. &nbsp;<br>",
+    "de_requirements": "<p><br></p>",
+    "subjects": "<p><span style=&dq;caret-color: rgb(75, 75, 75); color: rgb(75, 75, 75); font-family: &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14.399998664855957px;&dq;>Mathematics, Economics and any other Social Science subject</span><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "INTERNATIONAL RELATIONS",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "POLITICAL SCIENCE",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SOCIOLOGY",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PROCUREMENT MANAGEMENT",
+    "department": "ADMINISTRATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

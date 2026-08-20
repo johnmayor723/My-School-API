@@ -1,0 +1,857 @@
+[
+  {
+    "title": "HISTORY & DIPLOMATIC STUDIES",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HISTORY AND DIPLOMATIC STUDIES",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CHRISTIAN RELIGIOUS STUDIES",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CHRISTIAN RELIGIOUS STUDIES",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ISLAMIC STUDIES",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ISLAMIC STUDIES",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "FINE ARTS",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "FINE ARTS",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "THEATRE & PERFORMING ARTS",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MUSIC",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MUSIC",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BIOLOGY",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BIOLOGY",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CHEMISTRY",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CHEMISTRY",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PHYSICS",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PHYSICS",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MATHEMATICS",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MATHEMATICS",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "STATISTICS",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "STATISTICS",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INTEGRATED SCIENCE",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HEALTH EDUCATION",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HUMAN KINETICS",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATIONAL TECHNOLOGY",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "AUTOMOBILE TECHNOLOGY",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "WOODWORK TECHNOLOGY",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ELECTRICAL TECHNOLOGY",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "METALWORK TECHNOLOGY",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "LIBRARY & INFORMATION SCIENCE",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "AGRICULTURE SCIENCE",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HOME ECONOMICS",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HOME ECONOMICS",
+    "department": "SOCIAL SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BUSINESS EDUCATION",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SECRETARIAL ADMINISTRATION",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENTREPRENEURSHIP",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTING",
+    "department": "ADMINISTRATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ECONOMICS",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ECONOMICS",
+    "department": "SOCIAL SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "POLITICAL SCIENCE",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "POLITICAL SCIENCE",
+    "department": "SOCIAL SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATIONAL MANAGEMENT",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "TRANSPORT MANAGEMENT",
+    "department": "ADMINISTRATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & SOCIAL STUDIES",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "GEOGRAPHY",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "GEOGRAPHY",
+    "department": "SOCIAL SCIENCES",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EARLY CHILDHOOD CARE EDUCATION",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PRIMARY EDUCATION STUDIES",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "GUIDANCE & COUNSELLING",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SPECIAL EDUCATION",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ADULT EDUCATION",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH LANGUAGE",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "FRENCH",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "FRENCH",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ARABIC STUDIES",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ARABIC",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "YORUBA",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "YORUBA",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "IGBO",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "IGBO",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HAUSA",
+    "department": "EDUCATION",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HAUSA",
+    "department": "ARTS",
+    "status": "Pending",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & COMPUTER SCIENCE ",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "INTEGRATED SCIENCE",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & MATHEMATICS",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & STATISTICS",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & PHYSICS",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & CHEMISTRY",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & BIOLOGY",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & MUSIC",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & FINE ARTS",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & ISLAMIC STUDIES",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HISTORY & DIPLOMATIC STUDIES EDUCATION",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION AND GEOGRAPH",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "<p>The <strong>UTME subjects</strong> shall include English Language, Mathematics, and any 2 from Geography, Economics, Government, Biology, Physics, and Chemistry.</p>",
+    "de_requirements": "<p class=\"ql-align-justify\">  In addition to meeting the minimum O’ Level requirements, Direct Entry candidates into 200 Level must meet any of the following conditions: </p><p class=\"ql-align-justify\">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Two (2) A Level passes in Geography and other relevant subject OR Two merit passes in Geography and one other subject at NCE Level.</p><p class=\"ql-align-justify\">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Candidates without Geography at A Level, but with credit pass in Geography at O’ Level may be considered but must still have another A Level pass in one Social Science or Science.</p><p class=\"ql-align-justify\">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Holders of OND in Urban and Regional Planning, Town Planning, Cartography, Environmental/Science Management, Meteorology, Transport and Logistics Studies/Management, Hospitality and Tourism Management, Geoinformatics, and Agriculture may be considered for direct entry admission into 200 Level.</p><p>  </p>",
+    "subjects": "<p class=\"ql-align-justify\">The minimum O’ Level subjects requirements for any of the two programmes shall be 5 credit passes at one or two sittings in SSCE/NECO <strong>in English Language, Mathematics, and any other 3 subjects from Science or Social Science.</strong></p><p><br></p>",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & ECONOMICS",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & ACCOUNTING",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & POLITICAL SCIENCE",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & HOME ECONOMICS",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "LANGUAGE AND COMMUNICATION ARTS",
+    "department": "ARTS",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & CHRISTIAN RELIGIOUS STUDIES",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CIVIC & CITIZENSHIP",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COUSELLING PSYCHOLOGY",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & ENGLISH LANGUAGE",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & FRENCH",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & ARABIC",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & YORUBA",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & IGBO",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "EDUCATION & HAUSA",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MARKETING",
+    "department": "EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MARKETING",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HOSPITALITY & TOURISM MANAGEMENT",
+    "department": "ARTS",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

@@ -1,0 +1,15 @@
+module.exports = {
+  Role: require("./Role"),
+  User: require("./User"),
+  RefreshToken: require("./RefreshToken"),
+  StudentProfile: require("./StudentProfile"),
+  Institution: require("./Institution"),
+  Programme: require("./Programme"),
+  InstitutionProgramme: require("./InstitutionProgramme"),
+  AdmissionSession: require("./AdmissionSession"),
+  AdmissionRule: require("./AdmissionRule"),
+  Assessment: require("./Assessment"),
+  AssessmentRecommendation: require("./AssessmentRecommendation"),
+  Payment: require("./Payment"),
+  AuditLog: require("./AuditLog"),
+};

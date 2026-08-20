@@ -1,0 +1,101 @@
+[
+  {
+    "title": "AVIATION MANAGEMENT",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Mathematics, Economics in addition to one of either Commerce or Geography or Government or Principles of Accounts.&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the three-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects passes in relevant subjects at Advance GCE Level (or its equivalent) passes in relevant subjects, or OND with credit level passes or a good university degree may be considered. Holder of at least upper credit level at HND are eligible for consideration for admission into 300 level.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the four-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics, Economics and other acceptable subjects.&nbsp;&nbsp;</span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "POLITICS, PHILOSOPHY & ECONOMICS",
+    "department": "SOCIAL SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Economics, Government/History in addition to one of either Arts or Social sciences.&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the three-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects passes at Advance GCE Level (or its equivalent) in relevant subjects which could include Government or History or Economics or Philosophy, or OND with credit level passes related to the programme may be considered.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the four-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics and other three acceptable subjects from Arts or Social sciences.</span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "AEROSPACE ENGINEERING",
+    "department": "ENGINEERING/TECH/ENV",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Mathematics, Physics, Chemistry.&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the four-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects at Advance GCE Level (or its equivalent) passes in relevant subjects, or OND with credit level passes or a good University degree in relevant field as the case may be. Holder of upper credit level at HND are eligible for consideration for admission into 300 level.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the five-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics, Physics, Chemistry and other acceptable subjects.&nbsp;&nbsp;</span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "MECHATRONICS ENGINEERING",
+    "department": "ENGINEERING/TECH/ENV",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Mathematics, Physics, Chemistry.&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the four-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects at Advance GCE Level (or its equivalent) passes in relevant subjects, or OND with credit level passes or a good University degree in relevant field as the case may be. Holder of upper credit level at HND are eligible for consideration for admission into 300 level.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the five-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics, Physics, Chemistry and other acceptable subjects.&nbsp;&nbsp;</span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "SYSTEMS ENGINEERING",
+    "department": "ENGINEERING/TECH/ENV",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Mathematics, Physics, Chemistry.&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the four-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects at Advance GCE Level (or its equivalent) passes in relevant subjects, or OND with credit level passes or a good University degree in relevant field as the case may be. Holder of upper credit level at HND are eligible for consideration for admission into 300 level.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the five-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics, Physics, Chemistry and other acceptable subjects.&nbsp;&nbsp;</span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Mathematics, Physics in addition to one of either Agricultural Science or Biology or Chemistry or Economics or Geography.&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the three-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects passes in relevant subjects (Mathematics, Physics and Chemistry) at Advance GCE Level (or its equivalent) passes in relevant subjects, or OND with credit level passes or its equivalent (IJMB or JUPEB) may be considered. Holder of at least upper credit level at HND are eligible for consideration for admission into 300 level.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the four-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics, Physics, Chemistry and other acceptable subjects.&nbsp;&nbsp;</span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "INFORMATION TECHNOLOGY",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Mathematics, Physics in addition to one of either Agricultural Science or Biology or Chemistry or Economics or Geography.&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the three-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects passes in relevant subjects (Mathematics, Physics and Chemistry) at Advance GCE Level (or its equivalent) passes in relevant subjects, or OND with credit level passes or its equivalent (IJMB or JUPEB) may be considered. Holder of at least upper credit level at HND are eligible for consideration for admission into 300 level.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the four-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics, Physics, Chemistry and other acceptable subjects</span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "SOFTWARE ENGINEERING",
+    "department": "SCIENCES",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Mathematics, Physics in addition to one of either Agricultural Science or Biology or Chemistry or Economics or Geography,&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the three-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects passes in relevant subjects (Mathematics, Physics and Chemistry) at Advance GCE Level (or its equivalent) passes in relevant subjects, or OND with credit level passes or its equivalent (IJMB or JUPEB) may be considered. Holder of at least upper credit level at HND are eligible for consideration for admission into 300 level.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the four-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics, Physics, Chemistry and other acceptable subjects.&nbsp;&nbsp;</span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER ENGINEERING",
+    "department": "ENGINEERING/TECH/ENV",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ELECTRICAL & ELECTRONICS ENGINEERING",
+    "department": "ENGINEERING/TECH/ENV",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Mathematics, Physics, Chemistry.&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the four-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects at Advance GCE Level (or its equivalent) passes in relevant subjects, or OND with credit level passes or a good University degree in relevant field as the case may be. Holder of upper credit level at HND are eligible for consideration for admission into 300 level.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the five-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics, Physics, Chemistry and other acceptable subjects.&nbsp;&nbsp;</span></p>",
+    "remarks": ""
+  },
+  {
+    "title": "TELECOMMUNICATIONS ENGINEERING",
+    "department": "ENGINEERING/TECH/ENV",
+    "status": "Approved",
+    "utme_requirements": "<p><span style=\"color: black;\">The UTME subject combinations for the programme are English Language, Mathematics, Physics, Chemistry.&nbsp;&nbsp;</span></p>",
+    "de_requirements": "<p><span style=\"color: black;\">For the four-year Direct Entry into 200 level, candidate must in addition to having five (5) O-level SSCE or NECO credits, obtain at least two (2) subjects at Advance GCE Level (or its equivalent) passes in relevant subjects, or OND with credit level passes or a good University degree in relevant field as the case may be. Holder of upper credit level at HND are eligible for consideration for admission into 300 level.&nbsp;</span></p>",
+    "subjects": "<p><span style=\"color: black;\">For the five-year UTME Entry into 100 level, candidate must in addition to having an acceptable UTME score, obtain five (5) O-level SSCE or NECO credits, in the relevant subject at not more than two (2) sittings. The subjects must include English Language, Mathematics, Physics, Chemistry and other acceptable subjects.&nbsp;</span></p>",
+    "remarks": ""
+  }
+]

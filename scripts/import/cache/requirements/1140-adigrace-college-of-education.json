@@ -1,0 +1,434 @@
+[
+  {
+    "title": "General Education",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Primary Education",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "English Language",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Hausa Language",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Mathematics",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Integrated Science",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Biology",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Chemistry",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Computer Science",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Physics",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Physical and Health Education",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Christian Religious Studies",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Social Studies",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Political Science",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Economics",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Geography",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Islamic Studies",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Agricultural Education",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "Business Education",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "POLITICAL SCIENCE/CHRISTIAN RELIGIOUS STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PRIMARY EDUCATION (DOUBLE MAJOR)",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH/COMPUTER SCIENCE",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH/CHRISTIAN RELIGIOUS STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH/SOCIAL STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH/GEOGRAPHY",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ENGLISH/MATHEMATICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BIOLOGY/PHYSICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BIOLOGY/CHEMISTRY",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "BIOLOGY/MATHEMATICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CHEMISTRY/PHYSICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CHEMISTRY/MATHEMATICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE EDUCATION/PHYSICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE EDUCATION/MATHEMATICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER SCIENCE EDUCATION/CHEMISTRY",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "MATHEMATICS/PHYSICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CHRISTIAN RELIGIOUS STUDIES/SOCIAL STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "CHRISTIAN RELIGIOUS STUDIES/ECONOMICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "SOCIAL STUDIES/ECONOMICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "POLITICAL SCIENCE/SOCIAL STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PRIMARY EDUCATION STUDIES/SOCIAL STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PRIMARY EDUCATION STUDIES/CHRISTIAN RELIGIOUS STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PRIMARY EDUCATION STUDIES/GEOGRAPHY",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PRIMARY EDUCATION STUDIES/POLITICAL SCIENCE",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "PRIMARY EDUCATION STUDIES/ECONOMICS",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HISTORY/CHRISTIAN RELIGIOUS STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "HISTORY/SOCIAL STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ISLAMIC RELIGIOUS STUDIES/ENGLISH",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  },
+  {
+    "title": "ISLAMIC RELIGIOUS STUDIES/SOCIAL STUDIES",
+    "department": "COLLEGES OF EDUCATION",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]

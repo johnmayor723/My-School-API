@@ -1,0 +1,47 @@
+[
+  {
+    "title": "COMPUTER SCIENCE",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<ol><li>Mathematics.</li><li>English Language.</li><li>Any three (3) subjects from Statistics, Physics, Chemistry, Further Geography, and Economics.</li></ol>",
+    "de_requirements": "<ul><li>Two (2) â€˜Aâ€™ Level passes to include Mathematics or Statistics.</li><li>NCE credit in relevant subjects.</li></ul>",
+    "subjects": "<ul><li>Use of English Language</li><li>Mathematics&nbsp;</li><li>Physics</li><li>Chemistry</li></ul>",
+    "remarks": ""
+  },
+  {
+    "title": "COMPUTER ENGINEERING TECHNOLOGY",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<ol><li>Mathematics.</li><li>English Language.</li><li>Any three (3) subjects from Statistics, Physics, Chemistry, Further Geography, and Economics.</li></ol>",
+    "de_requirements": "<ol><li>Two (2) â€˜Aâ€™ Level passes to include Mathematics or Statistics.</li><li>NCE credit in relevant subjects.</li></ol>",
+    "subjects": "<ul><li>Use of English Language</li><li>Mathematics&nbsp;</li><li>Physics</li><li>Chemistry</li></ul>",
+    "remarks": ""
+  },
+  {
+    "title": "ELECTRICAL/ELECTRONICS ENGINEERING TECHNOLOGY",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<ol><li>Mathematics.</li><li>English Language.</li><li>Any three (3) subjects from Statistics, Physics, Chemistry, Further Geography, and Economics.</li></ol>",
+    "de_requirements": "<ul><li>Two (2) â€˜Aâ€™ Level passes to include Mathematics or Statistics.</li><li>NCE credit in relevant subjects.</li></ul>",
+    "subjects": "<ul><li>Use of English Language</li><li>Mathematics&nbsp;</li><li>Physics</li><li>Chemistry</li></ul>",
+    "remarks": ""
+  },
+  {
+    "title": "STATISTICS",
+    "department": "",
+    "status": "Approved",
+    "utme_requirements": "<ol><li>Mathematics.</li><li>English Language.</li><li>Any three (3) subjects from Statistics, Physics, Chemistry, Further Geography, and Economics.</li></ol>",
+    "de_requirements": "<ul><li>Two (2) â€˜Aâ€™ Level passes to include Mathematics or Statistics.</li><li>NCE credit in relevant subjects.</li></ul>",
+    "subjects": "<ul><li>Use of English Language</li><li>Mathematics&nbsp;</li><li>Physics</li><li>Chemistry</li></ul>",
+    "remarks": ""
+  },
+  {
+    "title": "ACCOUNTANCY",
+    "department": "NATIONAL DIPLOMA",
+    "status": "Approved",
+    "utme_requirements": "",
+    "de_requirements": "",
+    "subjects": "",
+    "remarks": ""
+  }
+]
