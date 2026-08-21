@@ -32,4 +32,15 @@ const listProgrammesQueryValidator = [
   query("institution").optional().isMongoId(),
 ];
 
-module.exports = { createProgrammeValidator, updateProgrammeValidator, listProgrammesQueryValidator };
+const searchProgrammesQueryValidator = [
+  query("q").optional().isString().trim(),
+  query("limit").optional().isInt({ min: 1, max: 50 }).toInt(),
+  query("olevelSubjects").optional().isString().trim(),
+];
+
+module.exports = {
+  createProgrammeValidator,
+  updateProgrammeValidator,
+  listProgrammesQueryValidator,
+  searchProgrammesQueryValidator,
+};

@@ -24,9 +24,29 @@ async function list({ page = 1, limit = 20, search, faculty, institution, status
   return { items, total };
 }
 
-async function search(query, limit = 20) {
+function normalizeSubject(subject) {
+  return String(subject || "").trim().toLowerCase();
+}
+
+// A programme "qualifies" when every O'Level subject its subjectProfile
+// requires is among the subjects the student submitted — the same subset
+// check the matching engine's O'Level evaluator applies later, just run
+// earlier so course discovery only surfaces courses the student can actually
+// be evaluated against.
+function qualifiesForOlevel(programme, submittedSet) {
+  const required = programme.subjectProfile?.olevelRequiredSubjects || [];
+  return required.every((subject) => submittedSet.has(normalizeSubject(subject)));
+}
+
+async function search(query, limit = 20, olevelSubjects) {
   const filter = query ? { $text: { $search: query }, status: RECORD_STATUS.ACTIVE } : { status: RECORD_STATUS.ACTIVE };
-  return Programme.find(filter).limit(limit);
+  const candidateLimit = olevelSubjects?.length ? Math.max(limit * 10, 500) : limit;
+  const candidates = await Programme.find(filter).sort({ name: 1 }).limit(candidateLimit);
+
+  if (!olevelSubjects?.length) return candidates;
+
+  const submittedSet = new Set(olevelSubjects.map(normalizeSubject));
+  return candidates.filter((p) => qualifiesForOlevel(p, submittedSet)).slice(0, limit);
 }
 
 async function getById(id) {

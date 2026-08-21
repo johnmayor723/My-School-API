@@ -13,6 +13,16 @@ const programmeSchema = new Schema(
     status: { type: String, enum: Object.values(RECORD_STATUS), default: RECORD_STATUS.ACTIVE },
     // Curated by admins — powers "alternative course" discovery in the matching engine.
     relatedProgrammes: [{ type: Schema.Types.ObjectId, ref: "Programme" }],
+    // General O'Level/UTME subject pattern for this course by category (e.g. all
+    // "Medicine & Surgery" programmes share the same JAMB combination nationally).
+    // Not institution-specific — drives course-discovery filtering and seeds the
+    // per-institution AdmissionRule generator; individual rules still carry their
+    // own institution-verified requirements once published.
+    subjectProfile: {
+      olevelRequiredSubjects: { type: [String], default: [] },
+      olevelMinimumCredits: { type: Number, min: 0, max: 9, default: 5 },
+      utmeRequiredSubjects: { type: [String], default: [] },
+    },
     createdBy: { type: Schema.Types.ObjectId, ref: "User" },
     updatedBy: { type: Schema.Types.ObjectId, ref: "User" },
   },

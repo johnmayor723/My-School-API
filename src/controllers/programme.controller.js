@@ -8,7 +8,10 @@ async function list(req, res) {
 }
 
 async function search(req, res) {
-  const items = await programmeService.search(req.query.q, req.query.limit ? Number(req.query.limit) : 20);
+  const olevelSubjects = req.query.olevelSubjects
+    ? req.query.olevelSubjects.split(",").map((s) => s.trim()).filter(Boolean)
+    : undefined;
+  const items = await programmeService.search(req.query.q, req.query.limit ? Number(req.query.limit) : 20, olevelSubjects);
   sendSuccess(res, { data: items });
 }
 

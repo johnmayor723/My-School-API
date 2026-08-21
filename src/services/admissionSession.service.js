@@ -14,6 +14,9 @@ async function list({ page = 1, limit = 20 } = {}) {
 
 async function create(payload, actor, req) {
   const session = await AdmissionSession.create(payload);
+  if (payload.isActive === true) {
+    await AdmissionSession.updateMany({ _id: { $ne: session._id }, isActive: true }, { $set: { isActive: false } });
+  }
   await auditService.record({
     user: actor._id,
     action: "ADMISSION_SESSION_CREATED",
@@ -32,6 +35,13 @@ async function update(id, payload, actor, req) {
 
   Object.assign(previous, payload);
   await previous.save();
+
+  // Only one admission session may be active at a time — matching resolves
+  // "the" active session, so leaving more than one flagged active makes that
+  // resolution non-deterministic.
+  if (payload.isActive === true) {
+    await AdmissionSession.updateMany({ _id: { $ne: previous._id }, isActive: true }, { $set: { isActive: false } });
+  }
 
   await auditService.record({
     user: actor._id,
