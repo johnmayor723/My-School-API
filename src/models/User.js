@@ -57,6 +57,15 @@ userSchema.methods.hasPermission = function hasPermission(permission) {
   return perms.includes(PERMISSIONS.ALL) || perms.includes(permission);
 };
 
+// Hard identity check (not permission-based) for actions that must stay
+// locked to the super admin even if a custom role is ever granted a
+// permission like MANAGE_USERS — e.g. creating/editing other admin accounts,
+// where a permission-only gate could be used to self-escalate.
+userSchema.methods.isSuperAdmin = function isSuperAdmin() {
+  if (this.userType !== USER_TYPES.STAFF) return false;
+  return (this.roles || []).some((role) => role && role.name === "SUPER_ADMIN");
+};
+
 userSchema.methods.toSafeJSON = function toSafeJSON() {
   const obj = this.toObject({ virtuals: true });
   delete obj.passwordHash;

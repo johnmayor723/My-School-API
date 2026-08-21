@@ -12,14 +12,19 @@ async function getById(req, res) {
   sendSuccess(res, { data: user });
 }
 
-async function createStaffUser(req, res) {
-  const user = await userService.createStaffUser(req.body, req.user, req);
-  sendSuccess(res, { statusCode: 201, message: "Staff user created", data: user });
+async function create(req, res) {
+  const user = await userService.create(req.body, req.user, req);
+  sendSuccess(res, { statusCode: 201, message: "User created", data: user });
 }
 
-async function updateStaffUser(req, res) {
-  const user = await userService.updateStaffUser(req.params.id, req.body, req.user, req);
-  sendSuccess(res, { message: "Staff user updated", data: user });
+async function update(req, res) {
+  const user = await userService.update(req.params.id, req.body, req.user, req);
+  sendSuccess(res, { message: "User updated", data: user });
 }
 
-module.exports = { list, getById, createStaffUser, updateStaffUser };
+async function remove(req, res) {
+  await userService.remove(req.params.id, req.user, req);
+  sendSuccess(res, { message: "User deleted", data: null });
+}
+
+module.exports = { list, getById, create, update, remove };

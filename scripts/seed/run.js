@@ -29,8 +29,8 @@ const SYSTEM_ROLES = [
   },
   {
     name: ROLE_NAMES.SUPPORT,
-    description: "Views students, assessments and audit logs to assist users",
-    permissions: [PERMISSIONS.VIEW_STUDENTS, PERMISSIONS.VIEW_ASSESSMENTS, PERMISSIONS.VIEW_AUDIT_LOGS],
+    description: "Views students, assessments and audit logs, and can edit student accounts to assist users",
+    permissions: [PERMISSIONS.VIEW_STUDENTS, PERMISSIONS.MANAGE_STUDENTS, PERMISSIONS.VIEW_ASSESSMENTS, PERMISSIONS.VIEW_AUDIT_LOGS],
     isSystem: true,
   },
 ];
