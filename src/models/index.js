@@ -8,6 +8,7 @@ module.exports = {
   InstitutionProgramme: require("./InstitutionProgramme"),
   AdmissionSession: require("./AdmissionSession"),
   AdmissionRule: require("./AdmissionRule"),
+  CourseTierCutoff: require("./CourseTierCutoff"),
   Assessment: require("./Assessment"),
   AssessmentRecommendation: require("./AssessmentRecommendation"),
   Payment: require("./Payment"),

@@ -22,7 +22,7 @@ async function findOfferingInstitutionIds(programmeId) {
  * Nothing here is inferred by a model; every pass/fail is traceable to a
  * specific stored requirement.
  */
-function evaluateAgainstRule(rule, academicSnapshot, preferences) {
+function evaluateAgainstRule(rule, academicSnapshot, preferences, courseCompetitivenessIndex) {
   const utmeScoreResult = evaluateUtmeScore(academicSnapshot.utmeScore, rule.utme);
   const utmeSubjectsResult = evaluateUtmeSubjects(academicSnapshot.utmeSubjects, rule.utme);
   const olevelResult = evaluateOlevel(academicSnapshot.oLevelSubjects, academicSnapshot.oLevelSittings, rule.olevel);
@@ -32,14 +32,15 @@ function evaluateAgainstRule(rule, academicSnapshot, preferences) {
   const hasSufficientData = utmeScoreResult.hasData && utmeSubjectsResult.hasData && olevelResult.hasData;
 
   const preferenceMatchRatio = computePreferenceMatchRatio(rule.institution, preferences);
-  const competitivenessIndex = rule.institution?.metadata?.competitivenessIndex;
+  const institutionCompetitivenessIndex = rule.institution?.metadata?.competitivenessIndex;
 
   const matchScore = computeScore({
     utmeScoreResult,
     utmeSubjectsResult,
     olevelResult,
     preferenceMatchRatio,
-    competitivenessIndex,
+    institutionCompetitivenessIndex,
+    courseCompetitivenessIndex,
   });
   const category = categorize(matchScore, { mandatoryFailure });
   const eligibility = mapEligibility(category, { mandatoryFailure, hasSufficientData });
@@ -75,17 +76,23 @@ async function runMatchingForProgramme({ programmeId, admissionSessionId, academ
     return { totalPotentialMatches: 0, institutionsAwaitingData: 0, recommendations: [] };
   }
 
-  const rules = await AdmissionRule.find({
-    programme: programmeId,
-    admissionSession: admissionSessionId,
-    institution: { $in: institutionIds },
-    status: RULE_STATUS.PUBLISHED,
-  })
-    .populate("institution")
-    .lean();
+  // The programme is the same for every rule evaluated in this call, so its
+  // own competitiveness index is fetched once here rather than per-rule.
+  const [rules, programme] = await Promise.all([
+    AdmissionRule.find({
+      programme: programmeId,
+      admissionSession: admissionSessionId,
+      institution: { $in: institutionIds },
+      status: RULE_STATUS.PUBLISHED,
+    })
+      .populate("institution")
+      .lean(),
+    Programme.findById(programmeId).select("metadata.competitivenessIndex").lean(),
+  ]);
+  const courseCompetitivenessIndex = programme?.metadata?.competitivenessIndex;
 
   const recommendations = rules.map((rule) => ({
-    ...evaluateAgainstRule(rule, academicSnapshot, preferences),
+    ...evaluateAgainstRule(rule, academicSnapshot, preferences, courseCompetitivenessIndex),
     programme: programmeId,
     isAlternativeProgramme,
   }));

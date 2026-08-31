@@ -151,6 +151,32 @@ const MATCH_SCORE_THRESHOLDS = Object.freeze({
   BORDERLINE: 45,
 });
 
+// How a course's own competitiveness (Medicine, Law, Petroleum Engineering, ...)
+// blends with its offering institution's competitiveness. Course dominates —
+// a Tier 1 course at a Tier 2 institution should still outrank a Tier 3 course
+// at a Tier 1 institution. Shared by scripts/rules/generate-admission-rules.js
+// (UTME cutoff generation) and the matching engine's scoring.js so the two
+// never drift out of sync with each other.
+const COMPETITIVENESS_BLEND_WEIGHTS = Object.freeze({
+  course: 0.6,
+  institution: 0.4,
+});
+
+// The discrete institution-tier buckets used by scripts/tiers/apply-competitiveness-tiers.js.
+// An institution's metadata.competitivenessIndex can be any 0..1 float (e.g. a manual
+// admin override), so lookups against these tiers snap to the nearest bucket rather than
+// requiring an exact match. Shared by the CourseTierCutoff matrix (per-course cutoff by
+// institution tier) and its admin UI.
+const INSTITUTION_TIERS = Object.freeze([
+  { index: 0.9, label: "Tier 1 Federal" },
+  { index: 0.75, label: "Tier 2 Federal" },
+  { index: 0.65, label: "Elite Private" },
+  { index: 0.55, label: "Standard" },
+  { index: 0.35, label: "State University" },
+  { index: 0.2, label: "Polytechnic" },
+  { index: 0.1, label: "College of Education" },
+]);
+
 const MATCH_SCORE_DISCLAIMER =
   "This is a My School Placement matching score, not an official probability of admission. " +
   "Final admission decisions remain with the relevant institution and admission authorities.";
@@ -178,6 +204,7 @@ const RESOURCE_TYPES = Object.freeze({
   PROGRAMME: "Programme",
   ADMISSION_SESSION: "AdmissionSession",
   ADMISSION_RULE: "AdmissionRule",
+  COURSE_TIER_CUTOFF: "CourseTierCutoff",
   ASSESSMENT: "Assessment",
   PAYMENT: "Payment",
   USER: "User",
@@ -204,6 +231,8 @@ module.exports = {
   ELIGIBILITY_STATUS,
   MATCH_SCORE_WEIGHTS,
   MATCH_SCORE_THRESHOLDS,
+  COMPETITIVENESS_BLEND_WEIGHTS,
+  INSTITUTION_TIERS,
   MATCH_SCORE_DISCLAIMER,
   OLEVEL_GRADE_SCALE,
   OLEVEL_EXAM_TYPES,

@@ -1,4 +1,4 @@
-const { MATCH_SCORE_WEIGHTS } = require("../../config/constants");
+const { MATCH_SCORE_WEIGHTS, COMPETITIVENESS_BLEND_WEIGHTS } = require("../../config/constants");
 
 function clamp(value, min = 0, max = 1) {
   return Math.max(min, Math.min(max, value));
@@ -42,19 +42,33 @@ function scorePreferencesComponent(preferenceMatchRatio) {
   return MATCH_SCORE_WEIGHTS.preferences * clamp(preferenceMatchRatio ?? 1);
 }
 
-function scoreCompetitivenessComponent(competitivenessIndex) {
+// Institution and course competitiveness are different axes (a Tier 1 course
+// like Medicine or Law stays harder to match even at a less selective
+// institution) — course dominates the blend, same weighting the admission
+// rule generator uses for UTME cutoffs, so scoring and cutoff generation
+// never disagree about which matters more.
+function scoreCompetitivenessComponent(institutionCompetitivenessIndex, courseCompetitivenessIndex) {
   // No reliable competitiveness data is invented — absent data scores a neutral value.
-  const value = typeof competitivenessIndex === "number" ? 1 - clamp(competitivenessIndex) : 0.7;
-  return MATCH_SCORE_WEIGHTS.competitiveness * value;
+  const institutionValue = typeof institutionCompetitivenessIndex === "number" ? 1 - clamp(institutionCompetitivenessIndex) : 0.7;
+  const courseValue = typeof courseCompetitivenessIndex === "number" ? 1 - clamp(courseCompetitivenessIndex) : 0.7;
+  const blended = COMPETITIVENESS_BLEND_WEIGHTS.course * courseValue + COMPETITIVENESS_BLEND_WEIGHTS.institution * institutionValue;
+  return MATCH_SCORE_WEIGHTS.competitiveness * blended;
 }
 
-function computeScore({ utmeScoreResult, utmeSubjectsResult, olevelResult, preferenceMatchRatio, competitivenessIndex }) {
+function computeScore({
+  utmeScoreResult,
+  utmeSubjectsResult,
+  olevelResult,
+  preferenceMatchRatio,
+  institutionCompetitivenessIndex,
+  courseCompetitivenessIndex,
+}) {
   const total =
     scoreUtmeScoreComponent(utmeScoreResult) +
     scoreUtmeSubjectsComponent(utmeSubjectsResult) +
     scoreOlevelComponent(olevelResult) +
     scorePreferencesComponent(preferenceMatchRatio) +
-    scoreCompetitivenessComponent(competitivenessIndex);
+    scoreCompetitivenessComponent(institutionCompetitivenessIndex, courseCompetitivenessIndex);
 
   return Math.round(clamp(total, 0, 100));
 }

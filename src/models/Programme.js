@@ -23,6 +23,16 @@ const programmeSchema = new Schema(
       olevelMinimumCredits: { type: Number, min: 0, max: 9, default: 5 },
       utmeRequiredSubjects: { type: [String], default: [] },
     },
+    metadata: {
+      // 0..1 indicator of the course's own admission competitiveness
+      // (Medicine/Law/Petroleum Engineering score high; general Arts/Education
+      // score low), independent of any offering institution's own
+      // competitivenessIndex. Assigned by scripts/tiers/apply-course-tiers.js;
+      // an internal input to cutoff generation and live scoring, not something
+      // admins edit directly — the actual per-institution cutoff an admin sets
+      // by hand lives on AdmissionRule.utme.minimumScore instead.
+      competitivenessIndex: { type: Number, min: 0, max: 1 },
+    },
     createdBy: { type: Schema.Types.ObjectId, ref: "User" },
     updatedBy: { type: Schema.Types.ObjectId, ref: "User" },
   },
