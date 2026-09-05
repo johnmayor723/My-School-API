@@ -5,9 +5,18 @@
  * Published workflow and the matching engine are both fully built but sit on
  * an almost-empty AdmissionRule collection.
  *
- * Each rule's O'Level/UTME subject requirements come from the offering
- * programme's subjectProfile (see apply-subject-profiles.js). Its UTME
- * minimum-score cutoff comes from one of two sources, in priority order:
+ * Each rule's O'Level/UTME subject requirements come from, in priority order:
+ *
+ *  1. InstitutionProgramme.jambRequirements — real subjects parsed from
+ *     JAMB's own published brochure text for this exact institution+
+ *     programme offering (see parse-jamb-requirements.js). Used whenever
+ *     it has anything usable.
+ *  2. The offering programme's subjectProfile (see apply-subject-profiles.js)
+ *     — a generic same-for-every-institution guess by course category, used
+ *     only where JAMB's cached text was empty or nothing parsed out of it.
+ *
+ * Its UTME minimum-score cutoff comes from one of two sources, in priority
+ * order:
  *
  *  1. CourseTierCutoff (see src/models/CourseTierCutoff.js) — a curated real
  *     cutoff an admin entered for this programme at the institution's tier
@@ -53,12 +62,16 @@ const DRY_RUN = process.argv.includes("--dry-run");
 const SESSION_ARG = process.argv.find((a) => a.startsWith("--session="))?.split("=")[1];
 
 const FORMULA_NOTE =
-  "Auto-generated from a general JAMB subject-combination pattern by course category/tier and the institution's " +
-  "competitiveness tier. Not institution-verified — review and replace with the university's actual published " +
-  "requirements when available.";
+  "Cutoff auto-generated from the institution's and course's competitiveness tiers. Not institution-verified — " +
+  "review and replace with the university's actual published cutoff when available.";
 const MATRIX_NOTE =
   "Cutoff taken from the course-tier cutoff matrix for this programme and institution tier. Curated, not " +
-  "institution-verified — review and replace with the university's actual published requirements when available.";
+  "institution-verified — review and replace with the university's actual published cutoff when available.";
+const SUBJECTS_FROM_JAMB_NOTE =
+  "UTME/O'Level subjects are taken from JAMB's own published brochure text for this institution and programme.";
+const SUBJECTS_GENERIC_NOTE =
+  "UTME/O'Level subjects are a generic pattern by course category (JAMB's brochure text for this specific " +
+  "offering was empty or unparseable) — review against the institution's actual published requirements when available.";
 
 // Institution and course competitiveness are different axes (see
 // apply-competitiveness-tiers.js and apply-course-tiers.js); course tier is
@@ -88,10 +101,42 @@ async function resolveSession() {
   );
 }
 
-function buildRuleDoc({ offering, programme, sessionId, minimumScore, sourceTitle, note, now }) {
+// Real per-offering JAMB text wins whenever it has anything usable;
+// Programme.subjectProfile's generic category guess is only a fallback for
+// offerings whose cached JAMB text was empty or nothing parsed out of it
+// (see parse-jamb-requirements.js / subject-lexicon.js).
+function subjectsFor(offering, programme) {
+  const jamb = offering.jambRequirements;
   const profile = programme.subjectProfile || {};
-  const olevelSubjects = profile.olevelRequiredSubjects?.length ? profile.olevelRequiredSubjects : ["English Language", "Mathematics"];
-  const utmeSubjects = profile.utmeRequiredSubjects?.length ? profile.utmeRequiredSubjects : ["English Language"];
+
+  const hasJambUtme = Array.isArray(jamb?.utmeSubjectCombinations) && jamb.utmeSubjectCombinations.length > 0;
+  const hasJambOlevel =
+    (Array.isArray(jamb?.olevelRequiredSubjects) && jamb.olevelRequiredSubjects.length > 0) ||
+    typeof jamb?.olevelMinimumCredits === "number";
+
+  const subjectCombinations = hasJambUtme
+    ? jamb.utmeSubjectCombinations
+    : [profile.utmeRequiredSubjects?.length ? profile.utmeRequiredSubjects : ["English Language"]];
+
+  const olevelSubjects =
+    (hasJambOlevel && jamb.olevelRequiredSubjects?.length ? jamb.olevelRequiredSubjects : null) ||
+    (profile.olevelRequiredSubjects?.length ? profile.olevelRequiredSubjects : ["English Language", "Mathematics"]);
+  const olevelMinimumCredits =
+    hasJambOlevel && typeof jamb.olevelMinimumCredits === "number" ? jamb.olevelMinimumCredits : profile.olevelMinimumCredits || 5;
+
+  return {
+    utmeSubjects: subjectCombinations[0],
+    subjectCombinations,
+    olevelSubjects,
+    olevelMinimumCredits,
+    fromJamb: hasJambUtme || hasJambOlevel,
+  };
+}
+
+function buildRuleDoc({ offering, programme, sessionId, minimumScore, sourceTitle, note, now }) {
+  const subjects = subjectsFor(offering, programme);
+  const subjectNote = subjects.fromJamb ? SUBJECTS_FROM_JAMB_NOTE : SUBJECTS_GENERIC_NOTE;
+  const combinedNote = `${note} ${subjectNote}`;
 
   return {
     institution: offering.institution,
@@ -100,12 +145,12 @@ function buildRuleDoc({ offering, programme, sessionId, minimumScore, sourceTitl
     status: RULE_STATUS.PUBLISHED,
     utme: {
       minimumScore,
-      requiredSubjects: utmeSubjects,
-      subjectCombinations: [utmeSubjects],
+      requiredSubjects: subjects.utmeSubjects,
+      subjectCombinations: subjects.subjectCombinations,
     },
     olevel: {
-      minimumCredits: profile.olevelMinimumCredits || 5,
-      requiredSubjects: olevelSubjects,
+      minimumCredits: subjects.olevelMinimumCredits,
+      requiredSubjects: subjects.olevelSubjects,
       minimumGrade: "C6",
       acceptedExaminations: ["WAEC", "NECO"],
       sittingsAllowed: 2,
@@ -113,11 +158,11 @@ function buildRuleDoc({ offering, programme, sessionId, minimumScore, sourceTitl
     additional: { postUtmeRequired: true },
     source: {
       title: sourceTitle,
-      type: RULE_SOURCE_TYPE.OTHER,
+      type: subjects.fromJamb ? RULE_SOURCE_TYPE.JAMB_BROCHURE : RULE_SOURCE_TYPE.OTHER,
       sourceDate: now,
     },
-    verification: { notes: note },
-    reviewNotes: note,
+    verification: { notes: combinedNote },
+    reviewNotes: combinedNote,
     submittedForReviewAt: now,
     reviewedAt: now,
     approvedAt: now,
@@ -148,7 +193,7 @@ async function run() {
     Programme.find({}, { name: 1, subjectProfile: 1, metadata: 1 }).lean(),
     AdmissionRule.find(
       { admissionSession: session._id, status: RULE_STATUS.PUBLISHED },
-      { institution: 1, programme: 1, "utme.minimumScore": 1, source: 1, verification: 1 }
+      { institution: 1, programme: 1, utme: 1, olevel: 1, source: 1, verification: 1 }
     ).lean(),
     CourseTierCutoff.find({}, { programme: 1, institutionTier: 1, cutoffMark: 1 }).lean(),
   ]);
@@ -181,6 +226,9 @@ async function run() {
     const { minimumScore, sourceTitle, note } = cutoffFor(institution, programme, matrixByKey);
     if (sourceTitle === MATRIX_SOURCE_TITLE) fromMatrix += 1;
     else fromFormula += 1;
+    const subjects = subjectsFor(offering, programme);
+    const sourceType = subjects.fromJamb ? RULE_SOURCE_TYPE.JAMB_BROCHURE : RULE_SOURCE_TYPE.OTHER;
+    const combinedNote = `${note} ${subjects.fromJamb ? SUBJECTS_FROM_JAMB_NOTE : SUBJECTS_GENERIC_NOTE}`;
     const existing = existingByKey.get(key);
 
     if (!existing) {
@@ -193,12 +241,23 @@ async function run() {
       continue;
     }
 
-    if (existing.utme?.minimumScore === minimumScore && existing.source?.title === sourceTitle) {
+    const sameSubjects =
+      JSON.stringify(existing.utme?.requiredSubjects) === JSON.stringify(subjects.utmeSubjects) &&
+      JSON.stringify(existing.utme?.subjectCombinations) === JSON.stringify(subjects.subjectCombinations) &&
+      JSON.stringify(existing.olevel?.requiredSubjects) === JSON.stringify(subjects.olevelSubjects) &&
+      existing.olevel?.minimumCredits === subjects.olevelMinimumCredits;
+
+    if (
+      existing.utme?.minimumScore === minimumScore &&
+      existing.source?.title === sourceTitle &&
+      existing.source?.type === sourceType &&
+      sameSubjects
+    ) {
       unchanged += 1;
       continue;
     }
 
-    updates.push({ _id: existing._id, minimumScore, sourceTitle, note });
+    updates.push({ _id: existing._id, minimumScore, sourceTitle, sourceType, note: combinedNote, subjects });
   }
 
   logger.info(
@@ -225,13 +284,18 @@ async function run() {
       for (let i = 0; i < updates.length; i += BATCH) {
         const batch = updates.slice(i, i + BATCH);
         await AdmissionRule.bulkWrite(
-          batch.map(({ _id, minimumScore, sourceTitle, note }) => ({
+          batch.map(({ _id, minimumScore, sourceTitle, sourceType, note, subjects }) => ({
             updateOne: {
               filter: { _id },
               update: {
                 $set: {
                   "utme.minimumScore": minimumScore,
+                  "utme.requiredSubjects": subjects.utmeSubjects,
+                  "utme.subjectCombinations": subjects.subjectCombinations,
+                  "olevel.requiredSubjects": subjects.olevelSubjects,
+                  "olevel.minimumCredits": subjects.olevelMinimumCredits,
                   "source.title": sourceTitle,
+                  "source.type": sourceType,
                   "verification.notes": note,
                   reviewNotes: note,
                 },
