@@ -12,7 +12,7 @@ const registerValidator = [
   body("firstName").trim().notEmpty().withMessage("firstName is required"),
   body("lastName").trim().notEmpty().withMessage("lastName is required"),
   body("email").trim().isEmail().withMessage("A valid email is required").normalizeEmail(),
-  body("phone").optional().trim().isLength({ min: 7, max: 20 }),
+  body("phone").optional().trim().isLength({ min: 7, max: 20 }).withMessage("phone must be between 7 and 20 characters"),
   passwordRule(),
   body("fullName").optional().trim(),
   body("utmeRegNumber").optional().trim(),
@@ -34,9 +34,9 @@ const resetPasswordValidator = [
 const refreshValidator = [body("refreshToken").isString().notEmpty().withMessage("refreshToken is required")];
 
 const updateAccountValidator = [
-  body("firstName").optional().trim().notEmpty(),
-  body("lastName").optional().trim().notEmpty(),
-  body("phone").optional().trim().isLength({ min: 7, max: 20 }),
+  body("firstName").optional().trim().notEmpty().withMessage("firstName cannot be empty"),
+  body("lastName").optional().trim().notEmpty().withMessage("lastName cannot be empty"),
+  body("phone").optional().trim().isLength({ min: 7, max: 20 }).withMessage("phone must be between 7 and 20 characters"),
 ];
 
 const changePasswordValidator = [
