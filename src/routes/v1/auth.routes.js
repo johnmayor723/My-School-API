@@ -8,6 +8,8 @@ const {
   loginValidator,
   forgotPasswordValidator,
   resetPasswordValidator,
+  verifyEmailValidator,
+  resendVerificationValidator,
   refreshValidator,
   updateAccountValidator,
   changePasswordValidator,
@@ -21,6 +23,8 @@ router.post("/refresh", authLimiter, validate(refreshValidator), authController.
 router.post("/logout", validate(refreshValidator), authController.logout);
 router.post("/forgot-password", authLimiter, validate(forgotPasswordValidator), authController.forgotPassword);
 router.post("/reset-password", authLimiter, validate(resetPasswordValidator), authController.resetPassword);
+router.post("/verify-email", authLimiter, validate(verifyEmailValidator), authController.verifyEmail);
+router.post("/resend-verification", authLimiter, validate(resendVerificationValidator), authController.resendVerification);
 router.get("/me", authenticate, authController.me);
 router.patch("/me", authenticate, validate(updateAccountValidator), authController.updateMe);
 router.post("/change-password", authenticate, validate(changePasswordValidator), authController.changePassword);

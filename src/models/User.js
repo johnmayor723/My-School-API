@@ -23,6 +23,11 @@ const userSchema = new Schema(
 
     passwordResetTokenHash: { type: String, select: false },
     passwordResetExpires: { type: Date, select: false },
+
+    emailVerified: { type: Boolean, default: false },
+    emailVerificationTokenHash: { type: String, select: false },
+    emailVerificationExpires: { type: Date, select: false },
+
     lastLoginAt: { type: Date },
   },
   { timestamps: true }
@@ -71,6 +76,8 @@ userSchema.methods.toSafeJSON = function toSafeJSON() {
   delete obj.passwordHash;
   delete obj.passwordResetTokenHash;
   delete obj.passwordResetExpires;
+  delete obj.emailVerificationTokenHash;
+  delete obj.emailVerificationExpires;
   delete obj.__v;
   return obj;
 };

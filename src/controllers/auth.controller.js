@@ -31,6 +31,16 @@ async function resetPassword(req, res) {
   sendSuccess(res, { message: "Password has been reset" });
 }
 
+async function verifyEmail(req, res) {
+  const user = await authService.verifyEmail(req.body.token);
+  sendSuccess(res, { message: "Email verified", data: user });
+}
+
+async function resendVerification(req, res) {
+  await authService.resendVerification(req.body.email);
+  sendSuccess(res, { message: "If an account with that email exists and isn't already verified, a new link has been sent" });
+}
+
 async function me(req, res) {
   sendSuccess(res, { data: req.user.toSafeJSON() });
 }
@@ -45,4 +55,16 @@ async function changePassword(req, res) {
   sendSuccess(res, { message: "Password changed" });
 }
 
-module.exports = { register, login, refresh, logout, forgotPassword, resetPassword, me, updateMe, changePassword };
+module.exports = {
+  register,
+  login,
+  refresh,
+  logout,
+  forgotPassword,
+  resetPassword,
+  verifyEmail,
+  resendVerification,
+  me,
+  updateMe,
+  changePassword,
+};

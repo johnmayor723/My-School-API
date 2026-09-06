@@ -23,6 +23,12 @@ const env = {
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean),
+  // The one canonical URL used INSIDE emails (reset/verify links) — distinct
+  // from clientUrls, which is a CORS allowlist that can contain multiple dev
+  // origins in any order. Using clientUrls[0] for email links was a real bug:
+  // whichever dev origin happened to be added first (localhost:3000) ended up
+  // in real users' inboxes.
+  publicWebUrl: optional("PUBLIC_WEB_URL", "https://myschoolplacement.com"),
 
   mongodbUri: required("MONGODB_URI"),
 
