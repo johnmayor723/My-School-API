@@ -11,6 +11,16 @@ async function login(req, res) {
   sendSuccess(res, { message: "Logged in", data: result });
 }
 
+async function googleLogin(req, res) {
+  const result = await authService.loginWithGoogle(req.body, { ip: req.ip });
+  sendSuccess(res, { message: "Logged in", data: result });
+}
+
+async function appleLogin(req, res) {
+  const result = await authService.loginWithApple(req.body, { ip: req.ip });
+  sendSuccess(res, { message: "Logged in", data: result });
+}
+
 async function refresh(req, res) {
   const result = await authService.refresh(req.body.refreshToken, { ip: req.ip });
   sendSuccess(res, { message: "Token refreshed", data: result });
@@ -58,6 +68,8 @@ async function changePassword(req, res) {
 module.exports = {
   register,
   login,
+  googleLogin,
+  appleLogin,
   refresh,
   logout,
   forgotPassword,

@@ -7,6 +7,7 @@ const logger = require("../config/logger");
 const { ConflictError, UnauthorizedError, ForbiddenError, EmailNotVerifiedError } = require("../errors/AppError");
 const { USER_TYPES, USER_STATUS, RESOURCE_TYPES } = require("../config/constants");
 const env = require("../config/env");
+const { verifyGoogleIdToken, exchangeGoogleAuthCode, verifyAppleIdToken } = require("../utils/socialAuth");
 
 const RESET_TOKEN_TTL_MS = 30 * 60 * 1000;
 const VERIFICATION_TOKEN_TTL_MS = 24 * 60 * 60 * 1000;
@@ -68,6 +69,64 @@ async function login({ email, password }, { ip } = {}) {
 
   const tokens = await tokenService.issueTokenPair(user, { ip });
   return { user: user.toSafeJSON(), ...tokens };
+}
+
+// Shared by loginWithGoogle/loginWithApple: matches an existing account by
+// provider ID first, then falls back to matching by email and linking the
+// provider ID onto it (safe because the provider — not the user — vouches
+// for that email), and only creates a new account if neither matches.
+async function findOrCreateSocialUser({ idField, providerId, email, firstName, lastName }, { ip } = {}) {
+  let user = await User.findOne({ [idField]: providerId }).populate("roles");
+
+  if (!user) {
+    user = await User.findOne({ email }).populate("roles");
+    if (user) {
+      user[idField] = providerId;
+      user.emailVerified = true;
+    }
+  }
+
+  if (!user) {
+    user = await User.create({
+      firstName: firstName || "New",
+      lastName: lastName || "User",
+      email,
+      passwordHash: crypto.randomBytes(32).toString("hex"),
+      userType: USER_TYPES.STUDENT,
+      emailVerified: true,
+      [idField]: providerId,
+    });
+    await StudentProfile.create({ user: user._id, fullName: `${user.firstName} ${user.lastName}` });
+    await auditService.record({ user: user._id, action: "USER_REGISTERED", resourceType: RESOURCE_TYPES.USER, resourceId: user._id });
+  }
+
+  if (user.status !== USER_STATUS.ACTIVE) throw new ForbiddenError("Account is not active");
+
+  user.lastLoginAt = new Date();
+  await user.save();
+
+  const tokens = await tokenService.issueTokenPair(user, { ip });
+  return { user: user.toSafeJSON(), ...tokens };
+}
+
+// Web sends a ready-made id_token (Google Identity Services); mobile sends
+// an authorization code + PKCE verifier instead (see socialAuth.js for why).
+async function loginWithGoogle({ idToken, code, redirectUri, codeVerifier, clientId }, { ip } = {}) {
+  const profile = idToken
+    ? await verifyGoogleIdToken(idToken)
+    : await exchangeGoogleAuthCode({ code, redirectUri, codeVerifier, clientId });
+  return findOrCreateSocialUser(
+    { idField: "googleId", providerId: profile.providerId, email: profile.email, firstName: profile.firstName, lastName: profile.lastName },
+    { ip }
+  );
+}
+
+// firstName/lastName come from the client, not the id_token — Apple only
+// hands those over in its client-side authorization response, and only on
+// the account's very first sign-in ever.
+async function loginWithApple({ idToken, firstName, lastName }, { ip } = {}) {
+  const profile = await verifyAppleIdToken(idToken);
+  return findOrCreateSocialUser({ idField: "appleId", providerId: profile.providerId, email: profile.email, firstName, lastName }, { ip });
 }
 
 async function refresh(refreshToken, { ip } = {}) {
@@ -175,6 +234,8 @@ async function changePassword(userId, { currentPassword, newPassword }) {
 module.exports = {
   register,
   login,
+  loginWithGoogle,
+  loginWithApple,
   refresh,
   logout,
   forgotPassword,

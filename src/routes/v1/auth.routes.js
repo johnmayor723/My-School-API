@@ -6,6 +6,8 @@ const { authLimiter } = require("../../middleware/rateLimiter");
 const {
   registerValidator,
   loginValidator,
+  googleLoginValidator,
+  appleLoginValidator,
   forgotPasswordValidator,
   resetPasswordValidator,
   verifyEmailValidator,
@@ -19,6 +21,8 @@ const router = Router();
 
 router.post("/register", authLimiter, validate(registerValidator), authController.register);
 router.post("/login", authLimiter, validate(loginValidator), authController.login);
+router.post("/google", authLimiter, validate(googleLoginValidator), authController.googleLogin);
+router.post("/apple", authLimiter, validate(appleLoginValidator), authController.appleLogin);
 router.post("/refresh", authLimiter, validate(refreshValidator), authController.refresh);
 router.post("/logout", validate(refreshValidator), authController.logout);
 router.post("/forgot-password", authLimiter, validate(forgotPasswordValidator), authController.forgotPassword);

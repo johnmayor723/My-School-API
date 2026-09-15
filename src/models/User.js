@@ -28,6 +28,9 @@ const userSchema = new Schema(
     emailVerificationTokenHash: { type: String, select: false },
     emailVerificationExpires: { type: Date, select: false },
 
+    googleId: { type: String, unique: true, sparse: true },
+    appleId: { type: String, unique: true, sparse: true },
+
     lastLoginAt: { type: Date },
   },
   { timestamps: true }

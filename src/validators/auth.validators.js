@@ -24,6 +24,24 @@ const loginValidator = [
   body("password").isString().notEmpty().withMessage("password is required"),
 ];
 
+// Web sends { idToken }; mobile sends { code, redirectUri, codeVerifier, clientId } (see socialAuth.js).
+const googleLoginValidator = [
+  body().custom((value) => {
+    const hasIdToken = typeof value.idToken === "string" && value.idToken.length > 0;
+    const hasCodeExchange = ["code", "redirectUri", "codeVerifier", "clientId"].every((k) => typeof value[k] === "string" && value[k].length > 0);
+    if (!hasIdToken && !hasCodeExchange) {
+      throw new Error("Provide either idToken, or code + redirectUri + codeVerifier + clientId");
+    }
+    return true;
+  }),
+];
+
+const appleLoginValidator = [
+  body("idToken").isString().notEmpty().withMessage("idToken is required"),
+  body("firstName").optional().trim(),
+  body("lastName").optional().trim(),
+];
+
 const forgotPasswordValidator = [body("email").trim().isEmail().withMessage("A valid email is required").normalizeEmail()];
 
 const resetPasswordValidator = [
@@ -51,6 +69,8 @@ const changePasswordValidator = [
 module.exports = {
   registerValidator,
   loginValidator,
+  googleLoginValidator,
+  appleLoginValidator,
   forgotPasswordValidator,
   resetPasswordValidator,
   verifyEmailValidator,

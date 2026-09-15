@@ -70,12 +70,43 @@ const env = {
   // them.
   requireEmailVerification: optional("REQUIRE_EMAIL_VERIFICATION", "false") === "true",
 
+  // Comma-separated because Google issues a distinct client ID per platform
+  // (web, iOS, Android) but all of them must verify against the same
+  // backend — google-auth-library's verifyIdToken accepts an audience array.
+  // Empty by default: social login is a no-op (ForbiddenError) until real
+  // client IDs are set.
+  google: {
+    clientIds: optional("GOOGLE_CLIENT_IDS", "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean),
+    // Unused by the current ID-token-verification flow (see
+    // src/utils/socialAuth.js) — reserved for a future server-side
+    // authorization-code exchange, should that ever replace it.
+    clientSecret: optional("GOOGLE_CLIENT_SECRET", ""),
+  },
+
+  // Same multi-audience shape as Google: the iOS app's bundle ID and the web
+  // Services ID are different values but both must verify here.
+  apple: {
+    clientIds: optional("APPLE_CLIENT_IDS", "")
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean),
+  },
+
   rateLimit: {
     windowMinutes: Number(optional("RATE_LIMIT_WINDOW_MINUTES", 15)),
     max: Number(optional("RATE_LIMIT_MAX", 300)),
     authWindowMinutes: Number(optional("AUTH_RATE_LIMIT_WINDOW_MINUTES", 15)),
     authMax: Number(optional("AUTH_RATE_LIMIT_MAX", 20)),
   },
+
+  // Phase 2: no AI SDK is wired in yet — this flag exists so the pipeline's
+  // AI-extraction slot-in point (BaseScraper.runAiFallback) can be enabled
+  // later purely by config, without a structural change. See
+  // src/services/cutoffAiExtraction.service.js.
+  aiExtractionEnabled: optional("AI_EXTRACTION_ENABLED", "false") === "true",
 
   seed: {
     adminEmail: optional("SEED_ADMIN_EMAIL", "admin@myschoolplacement.ng"),
