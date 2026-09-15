@@ -28,6 +28,12 @@ class ForbiddenError extends AppError {
   }
 }
 
+class EmailNotVerifiedError extends AppError {
+  constructor(message = "Please verify your email address before logging in") {
+    super(message, 403, "EMAIL_NOT_VERIFIED");
+  }
+}
+
 class NotFoundError extends AppError {
   constructor(message = "Resource not found") {
     super(message, 404, "NOT_FOUND");
@@ -57,6 +63,7 @@ module.exports = {
   ValidationAppError,
   UnauthorizedError,
   ForbiddenError,
+  EmailNotVerifiedError,
   NotFoundError,
   ConflictError,
   PaymentRequiredError,

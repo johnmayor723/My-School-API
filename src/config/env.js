@@ -63,6 +63,13 @@ const env = {
     fromName: optional("MAIL_FROM_NAME", "My School Placement"),
   },
 
+  // Off by default: the shared SMTP credential currently fails to
+  // authenticate (see mail block above), so verification emails aren't
+  // reaching anyone. Flip this on once SMTP is confirmed working, or every
+  // new signup gets locked out with no way to receive the link that unlocks
+  // them.
+  requireEmailVerification: optional("REQUIRE_EMAIL_VERIFICATION", "false") === "true",
+
   rateLimit: {
     windowMinutes: Number(optional("RATE_LIMIT_WINDOW_MINUTES", 15)),
     max: Number(optional("RATE_LIMIT_MAX", 300)),

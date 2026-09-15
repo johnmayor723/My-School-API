@@ -4,8 +4,9 @@ const tokenService = require("./token.service");
 const notificationService = require("./notification.service");
 const auditService = require("./audit.service");
 const logger = require("../config/logger");
-const { ConflictError, UnauthorizedError, ForbiddenError } = require("../errors/AppError");
+const { ConflictError, UnauthorizedError, ForbiddenError, EmailNotVerifiedError } = require("../errors/AppError");
 const { USER_TYPES, USER_STATUS, RESOURCE_TYPES } = require("../config/constants");
+const env = require("../config/env");
 
 const RESET_TOKEN_TTL_MS = 30 * 60 * 1000;
 const VERIFICATION_TOKEN_TTL_MS = 24 * 60 * 60 * 1000;
@@ -40,11 +41,9 @@ async function register({ firstName, lastName, email, phone, password, fullName,
     utmeScore,
   });
 
-  // Not blocking on email delivery, and not blocking login on verification
-  // status either — there's no real SMTP configured yet (see mailer.js), so
-  // hard-requiring verification before login would lock every user out until
-  // that's in place. emailVerified is tracked and exposed to clients so they
-  // can prompt for it without it being an access gate.
+  // Not blocking on email delivery — registration succeeds regardless, and
+  // whether login itself is gated on verification is controlled separately
+  // by env.requireEmailVerification (see login() below).
   notificationService
     .sendVerificationEmail(user, rawVerificationToken)
     .catch((err) => logger.warn("Verification email failed", { error: err.message }));
@@ -62,6 +61,7 @@ async function login({ email, password }, { ip } = {}) {
   if (!valid) throw new UnauthorizedError("Invalid email or password");
 
   if (user.status !== USER_STATUS.ACTIVE) throw new ForbiddenError("Account is not active");
+  if (env.requireEmailVerification && !user.emailVerified) throw new EmailNotVerifiedError();
 
   user.lastLoginAt = new Date();
   await user.save();
@@ -89,7 +89,9 @@ async function forgotPassword(email) {
   user.passwordResetExpires = new Date(Date.now() + RESET_TOKEN_TTL_MS);
   await user.save();
 
-  await notificationService.sendPasswordResetEmail(user, rawToken);
+  await notificationService
+    .sendPasswordResetEmail(user, rawToken)
+    .catch((err) => logger.warn("Password reset email failed", { error: err.message }));
   await auditService.record({ user: user._id, action: "PASSWORD_RESET_REQUESTED", resourceType: RESOURCE_TYPES.USER, resourceId: user._id });
 }
 
