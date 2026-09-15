@@ -36,6 +36,9 @@ const searchProgrammesQueryValidator = [
   query("q").optional().isString().trim(),
   query("limit").optional().isInt({ min: 1, max: 50 }).toInt(),
   query("olevelSubjects").optional().isString().trim(),
+  query("olevel").optional().isString(),
+  query("utmeSubjects").optional().isString().trim(),
+  query("utmeScore").optional().isInt({ min: 0, max: 400 }),
 ];
 
 module.exports = {

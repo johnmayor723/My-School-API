@@ -7,11 +7,38 @@ async function list(req, res) {
   sendSuccess(res, { data: items, meta: paginationMeta({ page, limit, total }) });
 }
 
+function splitList(value) {
+  return value ? value.split(",").map((s) => s.trim()).filter(Boolean) : undefined;
+}
+
+function parseOlevel(value) {
+  if (!value) return undefined;
+  let parsed;
+  try {
+    parsed = JSON.parse(value);
+  } catch {
+    // The legacy shape was a plain comma-separated subject list with no
+    // grades — treat every subject as a bare credit pass (C6) for callers
+    // still on that shape.
+    return splitList(value)?.map((subject) => ({ subject, grade: "C6" }));
+  }
+  if (!Array.isArray(parsed)) return undefined;
+  return parsed
+    .filter((row) => row && row.subject && row.grade)
+    .map((row) => ({ subject: row.subject, grade: row.grade, examType: row.exam_type || row.examType }));
+}
+
 async function search(req, res) {
-  const olevelSubjects = req.query.olevelSubjects
-    ? req.query.olevelSubjects.split(",").map((s) => s.trim()).filter(Boolean)
+  const oLevelSubjects = parseOlevel(req.query.olevel) || (req.query.olevelSubjects ? splitList(req.query.olevelSubjects)?.map((subject) => ({ subject, grade: "C6" })) : undefined);
+  const utmeSubjects = splitList(req.query.utmeSubjects);
+  const academicSnapshot = oLevelSubjects?.length
+    ? {
+        oLevelSubjects,
+        utmeSubjects,
+        utmeScore: req.query.utmeScore ? Number(req.query.utmeScore) : undefined,
+      }
     : undefined;
-  const items = await programmeService.search(req.query.q, req.query.limit ? Number(req.query.limit) : 20, olevelSubjects);
+  const items = await programmeService.search(req.query.q, req.query.limit ? Number(req.query.limit) : 20, academicSnapshot);
   sendSuccess(res, { data: items });
 }
 
