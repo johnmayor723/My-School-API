@@ -2,8 +2,8 @@ const institutionService = require("../services/institution.service");
 const { sendSuccess, paginationMeta } = require("../responses/ApiResponse");
 
 async function list(req, res) {
-  const { page = 1, limit = 20, state, ownership, institutionType, search } = req.query;
-  const { items, total } = await institutionService.list({ page, limit, state, ownership, institutionType, search });
+  const { page = 1, limit = 20, state, zone, ownership, institutionType, search, sort } = req.query;
+  const { items, total } = await institutionService.list({ page, limit, state, zone, ownership, institutionType, search, sort });
   sendSuccess(res, { data: items, meta: paginationMeta({ page, limit, total }) });
 }
 

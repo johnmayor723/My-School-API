@@ -2,6 +2,7 @@ const { Institution, InstitutionProgramme, AdmissionRule, Programme } = require(
 const { evaluateUtmeScore, evaluateUtmeSubjects } = require("./evaluators/utme.evaluator");
 const { evaluateOlevel } = require("./evaluators/olevel.evaluator");
 const { evaluateAdditional } = require("./evaluators/additional.evaluator");
+const { evaluateCatchment } = require("./evaluators/catchment.evaluator");
 const { computeScore, computePreferenceMatchRatio } = require("./scoring");
 const { categorize, mapEligibility } = require("./categorize");
 const { MATCH_SCORE_DISCLAIMER, RULE_STATUS, RECORD_STATUS, MATCH_CATEGORY } = require("../../config/constants");
@@ -27,6 +28,8 @@ function evaluateAgainstRule(rule, academicSnapshot, preferences, courseCompetit
   const utmeSubjectsResult = evaluateUtmeSubjects(academicSnapshot.utmeSubjects, rule.utme);
   const olevelResult = evaluateOlevel(academicSnapshot.oLevelSubjects, academicSnapshot.oLevelSittings, rule.olevel);
   const additionalResult = evaluateAdditional(rule.additional);
+  // Informational only — deliberately excluded from mandatoryFailure/matchScore below.
+  const catchmentResult = evaluateCatchment(academicSnapshot.stateOfOrigin, rule.institution);
 
   const mandatoryFailure = !utmeScoreResult.passed || !utmeSubjectsResult.passed || !olevelResult.passed;
   const hasSufficientData = utmeScoreResult.hasData && utmeSubjectsResult.hasData && olevelResult.hasData;
@@ -67,6 +70,8 @@ function evaluateAgainstRule(rule, academicSnapshot, preferences, courseCompetit
     reasons,
     failedRequirements,
     warnings,
+    catchmentStatus: catchmentResult.catchmentStatus,
+    catchmentReason: catchmentResult.message,
   };
 }
 

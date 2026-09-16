@@ -13,4 +13,8 @@ module.exports = {
   AssessmentRecommendation: require("./AssessmentRecommendation"),
   Payment: require("./Payment"),
   AuditLog: require("./AuditLog"),
+  CutoffSource: require("./CutoffSource"),
+  CutoffCandidate: require("./CutoffCandidate"),
+  CutoffRecord: require("./CutoffRecord"),
+  ChatMessage: require("./ChatMessage"),
 };

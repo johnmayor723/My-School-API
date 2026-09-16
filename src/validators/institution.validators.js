@@ -1,5 +1,6 @@
 const { body, query } = require("express-validator");
 const { INSTITUTION_OWNERSHIP, INSTITUTION_TYPE, RECORD_STATUS } = require("../config/constants");
+const { GEOPOLITICAL_ZONES } = require("../config/geopoliticalZones");
 const { paginationQuery } = require("./common.validators");
 
 const createInstitutionValidator = [
@@ -25,15 +26,19 @@ const updateInstitutionValidator = [
   body("website").optional().isURL(),
   body("status").optional().isIn(Object.values(RECORD_STATUS)),
   body("metadata.competitivenessIndex").optional({ nullable: true }).isFloat({ min: 0, max: 1 }),
+  body("metadata.catchmentStates").optional({ nullable: true }).isArray(),
+  body("metadata.catchmentStates.*").optional().isString().trim(),
 ];
 
 const listInstitutionsQueryValidator = [
   ...paginationQuery(),
   query("state").optional().isString().trim(),
+  query("zone").optional().isIn(Object.values(GEOPOLITICAL_ZONES)),
   query("ownership").optional().isIn(Object.values(INSTITUTION_OWNERSHIP)),
   query("institutionType").optional().isIn(Object.values(INSTITUTION_TYPE)),
   query("search").optional().isString().trim(),
   query("status").optional().isIn(Object.values(RECORD_STATUS)),
+  query("sort").optional().isIn(["name", "competitiveness"]),
 ];
 
 const addProgrammeOfferingValidator = [body("programme").isMongoId().withMessage("programme must be a valid id")];

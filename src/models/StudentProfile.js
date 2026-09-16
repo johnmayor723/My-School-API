@@ -22,6 +22,12 @@ const studentProfileSchema = new Schema(
     oLevelSubjects: { type: [oLevelSubjectSchema], default: [] },
     oLevelSittings: { type: Number, min: 1, max: 2, default: 1 },
 
+    // JAMB's catchment/ELDS criterion is state of origin, not where the student
+    // currently lives — kept distinct from residentialState and from
+    // preferredStates (which is where they *want* to study).
+    stateOfOrigin: { type: String, trim: true },
+    residentialState: { type: String, trim: true },
+
     preferredProgramme: { type: Schema.Types.ObjectId, ref: "Programme" },
     preferredStates: { type: [String], default: [] },
     preferredInstitutionTypes: {

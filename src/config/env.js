@@ -80,10 +80,6 @@ const env = {
       .split(",")
       .map((s) => s.trim())
       .filter(Boolean),
-    // Unused by the current ID-token-verification flow (see
-    // src/utils/socialAuth.js) — reserved for a future server-side
-    // authorization-code exchange, should that ever replace it.
-    clientSecret: optional("GOOGLE_CLIENT_SECRET", ""),
   },
 
   // Same multi-audience shape as Google: the iOS app's bundle ID and the web
@@ -107,6 +103,15 @@ const env = {
   // later purely by config, without a structural change. See
   // src/services/cutoffAiExtraction.service.js.
   aiExtractionEnabled: optional("AI_EXTRACTION_ENABLED", "false") === "true",
+
+  // Student-facing AI chat (Item 7). Off by default: dark-launched until an
+  // API key exists, same convention as requireEmailVerification above. See
+  // src/modules/ai-chat/chatService.js.
+  aiChat: {
+    enabled: optional("AI_CHAT_ENABLED", "false") === "true",
+    apiKey: optional("ANTHROPIC_API_KEY", ""),
+    model: optional("AI_CHAT_MODEL", "claude-haiku-4-5"),
+  },
 
   seed: {
     adminEmail: optional("SEED_ADMIN_EMAIL", "admin@myschoolplacement.ng"),

@@ -31,6 +31,8 @@ const createAssessmentValidator = [
     .isIn(Object.keys(OLEVEL_GRADE_SCALE)),
   body("academicOverride.oLevelSubjects.*.examType").optional().isIn(Object.values(OLEVEL_EXAM_TYPES)),
   body("academicOverride.oLevelSittings").optional().isInt({ min: 1, max: 2 }),
+  body("academicOverride.stateOfOrigin").optional().isString().trim().notEmpty(),
+  body("academicOverride.residentialState").optional().isString().trim().notEmpty(),
 ];
 
 const listAssessmentsQueryValidator = [

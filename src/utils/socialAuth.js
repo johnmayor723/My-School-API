@@ -2,12 +2,18 @@ const jwt = require("jsonwebtoken");
 const jwksClient = require("jwks-rsa");
 const { OAuth2Client } = require("google-auth-library");
 const env = require("../config/env");
+const logger = require("../config/logger");
 const { UnauthorizedError, ForbiddenError } = require("../errors/AppError");
 
 const googleClient = new OAuth2Client();
 
 function profileFromGooglePayload(payload) {
   if (!payload?.email) throw new UnauthorizedError("Google account has no email");
+  // Google can issue a token for an unverified email (e.g. the user added it
+  // to their Google account but never confirmed it) — unlike Apple, whose
+  // token never even carries an email in that case, so this needs its own
+  // explicit check rather than relying on the email-presence check above.
+  if (payload.email_verified === false) throw new UnauthorizedError("Google account email is not verified");
   return {
     providerId: payload.sub,
     email: payload.email,
@@ -23,7 +29,8 @@ async function verifyGoogleIdToken(idToken) {
   let ticket;
   try {
     ticket = await googleClient.verifyIdToken({ idToken, audience: env.google.clientIds });
-  } catch {
+  } catch (err) {
+    logger.warn("Google id_token verification failed", { error: err.message });
     throw new UnauthorizedError("Invalid Google sign-in token");
   }
 
@@ -43,7 +50,8 @@ async function exchangeGoogleAuthCode({ code, redirectUri, codeVerifier, clientI
   let tokens;
   try {
     ({ tokens } = await client.getToken({ code, codeVerifier }));
-  } catch {
+  } catch (err) {
+    logger.warn("Google authorization code exchange failed", { error: err.message, redirectUri });
     throw new UnauthorizedError("Invalid Google authorization code");
   }
   if (!tokens.id_token) throw new UnauthorizedError("Google did not return an id_token");
@@ -81,7 +89,8 @@ async function verifyAppleIdToken(idToken) {
         (err, decoded) => (err ? reject(err) : resolve(decoded))
       );
     });
-  } catch {
+  } catch (err) {
+    logger.warn("Apple id_token verification failed", { error: err.message });
     throw new UnauthorizedError("Invalid Apple sign-in token");
   }
 

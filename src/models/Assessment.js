@@ -27,6 +27,8 @@ const academicSnapshotSchema = new Schema(
     utmeSubjects: [String],
     oLevelSubjects: [oLevelSubjectSnapshotSchema],
     oLevelSittings: Number,
+    stateOfOrigin: String,
+    residentialState: String,
   },
   { _id: false }
 );

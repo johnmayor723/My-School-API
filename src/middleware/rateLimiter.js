@@ -21,4 +21,15 @@ const authLimiter = rateLimit({
   },
 });
 
-module.exports = { generalLimiter, authLimiter };
+// Each message is a real, metered Anthropic API call — tighter than the
+// general limiter regardless of the per-assessment message cap in
+// chatService.js, which bounds total spend rather than request rate.
+const chatLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 6,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: { code: "RATE_LIMITED", message: "Too many chat messages. Please slow down." } },
+});
+
+module.exports = { generalLimiter, authLimiter, chatLimiter };

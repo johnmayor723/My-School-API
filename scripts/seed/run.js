@@ -9,16 +9,36 @@ const SYSTEM_ROLES = [
   {
     name: ROLE_NAMES.RULES_EDITOR,
     description: "Drafts and edits admission rules",
-    permissions: [PERMISSIONS.MANAGE_ADMISSION_RULES, PERMISSIONS.MANAGE_INSTITUTIONS, PERMISSIONS.MANAGE_PROGRAMMES],
+    permissions: [
+      PERMISSIONS.MANAGE_ADMISSION_RULES,
+      PERMISSIONS.MANAGE_INSTITUTIONS,
+      PERMISSIONS.MANAGE_PROGRAMMES,
+      PERMISSIONS.MANAGE_CUTOFF_RECORDS,
+    ],
     isSystem: true,
   },
-  { name: ROLE_NAMES.RULES_REVIEWER, description: "Reviews draft admission rules", permissions: [PERMISSIONS.REVIEW_ADMISSION_RULES], isSystem: true },
-  { name: ROLE_NAMES.RULES_APPROVER, description: "Approves reviewed admission rules", permissions: [PERMISSIONS.APPROVE_ADMISSION_RULES], isSystem: true },
+  {
+    name: ROLE_NAMES.RULES_REVIEWER,
+    description: "Reviews draft admission rules",
+    permissions: [PERMISSIONS.REVIEW_ADMISSION_RULES, PERMISSIONS.REVIEW_CUTOFF_CANDIDATES],
+    isSystem: true,
+  },
+  {
+    name: ROLE_NAMES.RULES_APPROVER,
+    description: "Approves reviewed admission rules",
+    permissions: [PERMISSIONS.APPROVE_ADMISSION_RULES, PERMISSIONS.REVIEW_CUTOFF_CANDIDATES],
+    isSystem: true,
+  },
   { name: ROLE_NAMES.RULES_PUBLISHER, description: "Publishes approved admission rules", permissions: [PERMISSIONS.PUBLISH_ADMISSION_RULES, PERMISSIONS.ARCHIVE_ADMISSION_RULES], isSystem: true },
   {
     name: ROLE_NAMES.CATALOG_MANAGER,
     description: "Manages institutions, programmes and admission sessions",
-    permissions: [PERMISSIONS.MANAGE_INSTITUTIONS, PERMISSIONS.MANAGE_PROGRAMMES, PERMISSIONS.MANAGE_ADMISSION_SESSIONS],
+    permissions: [
+      PERMISSIONS.MANAGE_INSTITUTIONS,
+      PERMISSIONS.MANAGE_PROGRAMMES,
+      PERMISSIONS.MANAGE_ADMISSION_SESSIONS,
+      PERMISSIONS.MANAGE_CUTOFF_SOURCES,
+    ],
     isSystem: true,
   },
   {

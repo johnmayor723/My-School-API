@@ -34,6 +34,9 @@ const PERMISSIONS = Object.freeze({
   VIEW_AUDIT_LOGS: "VIEW_AUDIT_LOGS",
   MANAGE_USERS: "MANAGE_USERS",
   MANAGE_ROLES: "MANAGE_ROLES",
+  MANAGE_CUTOFF_SOURCES: "MANAGE_CUTOFF_SOURCES",
+  REVIEW_CUTOFF_CANDIDATES: "REVIEW_CUTOFF_CANDIDATES",
+  MANAGE_CUTOFF_RECORDS: "MANAGE_CUTOFF_RECORDS",
 });
 
 const ROLE_NAMES = Object.freeze({
@@ -135,6 +138,15 @@ const ELIGIBILITY_STATUS = Object.freeze({
   INSUFFICIENT_INFORMATION: "INSUFFICIENT_INFORMATION",
 });
 
+// Informational classification only — never folded into matchScore (see
+// catchment.evaluator.js). ELDS isn't included yet: it's a specific JAMB-designated
+// state list, not derivable from geopolitical zone, and isn't verified in this codebase yet.
+const CATCHMENT_STATUS = Object.freeze({
+  MERIT: "MERIT",
+  CATCHMENT: "CATCHMENT",
+  UNKNOWN: "UNKNOWN",
+});
+
 // Weights must sum to 100. Centralised here so scoring can be tuned in one
 // place without touching the evaluators that produce the underlying facts.
 const MATCH_SCORE_WEIGHTS = Object.freeze({
@@ -209,6 +221,60 @@ const RESOURCE_TYPES = Object.freeze({
   PAYMENT: "Payment",
   USER: "User",
   ROLE: "Role",
+  CUTOFF_SOURCE: "CutoffSource",
+  CUTOFF_CANDIDATE: "CutoffCandidate",
+  CUTOFF_RECORD: "CutoffRecord",
+});
+
+// The 12 admission-threshold types the Cut-Off Marks Intelligence module must
+// distinguish. Every CutoffCandidate/CutoffRecord carries exactly one of
+// these — never mix e.g. an institutional minimum with a departmental merit
+// cutoff in the same field.
+const CUTOFF_TYPE = Object.freeze({
+  NATIONAL_JAMB_MINIMUM: "national_jamb_minimum",
+  INSTITUTIONAL_MINIMUM: "institutional_minimum",
+  FACULTY_MINIMUM: "faculty_minimum",
+  DEPARTMENTAL_CUTOFF: "departmental_cutoff",
+  MERIT_CUTOFF: "merit_cutoff",
+  CATCHMENT_CUTOFF: "catchment_cutoff",
+  ELDS_CUTOFF: "elds_cutoff",
+  SUPPLEMENTARY_CUTOFF: "supplementary_cutoff",
+  POST_UTME_MINIMUM: "post_utme_minimum",
+  AGGREGATE_SCORE: "aggregate_score",
+  HISTORICAL_CUTOFF: "historical_cutoff",
+  ESTIMATED_COMPETITIVE: "estimated_competitive",
+});
+
+const CUTOFF_SOURCE_TYPE = Object.freeze({
+  OFFICIAL: "official",
+  SECONDARY: "secondary",
+});
+
+const CUTOFF_CANDIDATE_STATUS = Object.freeze({
+  PENDING: "PENDING",
+  APPROVED: "APPROVED",
+  REJECTED: "REJECTED",
+  DUPLICATE: "DUPLICATE",
+});
+
+const CUTOFF_CONFIDENCE = Object.freeze({
+  HIGH: "high",
+  MEDIUM: "medium",
+  LOW: "low",
+});
+
+// Only these cutoffTypes represent "the one number the matching engine cares
+// about" for a given offering, so only these are ever eligible to update
+// AdmissionRule.utme.minimumScore. Every other type is stored and displayed
+// as data but never silently collapsed into that single field — deliberately
+// conservative, matching the matching-engine evaluators' "never invent
+// certainty" idiom. Extend only when a real product need justifies picking a
+// winner among the remaining ambiguous types.
+const PROMOTABLE_CUTOFF_TYPES = Object.freeze([CUTOFF_TYPE.INSTITUTIONAL_MINIMUM, CUTOFF_TYPE.DEPARTMENTAL_CUTOFF]);
+
+const CHAT_ROLE = Object.freeze({
+  USER: "user",
+  ASSISTANT: "assistant",
 });
 
 module.exports = {
@@ -229,6 +295,7 @@ module.exports = {
   PAYMENT_PROVIDERS,
   MATCH_CATEGORY,
   ELIGIBILITY_STATUS,
+  CATCHMENT_STATUS,
   MATCH_SCORE_WEIGHTS,
   MATCH_SCORE_THRESHOLDS,
   COMPETITIVENESS_BLEND_WEIGHTS,
@@ -237,4 +304,10 @@ module.exports = {
   OLEVEL_GRADE_SCALE,
   OLEVEL_EXAM_TYPES,
   RESOURCE_TYPES,
+  CUTOFF_TYPE,
+  CUTOFF_SOURCE_TYPE,
+  CUTOFF_CANDIDATE_STATUS,
+  CUTOFF_CONFIDENCE,
+  PROMOTABLE_CUTOFF_TYPES,
+  CHAT_ROLE,
 };

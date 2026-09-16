@@ -3,9 +3,29 @@ const auditService = require("./audit.service");
 const { NotFoundError } = require("../errors/AppError");
 const { RESOURCE_TYPES, RECORD_STATUS } = require("../config/constants");
 
-async function list({ page = 1, limit = 20, state, ownership, institutionType, search, status = RECORD_STATUS.ACTIVE }) {
+// "competitiveness" sorts by metadata.competitivenessIndex descending. Mongo
+// treats a missing field as null for sort purposes, and null sorts after
+// numbers in a descending sort — so institutions an admin hasn't scored yet
+// fall to the end rather than outranking real tier-1 data with an implicit 0.
+const SORTS = {
+  name: { name: 1 },
+  competitiveness: { "metadata.competitivenessIndex": -1, name: 1 },
+};
+
+async function list({
+  page = 1,
+  limit = 20,
+  state,
+  zone,
+  ownership,
+  institutionType,
+  search,
+  status = RECORD_STATUS.ACTIVE,
+  sort = "name",
+}) {
   const filter = {};
   if (state) filter.state = state;
+  if (zone) filter.zone = zone;
   if (ownership) filter.ownership = ownership;
   if (institutionType) filter.institutionType = institutionType;
   if (status) filter.status = status;
@@ -13,7 +33,10 @@ async function list({ page = 1, limit = 20, state, ownership, institutionType, s
 
   const skip = (page - 1) * limit;
   const [items, total] = await Promise.all([
-    Institution.find(filter).sort({ name: 1 }).skip(skip).limit(limit),
+    Institution.find(filter)
+      .sort(SORTS[sort] || SORTS.name)
+      .skip(skip)
+      .limit(limit),
     Institution.countDocuments(filter),
   ]);
   return { items, total };
@@ -58,6 +81,14 @@ async function update(id, payload, actor, req) {
       if (metadata.competitivenessIndex === null) merged.competitivenessIndex = undefined;
     } else {
       merged.competitivenessManuallySet = previousSnapshot.metadata?.competitivenessManuallySet;
+    }
+    // catchmentManuallySet follows the same server-derived rule as competitivenessManuallySet:
+    // sending catchmentStates marks it manual, null clears it back to the zone-wide default.
+    if (Object.prototype.hasOwnProperty.call(metadata, "catchmentStates")) {
+      merged.catchmentManuallySet = metadata.catchmentStates !== null;
+      if (metadata.catchmentStates === null) merged.catchmentStates = undefined;
+    } else {
+      merged.catchmentManuallySet = previousSnapshot.metadata?.catchmentManuallySet;
     }
     previous.metadata = merged;
   }

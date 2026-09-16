@@ -22,6 +22,8 @@ function buildAcademicSnapshot(profile, override = {}) {
     utmeSubjects: override.utmeSubjects ?? profile.utmeSubjects ?? [],
     oLevelSubjects: override.oLevelSubjects ?? profile.oLevelSubjects ?? [],
     oLevelSittings: override.oLevelSittings ?? profile.oLevelSittings,
+    stateOfOrigin: override.stateOfOrigin ?? profile.stateOfOrigin,
+    residentialState: override.residentialState ?? profile.residentialState,
   };
 }
 
@@ -81,6 +83,8 @@ async function runAndStoreMatching(assessment) {
       reasons: rec.reasons,
       failedRequirements: rec.failedRequirements,
       warnings: rec.warnings,
+      catchmentStatus: rec.catchmentStatus,
+      catchmentReason: rec.catchmentReason,
       isAlternativeProgramme: rec.isAlternativeProgramme,
       rank: rec.rank,
     }));
@@ -125,7 +129,7 @@ async function getRecommendations(id, requestingUser) {
     });
   }
   const recommendations = await AssessmentRecommendation.find({ assessment: id })
-    .populate("institution", "name slug state ownership institutionType")
+    .populate("institution", "name slug state zone ownership institutionType")
     .populate("programme", "name slug faculty")
     .sort({ isAlternativeProgramme: 1, rank: 1 });
   return { assessment, recommendations };

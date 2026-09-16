@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const { MATCH_CATEGORY, ELIGIBILITY_STATUS } = require("../config/constants");
+const { MATCH_CATEGORY, ELIGIBILITY_STATUS, CATCHMENT_STATUS } = require("../config/constants");
 
 const assessmentRecommendationSchema = new Schema(
   {
@@ -15,6 +15,10 @@ const assessmentRecommendationSchema = new Schema(
     reasons: { type: [String], default: [] },
     failedRequirements: { type: [String], default: [] },
     warnings: { type: [String], default: [] },
+
+    // Informational only — never affects matchScore/category/eligibility above.
+    catchmentStatus: { type: String, enum: Object.values(CATCHMENT_STATUS), default: CATCHMENT_STATUS.UNKNOWN },
+    catchmentReason: { type: String },
 
     isAlternativeProgramme: { type: Boolean, default: false },
     rank: { type: Number },

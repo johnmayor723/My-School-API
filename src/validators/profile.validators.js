@@ -20,6 +20,9 @@ const updateProfileValidator = [
   body("oLevelSubjects.*.examType").optional().isIn(Object.values(OLEVEL_EXAM_TYPES)),
   body("oLevelSittings").optional().isInt({ min: 1, max: 2 }),
 
+  body("stateOfOrigin").optional().isString().trim().notEmpty(),
+  body("residentialState").optional().isString().trim().notEmpty(),
+
   body("preferredProgramme").optional().isMongoId(),
   body("preferredStates").optional().isArray(),
   body("preferredStates.*").optional().isString().trim(),
