@@ -32,5 +32,6 @@ router.post("/resend-verification", authLimiter, validate(resendVerificationVali
 router.get("/me", authenticate, authController.me);
 router.patch("/me", authenticate, validate(updateAccountValidator), authController.updateMe);
 router.post("/change-password", authenticate, validate(changePasswordValidator), authController.changePassword);
+router.delete("/me", authenticate, authController.deleteAccount);
 
 module.exports = router;

@@ -27,7 +27,7 @@ async function initializePayment(assessmentId, user, req) {
 
   const provider = getProvider();
   const reference = `MSP-${uuid()}`;
-  const callbackUrl = `${env.clientUrls[0] || "http://localhost:3000"}/payments/callback`;
+  const callbackUrl = `${env.publicWebUrl}/payments/callback`;
 
   const providerResult = await provider.initialize({
     email: user.email,

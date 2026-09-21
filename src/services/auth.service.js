@@ -231,6 +231,50 @@ async function changePassword(userId, { currentPassword, newPassword }) {
   await auditService.record({ user: user._id, action: "PASSWORD_CHANGED", resourceType: RESOURCE_TYPES.USER, resourceId: user._id });
 }
 
+// Anonymizes and deactivates the account rather than removing the User row
+// outright, so Payment records referencing it stay intact for the financial
+// retention period the privacy policy promises. Academic/chat data, which
+// has no such retention need, is deleted outright.
+async function deleteAccount(userId, { req } = {}) {
+  const user = await User.findById(userId);
+  if (!user) throw new UnauthorizedError("Account no longer exists");
+
+  const { Assessment, StudentProfile: StudentProfileModel, ChatMessage } = require("../models");
+
+  const assessmentIds = await Assessment.find({ student: user._id }).distinct("_id");
+  if (assessmentIds.length) {
+    await ChatMessage.deleteMany({ assessment: { $in: assessmentIds } });
+    await Assessment.updateMany(
+      { _id: { $in: assessmentIds } },
+      {
+        $set: {
+          "academicSnapshot.fullName": "Deleted user",
+          "academicSnapshot.utmeRegNumber": undefined,
+          "academicSnapshot.stateOfOrigin": undefined,
+          "academicSnapshot.residentialState": undefined,
+        },
+      }
+    );
+  }
+  await StudentProfileModel.deleteOne({ user: user._id });
+
+  await tokenService.revokeAllRefreshTokensForUser(user._id);
+
+  const deletedMarker = `deleted-${user._id}@myschoolplacement.deleted`;
+  user.firstName = "Deleted";
+  user.lastName = "User";
+  user.email = deletedMarker;
+  user.phone = undefined;
+  user.passwordHash = crypto.randomBytes(32).toString("hex");
+  user.googleId = undefined;
+  user.appleId = undefined;
+  user.emailVerified = false;
+  user.status = USER_STATUS.DELETED;
+  await user.save();
+
+  await auditService.record({ user: user._id, action: "ACCOUNT_DELETED", resourceType: RESOURCE_TYPES.USER, resourceId: user._id, req });
+}
+
 module.exports = {
   register,
   login,
@@ -244,4 +288,5 @@ module.exports = {
   resendVerification,
   updateAccount,
   changePassword,
+  deleteAccount,
 };

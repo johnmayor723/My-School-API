@@ -14,6 +14,7 @@ const USER_STATUS = Object.freeze({
   ACTIVE: "active",
   INACTIVE: "inactive",
   SUSPENDED: "suspended",
+  DELETED: "deleted",
 });
 
 const PERMISSIONS = Object.freeze({

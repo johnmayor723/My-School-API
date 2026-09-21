@@ -65,6 +65,11 @@ async function changePassword(req, res) {
   sendSuccess(res, { message: "Password changed" });
 }
 
+async function deleteAccount(req, res) {
+  await authService.deleteAccount(req.user._id, { req });
+  sendSuccess(res, { message: "Account deleted" });
+}
+
 module.exports = {
   register,
   login,
@@ -79,4 +84,5 @@ module.exports = {
   me,
   updateMe,
   changePassword,
+  deleteAccount,
 };

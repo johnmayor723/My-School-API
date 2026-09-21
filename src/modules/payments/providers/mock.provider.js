@@ -6,7 +6,7 @@ const { PAYMENT_PROVIDERS, PAYMENT_STATUS } = require("../../../config/constants
 // register -> assess -> pay -> unlock flow is runnable end-to-end without any
 // external payment credentials configured.
 async function initialize({ reference, amount, currency }) {
-  const base = env.clientUrls[0] || "http://localhost:3000";
+  const base = env.publicWebUrl;
   return {
     authorizationUrl: `${base}/mock-checkout?reference=${encodeURIComponent(reference)}&amount=${amount}&currency=${currency}`,
     providerReference: reference,
