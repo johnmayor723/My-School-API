@@ -1,4 +1,4 @@
-const Anthropic = require("@anthropic-ai/sdk");
+const { OpenAI } = require("openai");
 const env = require("../../config/env");
 const logger = require("../../config/logger");
 const { ChatMessage } = require("../../models");
@@ -11,12 +11,16 @@ const MAX_MESSAGES_PER_ASSESSMENT = 60;
 
 let client = null;
 function getClient() {
-  if (!client) client = new Anthropic({ apiKey: env.aiChat.apiKey });
+  if (!client) {
+    const apiKey = process.env.NVIDIA_KEY;
+    if (!apiKey) throw new ForbiddenError("NVDIA API key not configured");
+    client = new OpenAI({ apiKey, baseURL: "https://integrate.api.nvidia.com/v1" });
+  }
   return client;
 }
 
 function assertConfigured() {
-  if (!env.aiChat.enabled || !env.aiChat.apiKey) {
+  if (!env.aiChat.enabled || !process.env.NVIDIA_KEY) {
     throw new ForbiddenError("AI chat is not available yet");
   }
 }

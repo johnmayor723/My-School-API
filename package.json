@@ -28,6 +28,7 @@
     "jwks-rsa": "^4.1.0",
     "mongoose": "^8.10.1",
     "nodemailer": "^7.0.9",
+    "openai": "^7.21.0",
     "swagger-ui-express": "^5.0.1",
     "uuid": "^14.0.1"
   },
