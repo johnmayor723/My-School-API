@@ -12,15 +12,14 @@ const MAX_MESSAGES_PER_ASSESSMENT = 60;
 let client = null;
 function getClient() {
   if (!client) {
-    const apiKey = process.env.NVIDIA_KEY;
-    if (!apiKey) throw new ForbiddenError("NVDIA API key not configured");
-    client = new OpenAI({ apiKey, baseURL: "https://integrate.api.nvidia.com/v1" });
+    if (!env.aiChat.apiKey) throw new ForbiddenError("NVIDIA API key not configured");
+    client = new OpenAI({ apiKey: env.aiChat.apiKey, baseURL: "https://integrate.api.nvidia.com/v1" });
   }
   return client;
 }
 
 function assertConfigured() {
-  if (!env.aiChat.enabled || !process.env.NVIDIA_KEY) {
+  if (!env.aiChat.enabled || !env.aiChat.apiKey) {
     throw new ForbiddenError("AI chat is not available yet");
   }
 }
@@ -88,18 +87,19 @@ async function sendMessage(assessmentId, requestingUser, content) {
   const userMessage = await ChatMessage.create({ assessment: assessment._id, role: CHAT_ROLE.USER, content: trimmed });
 
   const system = buildSystemPrompt(assessment, recommendations);
-  const messages = [...history, userMessage].map((m) => ({ role: m.role, content: m.content }));
+  const messages = [
+    { role: "system", content: system },
+    ...[...history, userMessage].map((m) => ({ role: m.role, content: m.content })),
+  ];
 
   let replyText;
   try {
-    const response = await getClient().messages.create({
+    const response = await getClient().chat.completions.create({
       model: env.aiChat.model,
       max_tokens: 1024,
-      system,
       messages,
     });
-    const textBlock = response.content.find((block) => block.type === "text");
-    replyText = textBlock?.text?.trim() || "I don't have a response for that right now.";
+    replyText = response.choices[0]?.message?.content?.trim() || "I don't have a response for that right now.";
   } catch (err) {
     logger.error("AI chat completion failed", { error: err.message, assessmentId: String(assessment._id) });
     throw new BusinessRuleError("The assistant is temporarily unavailable. Please try again.");

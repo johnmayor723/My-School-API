@@ -23,7 +23,6 @@ async function register({ firstName, lastName, email, phone, password, fullName,
   const existing = await User.findOne({ email });
   if (existing) throw new ConflictError("An account with this email already exists");
 
-  const rawVerificationToken = crypto.randomBytes(32).toString("hex");
   const user = await User.create({
     firstName,
     lastName,
@@ -31,8 +30,6 @@ async function register({ firstName, lastName, email, phone, password, fullName,
     phone,
     passwordHash: password,
     userType: USER_TYPES.STUDENT,
-    emailVerificationTokenHash: hashResetToken(rawVerificationToken),
-    emailVerificationExpires: new Date(Date.now() + VERIFICATION_TOKEN_TTL_MS),
   });
 
   await StudentProfile.create({
@@ -42,12 +39,25 @@ async function register({ firstName, lastName, email, phone, password, fullName,
     utmeScore,
   });
 
+  // When REQUIRE_EMAIL_VERIFICATION is false, no verification token is created and
+  // no verification email is sent, so new users can log in immediately.
+  //
   // Not blocking on email delivery — registration succeeds regardless, and
   // whether login itself is gated on verification is controlled separately
   // by env.requireEmailVerification (see login() below).
-  notificationService
-    .sendVerificationEmail(user, rawVerificationToken)
-    .catch((err) => logger.warn("Verification email failed", { error: err.message }));
+  if (env.requireEmailVerification) {
+    const rawVerificationToken = crypto.randomBytes(32).toString("hex");
+    await User.updateOne(
+      { _id: user._id },
+      {
+        emailVerificationTokenHash: hashResetToken(rawVerificationToken),
+        emailVerificationExpires: new Date(Date.now() + VERIFICATION_TOKEN_TTL_MS),
+      }
+    );
+    notificationService
+      .sendVerificationEmail(user, rawVerificationToken)
+      .catch((err) => logger.warn("Verification email failed", { error: err.message }));
+  }
   await auditService.record({ user: user._id, action: "USER_REGISTERED", resourceType: RESOURCE_TYPES.USER, resourceId: user._id });
 
   const tokens = await tokenService.issueTokenPair(user, { ip });

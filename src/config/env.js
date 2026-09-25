@@ -109,8 +109,8 @@ const env = {
   // src/modules/ai-chat/chatService.js.
   aiChat: {
     enabled: optional("AI_CHAT_ENABLED", "false") === "true",
-    apiKey: optional("ANTHROPIC_API_KEY", ""),
-    model: optional("AI_CHAT_MODEL", "claude-haiku-4-5"),
+    apiKey: optional("NVIDIA_KEY", ""),
+    model: optional("AI_CHAT_MODEL", "z-ai/glm-5.3-flash"),
   },
 
   seed: {
