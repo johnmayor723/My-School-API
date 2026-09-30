@@ -17,4 +17,5 @@ module.exports = {
   CutoffCandidate: require("./CutoffCandidate"),
   CutoffRecord: require("./CutoffRecord"),
   ChatMessage: require("./ChatMessage"),
+  OneTimeCode: require("../modules/accounts/models/OneTimeCode"),
 };

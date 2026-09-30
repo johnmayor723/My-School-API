@@ -21,6 +21,18 @@ const authLimiter = rateLimit({
   },
 });
 
+// IP-based outer guard only. The real per-identifier throttle (stopping an
+// attacker spamming one victim's inbox from many IPs) lives in
+// src/modules/accounts/services/otp.service.js, which checks the
+// OneTimeCode collection directly.
+const otpLimiter = rateLimit({
+  windowMs: env.rateLimit.otpWindowMinutes * 60 * 1000,
+  max: env.rateLimit.otpMax,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: { code: "RATE_LIMITED", message: "Too many code requests. Please try again later." } },
+});
+
 // Each message is a real, metered Anthropic API call — tighter than the
 // general limiter regardless of the per-assessment message cap in
 // chatService.js, which bounds total spend rather than request rate.
@@ -32,4 +44,4 @@ const chatLimiter = rateLimit({
   message: { success: false, error: { code: "RATE_LIMITED", message: "Too many chat messages. Please slow down." } },
 });
 
-module.exports = { generalLimiter, authLimiter, chatLimiter };
+module.exports = { generalLimiter, authLimiter, otpLimiter, chatLimiter };

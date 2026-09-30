@@ -8,7 +8,16 @@ const createUserValidator = [
   body("lastName").trim().notEmpty(),
   body("email").trim().isEmail().normalizeEmail(),
   body("phone").optional().trim(),
-  body("password").isString().isLength({ min: 8 }).withMessage("password must be at least 8 characters long"),
+  // Only STAFF logs in with a password — Student accounts are OTP-only.
+  body("password")
+    .if(body("userType").equals(USER_TYPES.STAFF))
+    .isString()
+    .isLength({ min: 8 })
+    .withMessage("password must be at least 8 characters long"),
+  body("dateOfBirth")
+    .if(body("userType").equals(USER_TYPES.STUDENT))
+    .isISO8601()
+    .withMessage("dateOfBirth must be a valid date"),
   body("roles")
     .if(body("userType").equals(USER_TYPES.STAFF))
     .isArray({ min: 1 })

@@ -10,6 +10,19 @@ const USER_TYPES = Object.freeze({
   STAFF: "staff",
 });
 
+const OTP_CHANNEL = Object.freeze({
+  EMAIL: "email",
+  PHONE: "phone",
+});
+
+// ACCOUNT_DELETION reuses the same OneTimeCode mechanism as sign-up/login,
+// just scoped to a different purpose so a code issued for one action can't
+// be replayed against another.
+const OTP_PURPOSE = Object.freeze({
+  AUTHENTICATE: "authenticate", // covers both sign-up and login — see accountAuth.service.js
+  ACCOUNT_DELETION: "account_deletion",
+});
+
 const USER_STATUS = Object.freeze({
   ACTIVE: "active",
   INACTIVE: "inactive",
@@ -225,6 +238,7 @@ const RESOURCE_TYPES = Object.freeze({
   CUTOFF_SOURCE: "CutoffSource",
   CUTOFF_CANDIDATE: "CutoffCandidate",
   CUTOFF_RECORD: "CutoffRecord",
+  ONE_TIME_CODE: "OneTimeCode",
 });
 
 // The 12 admission-threshold types the Cut-Off Marks Intelligence module must
@@ -281,6 +295,8 @@ const CHAT_ROLE = Object.freeze({
 module.exports = {
   USER_TYPES,
   USER_STATUS,
+  OTP_CHANNEL,
+  OTP_PURPOSE,
   PERMISSIONS,
   ROLE_NAMES,
   INSTITUTION_OWNERSHIP,

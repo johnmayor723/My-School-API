@@ -17,15 +17,32 @@ function getTransporter() {
   return transporter;
 }
 
+async function sendViaGemfiMailService({ to, subject, text, html }) {
+  const res = await fetch(env.gemfiMail.url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "X-Internal-Auth": env.gemfiMail.internalSecret },
+    body: JSON.stringify({ to, subject, text, html, fromName: env.mail.fromName }),
+  });
+  if (!res.ok) {
+    const body = await res.text().catch(() => "");
+    throw new Error(`gemfi-mail-service responded ${res.status}: ${body}`);
+  }
+}
+
 /**
- * Sends an email via SMTP when credentials are configured. In local/dev use
- * without SMTP_HOST set, the message is logged instead of sent so the rest of
- * the flow (password reset, etc.) is still exercisable end-to-end.
+ * Sends an email via gemfi-mail-service when configured (see env.gemfiMail
+ * above), falling back to direct SMTP, then to logging when neither is
+ * configured — same dark-launch convention as smsSender.js.
  */
 async function sendMail({ to, subject, text, html }) {
+  if (env.gemfiMail.url) {
+    await sendViaGemfiMailService({ to, subject, text, html });
+    return { sent: true };
+  }
+
   const t = getTransporter();
   if (!t) {
-    logger.info("Mail not sent (SMTP not configured) — logging instead", { to, subject, text });
+    logger.info("Mail not sent (no mail provider configured) — logging instead", { to, subject, text });
     return { sent: false };
   }
   await t.sendMail({

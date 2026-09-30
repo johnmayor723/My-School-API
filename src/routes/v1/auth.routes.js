@@ -1,37 +1,35 @@
 const { Router } = require("express");
 const authController = require("../../controllers/auth.controller");
+const otpAuthController = require("../../modules/accounts/controllers/otpAuth.controller");
 const { authenticate } = require("../../middleware/auth");
 const { validate } = require("../../middleware/validate");
-const { authLimiter } = require("../../middleware/rateLimiter");
+const { authLimiter, otpLimiter } = require("../../middleware/rateLimiter");
+const { loginValidator, refreshValidator, updateAccountValidator } = require("../../validators/auth.validators");
 const {
-  registerValidator,
-  loginValidator,
-  googleLoginValidator,
-  appleLoginValidator,
-  forgotPasswordValidator,
-  resetPasswordValidator,
-  verifyEmailValidator,
-  resendVerificationValidator,
-  refreshValidator,
-  updateAccountValidator,
-  changePasswordValidator,
-} = require("../../validators/auth.validators");
+  requestCodeValidator,
+  verifyCodeValidator,
+  completeSignupValidator,
+  deletionCodeValidator,
+} = require("../../modules/accounts/validators/otpAuth.validators");
 
 const router = Router();
 
-router.post("/register", authLimiter, validate(registerValidator), authController.register);
+// Student sign-up and login — one-time code by email (phone deferred, see
+// otpAuth.controller.js).
+router.post("/otp/request", otpLimiter, validate(requestCodeValidator), otpAuthController.requestCode);
+router.post("/otp/verify", otpLimiter, validate(verifyCodeValidator), otpAuthController.verifyCode);
+router.post("/register/complete", authLimiter, validate(completeSignupValidator), otpAuthController.completeSignup);
+
+// STAFF (admin console) only — password login.
 router.post("/login", authLimiter, validate(loginValidator), authController.login);
-router.post("/google", authLimiter, validate(googleLoginValidator), authController.googleLogin);
-router.post("/apple", authLimiter, validate(appleLoginValidator), authController.appleLogin);
+
 router.post("/refresh", authLimiter, validate(refreshValidator), authController.refresh);
 router.post("/logout", validate(refreshValidator), authController.logout);
-router.post("/forgot-password", authLimiter, validate(forgotPasswordValidator), authController.forgotPassword);
-router.post("/reset-password", authLimiter, validate(resetPasswordValidator), authController.resetPassword);
-router.post("/verify-email", authLimiter, validate(verifyEmailValidator), authController.verifyEmail);
-router.post("/resend-verification", authLimiter, validate(resendVerificationValidator), authController.resendVerification);
+
 router.get("/me", authenticate, authController.me);
 router.patch("/me", authenticate, validate(updateAccountValidator), authController.updateMe);
-router.post("/change-password", authenticate, validate(changePasswordValidator), authController.changePassword);
-router.delete("/me", authenticate, authController.deleteAccount);
+router.get("/me/data-export", authenticate, otpAuthController.exportData);
+router.post("/me/deletion-code", authenticate, otpLimiter, otpAuthController.requestDeletionCode);
+router.delete("/me", authenticate, validate(deletionCodeValidator), otpAuthController.confirmDeletion);
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const { User, StudentProfile, Role } = require("../models");
 const auditService = require("./audit.service");
 const { ConflictError, NotFoundError, ForbiddenError, BusinessRuleError } = require("../errors/AppError");
-const { RESOURCE_TYPES, USER_TYPES, PERMISSIONS } = require("../config/constants");
+const { RESOURCE_TYPES, USER_TYPES, USER_STATUS, PERMISSIONS } = require("../config/constants");
 
 // Admin/staff accounts control platform access, including who else can be
 // made an admin, so their lifecycle is locked to the super admin specifically
@@ -70,14 +70,19 @@ async function create(payload, actor, req) {
     return user.toSafeJSON();
   }
 
+  // STUDENT accounts are OTP-only (see src/modules/accounts) — an
+  // admin-created account just needs to exist and be ACTIVE; the owner logs
+  // in later via a one-time code to whatever email is on file, same as any
+  // self-service sign-up.
   assertCanManageStudents(actor);
   const user = await User.create({
     firstName: payload.firstName,
     lastName: payload.lastName,
     email: payload.email,
     phone: payload.phone,
-    passwordHash: payload.password,
     userType: USER_TYPES.STUDENT,
+    status: USER_STATUS.ACTIVE,
+    dateOfBirth: payload.dateOfBirth,
   });
   await StudentProfile.create({
     user: user._id,

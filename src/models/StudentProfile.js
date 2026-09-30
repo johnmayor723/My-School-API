@@ -28,6 +28,13 @@ const studentProfileSchema = new Schema(
     stateOfOrigin: { type: String, trim: true },
     residentialState: { type: String, trim: true },
 
+    interests: { type: [String], default: [] },
+    desiredCareer: { type: String, trim: true },
+    // Stored but not yet branched on anywhere — the rest of this schema
+    // (preferredStates, INSTITUTION_TYPE/OWNERSHIP) is implicitly Nigeria-only.
+    // Multi-country matching is a future phase, not this one.
+    preferredCountry: { type: String, trim: true, default: "Nigeria" },
+
     preferredProgramme: { type: Schema.Types.ObjectId, ref: "Programme" },
     preferredStates: { type: [String], default: [] },
     preferredInstitutionTypes: {

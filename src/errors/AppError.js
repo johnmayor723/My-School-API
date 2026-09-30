@@ -28,9 +28,9 @@ class ForbiddenError extends AppError {
   }
 }
 
-class EmailNotVerifiedError extends AppError {
-  constructor(message = "Please verify your email address before logging in") {
-    super(message, 403, "EMAIL_NOT_VERIFIED");
+class TooManyRequestsError extends AppError {
+  constructor(message = "Too many requests. Please try again later.") {
+    super(message, 429, "RATE_LIMITED");
   }
 }
 
@@ -63,7 +63,7 @@ module.exports = {
   ValidationAppError,
   UnauthorizedError,
   ForbiddenError,
-  EmailNotVerifiedError,
+  TooManyRequestsError,
   NotFoundError,
   ConflictError,
   PaymentRequiredError,
