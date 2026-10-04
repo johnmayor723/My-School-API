@@ -1,6 +1,6 @@
-const { OpenAI } = require("openai");
 const env = require("../../config/env");
 const logger = require("../../config/logger");
+const geminiKeyPool = require("./geminiKeyPool");
 const { ChatMessage } = require("../../models");
 const assessmentService = require("../../services/assessment.service");
 const { ForbiddenError, ValidationAppError, BusinessRuleError } = require("../../errors/AppError");
@@ -9,17 +9,11 @@ const { CHAT_ROLE, MATCH_SCORE_DISCLAIMER } = require("../../config/constants");
 const MAX_MESSAGE_LENGTH = 1000;
 const MAX_MESSAGES_PER_ASSESSMENT = 60;
 
-let client = null;
-function getClient() {
-  if (!client) {
-    if (!env.aiChat.apiKey) throw new ForbiddenError("NVIDIA API key not configured");
-    client = new OpenAI({ apiKey: env.aiChat.apiKey, baseURL: "https://integrate.api.nvidia.com/v1" });
-  }
-  return client;
-}
+// Gemini only knows "user"/"model", not our stored "assistant" role.
+const GEMINI_ROLE = { [CHAT_ROLE.USER]: "user", [CHAT_ROLE.ASSISTANT]: "model" };
 
 function assertConfigured() {
-  if (!env.aiChat.enabled || !env.aiChat.apiKey) {
+  if (!env.aiChat.enabled || env.aiChat.apiKeys.length === 0) {
     throw new ForbiddenError("AI chat is not available yet");
   }
 }
@@ -86,20 +80,20 @@ async function sendMessage(assessmentId, requestingUser, content) {
   const history = await ChatMessage.find({ assessment: assessment._id }).sort({ createdAt: 1 });
   const userMessage = await ChatMessage.create({ assessment: assessment._id, role: CHAT_ROLE.USER, content: trimmed });
 
-  const system = buildSystemPrompt(assessment, recommendations);
-  const messages = [
-    { role: "system", content: system },
-    ...[...history, userMessage].map((m) => ({ role: m.role, content: m.content })),
-  ];
+  const systemInstruction = buildSystemPrompt(assessment, recommendations);
+  const contents = [...history, userMessage].map((m) => ({
+    role: GEMINI_ROLE[m.role],
+    parts: [{ text: m.content }],
+  }));
 
   let replyText;
   try {
-    const response = await getClient().chat.completions.create({
+    const response = await geminiKeyPool.generateContent({
       model: env.aiChat.model,
-      max_tokens: 1024,
-      messages,
+      contents,
+      config: { systemInstruction, maxOutputTokens: 1024 },
     });
-    replyText = response.choices[0]?.message?.content?.trim() || "I don't have a response for that right now.";
+    replyText = response.text?.trim() || "I don't have a response for that right now.";
   } catch (err) {
     logger.error("AI chat completion failed", { error: err.message, assessmentId: String(assessment._id) });
     throw new BusinessRuleError("The assistant is temporarily unavailable. Please try again.");

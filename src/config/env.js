@@ -110,10 +110,17 @@ const env = {
   // Student-facing AI chat (Item 7). Off by default: dark-launched until an
   // API key exists, same convention as sms.enabled above. See
   // src/modules/ai-chat/chatService.js.
+  // apiKeys supports a pool (comma-separated GEMINI_API_KEYS) so the chat
+  // service can fail over to the next key when one hits its rate/quota
+  // limit (HTTP 429) — see src/modules/ai-chat/geminiKeyPool.js. Falls back
+  // to the single-key GEMINI_API_KEY var when GEMINI_API_KEYS isn't set.
   aiChat: {
     enabled: optional("AI_CHAT_ENABLED", "false") === "true",
-    apiKey: optional("NVIDIA_KEY", ""),
-    model: optional("AI_CHAT_MODEL", "z-ai/glm-5.3-flash"),
+    apiKeys: optional("GEMINI_API_KEYS", optional("GEMINI_API_KEY", ""))
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean),
+    model: optional("AI_CHAT_MODEL", "gemini-3.8-flash"),
   },
 
   seed: {
