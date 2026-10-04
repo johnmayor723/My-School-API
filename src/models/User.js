@@ -7,15 +7,18 @@ const userSchema = new Schema(
   {
     firstName: { type: String, required: true, trim: true },
     lastName: { type: String, required: true, trim: true },
+    // Students may sign up with email OR phone (see the pre-validate check
+    // below); STAFF always has email (admin console login is password-based).
+    // Both are sparse-unique so phone-only and email-only accounts coexist.
     email: {
       type: String,
-      required: true,
       unique: true,
+      sparse: true,
       trim: true,
       lowercase: true,
       match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Invalid email address"],
     },
-    phone: { type: String, trim: true },
+    phone: { type: String, unique: true, sparse: true, trim: true },
     // Only STAFF (admin console) logs in with a password now — Student
     // accounts are OTP-only, so this is meaningless for them going forward.
     // Kept required-for-staff rather than dropped, to avoid an index/schema
@@ -35,12 +38,7 @@ const userSchema = new Schema(
     dateOfBirth: { type: Date },
 
     emailVerified: { type: Boolean, default: false },
-
-    // No longer written to for new accounts (Google/Apple sign-in was
-    // removed in favor of OTP-only auth) — kept on the schema only so
-    // existing linked accounts' data isn't silently dropped.
-    googleId: { type: String, unique: true, sparse: true },
-    appleId: { type: String, unique: true, sparse: true },
+    phoneVerified: { type: Boolean, default: false },
 
     lastLoginAt: { type: Date },
   },
@@ -49,6 +47,16 @@ const userSchema = new Schema(
 
 userSchema.index({ userType: 1 });
 userSchema.index({ status: 1 });
+
+userSchema.pre("validate", function requireAnIdentifier(next) {
+  if (this.userType === USER_TYPES.STAFF && !this.email) {
+    return next(new Error("Staff accounts require an email"));
+  }
+  if (!this.email && !this.phone) {
+    return next(new Error("An account needs an email or a phone number"));
+  }
+  next();
+});
 
 userSchema.pre("save", async function preSave(next) {
   if (!this.isModified("passwordHash") || !this.passwordHash) return next();

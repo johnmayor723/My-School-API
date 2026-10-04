@@ -20,6 +20,12 @@ const assessmentRecommendationSchema = new Schema(
     catchmentStatus: { type: String, enum: Object.values(CATCHMENT_STATUS), default: CATCHMENT_STATUS.UNKNOWN },
     catchmentReason: { type: String },
 
+    // Snapshot of the rule's published scores at match time, so the UI can
+    // show "UTME: X" / "Post-UTME: Y" directly. postUtmeMinimumScore is
+    // frequently null — most institutions only publish a raw UTME cutoff.
+    utmeMinimumScore: { type: Number },
+    postUtmeMinimumScore: { type: Number },
+
     isAlternativeProgramme: { type: Boolean, default: false },
     rank: { type: Number },
   },

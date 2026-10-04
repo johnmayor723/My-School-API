@@ -1,7 +1,7 @@
 const { User } = require("../models");
 const tokenService = require("./token.service");
 const auditService = require("./audit.service");
-const { UnauthorizedError, ForbiddenError } = require("../errors/AppError");
+const { UnauthorizedError, ForbiddenError, ConflictError } = require("../errors/AppError");
 const { USER_TYPES, USER_STATUS, RESOURCE_TYPES } = require("../config/constants");
 
 // Student accounts are OTP-only (see src/modules/accounts) — this endpoint
@@ -38,7 +38,17 @@ async function updateAccount(userId, { firstName, lastName, phone }) {
   if (firstName !== undefined) user.firstName = firstName;
   if (lastName !== undefined) user.lastName = lastName;
   if (phone !== undefined) user.phone = phone;
-  await user.save();
+  try {
+    await user.save();
+  } catch (err) {
+    // phone is also the OTP-login identifier now (see User.js) — a plain
+    // PATCH could otherwise crash with a raw duplicate-key error instead of
+    // a message the frontend can show.
+    if (err.code === 11000 && err.keyPattern?.phone) {
+      throw new ConflictError("That phone number is already in use on another account");
+    }
+    throw err;
+  }
   await auditService.record({ user: user._id, action: "ACCOUNT_UPDATED", resourceType: RESOURCE_TYPES.USER, resourceId: user._id });
   return user.toSafeJSON();
 }
@@ -78,9 +88,8 @@ async function deleteAccount(userId, { req } = {}) {
   user.lastName = "User";
   user.email = deletedMarker;
   user.phone = undefined;
-  user.googleId = undefined;
-  user.appleId = undefined;
   user.emailVerified = false;
+  user.phoneVerified = false;
   user.status = USER_STATUS.DELETED;
   await user.save();
 

@@ -84,11 +84,10 @@ const env = {
     maxPerHourPerIdentifier: Number(optional("OTP_MAX_PER_HOUR", 5)),
   },
 
-  // Off by default until TERMII_API_KEY/TERMII_SENDER_ID are set. Phone is
-  // accepted as an OTP identifier, but sendSms() just logs until this is
-  // flipped on — same dark-launch convention as aiChat below.
+  // Phone is a fully supported OTP identifier (signup, login, deletion);
+  // sendSms() logs instead of sending until these are set — no separate
+  // enabled flag, dropping in real values is enough to go live.
   sms: {
-    enabled: optional("SMS_ENABLED", "false") === "true",
     termiiApiKey: optional("TERMII_API_KEY", ""),
     termiiSenderId: optional("TERMII_SENDER_ID", ""),
   },

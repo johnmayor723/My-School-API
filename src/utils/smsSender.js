@@ -36,17 +36,15 @@ async function sendViaTermii(to, message) {
 
 /**
  * Sends SMS via Termii when credentials are configured; logs instead of
- * sending when SMS_ENABLED is off (same dark-launch convention as
- * mailer.js's fallback), so the phone-OTP code path is exercisable
- * end-to-end without a provider plugged in.
+ * sending when they're not, so the phone-OTP code path (and anything that
+ * depends on it — signup, login, deletion) is exercisable end-to-end before
+ * a real provider is plugged in. No separate enabled flag to flip later —
+ * dropping in TERMII_API_KEY/TERMII_SENDER_ID is enough to go live.
  */
 async function sendSms(to, message) {
-  if (!env.sms.enabled) {
-    logger.info("SMS not sent (no provider configured) — logging instead", { to, message });
-    return { sent: false };
-  }
   if (!env.sms.termiiApiKey || !env.sms.termiiSenderId) {
-    throw new Error("SMS_ENABLED is true but TERMII_API_KEY/TERMII_SENDER_ID are not set");
+    logger.info("SMS not sent (Termii not configured) — logging instead", { to, message });
+    return { sent: false };
   }
   await sendViaTermii(to, message);
   return { sent: true };

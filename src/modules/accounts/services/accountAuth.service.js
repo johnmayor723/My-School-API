@@ -29,13 +29,6 @@ async function verifyCodeAndRoute({ identifier, channel, code }, { ip } = {}) {
   const user = await findUserByIdentifier(identifier, channel).then((u) => (u ? u.populate("roles") : null));
 
   if (!user) {
-    // No email schema support for phone-only accounts yet — see User.js
-    // (email is required+unique). Phone sign-up is a later phase once SMS
-    // delivery actually exists; for now this identifier can only continue
-    // as a login if it's email.
-    if (channel !== OTP_CHANNEL.EMAIL) {
-      throw new BusinessRuleError("Sign-up by phone isn't available yet — please use email.");
-    }
     const registrationToken = registrationSession.issue({ identifier: normalize(identifier), channel });
     return { isNewAccount: true, registrationToken };
   }
@@ -56,18 +49,17 @@ async function verifyCodeAndRoute({ identifier, channel, code }, { ip } = {}) {
 
 async function completeSignup({ registrationToken, firstName, lastName, dateOfBirth, profile }, { ip } = {}) {
   const { identifier, channel } = registrationSession.verify(registrationToken);
-  if (channel !== OTP_CHANNEL.EMAIL) {
-    throw new BusinessRuleError("Sign-up by phone isn't available yet — please use email.");
-  }
 
   const user = await User.create({
     firstName,
     lastName,
-    email: identifier,
+    // Verified by completing the OTP flow to get here.
+    ...(channel === OTP_CHANNEL.EMAIL
+      ? { email: identifier, emailVerified: true }
+      : { phone: identifier, phoneVerified: true }),
     userType: USER_TYPES.STUDENT,
     status: USER_STATUS.ACTIVE,
     dateOfBirth,
-    emailVerified: true, // proven by completing the OTP flow to get here
   });
 
   await StudentProfile.create({
@@ -95,17 +87,48 @@ async function completeSignup({ registrationToken, firstName, lastName, dateOfBi
   return { user: user.toSafeJSON(), ...tokens };
 }
 
-async function requestAccountDeletion(user) {
+// Lets an account that signed up by phone (or any account without one yet)
+// attach a verified email later — email stays important for account
+// recovery/communication even though it's no longer required at sign-up.
+async function requestAddEmail(user, email) {
+  const normalized = normalize(email);
+  const taken = await User.findOne({ email: normalized, _id: { $ne: user._id } });
+  if (taken) throw new ForbiddenError("That email is already in use");
+
   await otpService.generateAndSendCode({
-    identifier: user.email,
+    identifier: normalized,
     channel: OTP_CHANNEL.EMAIL,
+    purpose: OTP_PURPOSE.ADD_EMAIL,
+    userId: user._id,
+  });
+}
+
+async function confirmAddEmail(user, { email, code }) {
+  const normalized = normalize(email);
+  await otpService.verifyCode({ identifier: normalized, purpose: OTP_PURPOSE.ADD_EMAIL, code });
+
+  const taken = await User.findOne({ email: normalized, _id: { $ne: user._id } });
+  if (taken) throw new ForbiddenError("That email is already in use");
+
+  user.email = normalized;
+  user.emailVerified = true;
+  await user.save();
+  await auditService.record({ user: user._id, action: "EMAIL_ADDED", resourceType: RESOURCE_TYPES.USER, resourceId: user._id });
+  return user.toSafeJSON();
+}
+
+async function requestAccountDeletion(user) {
+  const channel = user.email ? OTP_CHANNEL.EMAIL : OTP_CHANNEL.PHONE;
+  await otpService.generateAndSendCode({
+    identifier: user.email || user.phone,
+    channel,
     purpose: OTP_PURPOSE.ACCOUNT_DELETION,
     userId: user._id,
   });
 }
 
 async function confirmAccountDeletion(user, code, { req } = {}) {
-  await otpService.verifyCode({ identifier: user.email, purpose: OTP_PURPOSE.ACCOUNT_DELETION, code });
+  await otpService.verifyCode({ identifier: user.email || user.phone, purpose: OTP_PURPOSE.ACCOUNT_DELETION, code });
   await authService.deleteAccount(user._id, { req });
 }
 
@@ -122,6 +145,8 @@ module.exports = {
   requestCode,
   verifyCodeAndRoute,
   completeSignup,
+  requestAddEmail,
+  confirmAddEmail,
   requestAccountDeletion,
   confirmAccountDeletion,
   exportMyData,

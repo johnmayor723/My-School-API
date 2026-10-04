@@ -85,6 +85,8 @@ async function runAndStoreMatching(assessment) {
       warnings: rec.warnings,
       catchmentStatus: rec.catchmentStatus,
       catchmentReason: rec.catchmentReason,
+      utmeMinimumScore: rec.utmeMinimumScore,
+      postUtmeMinimumScore: rec.postUtmeMinimumScore,
       isAlternativeProgramme: rec.isAlternativeProgramme,
       rank: rec.rank,
     }));

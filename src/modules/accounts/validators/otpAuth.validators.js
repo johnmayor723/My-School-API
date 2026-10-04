@@ -58,4 +58,18 @@ const completeSignupValidator = [
 
 const deletionCodeValidator = [body("code").isString().trim().notEmpty().withMessage("code is required")];
 
-module.exports = { requestCodeValidator, verifyCodeValidator, completeSignupValidator, deletionCodeValidator };
+const requestAddEmailValidator = [body("email").isEmail().withMessage("A valid email is required")];
+
+const confirmAddEmailValidator = [
+  body("email").isEmail().withMessage("A valid email is required"),
+  body("code").isString().trim().notEmpty().withMessage("code is required"),
+];
+
+module.exports = {
+  requestCodeValidator,
+  verifyCodeValidator,
+  completeSignupValidator,
+  deletionCodeValidator,
+  requestAddEmailValidator,
+  confirmAddEmailValidator,
+};

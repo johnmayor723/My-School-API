@@ -16,9 +16,19 @@ async function completeSignup(req, res) {
   sendSuccess(res, { statusCode: 201, message: "Account created", data: result });
 }
 
+async function requestAddEmail(req, res) {
+  await accountAuthService.requestAddEmail(req.user, req.body.email);
+  sendSuccess(res, { message: "A code has been sent to that email" });
+}
+
+async function confirmAddEmail(req, res) {
+  const user = await accountAuthService.confirmAddEmail(req.user, req.body);
+  sendSuccess(res, { message: "Email added", data: { user } });
+}
+
 async function requestDeletionCode(req, res) {
   await accountAuthService.requestAccountDeletion(req.user);
-  sendSuccess(res, { message: "A confirmation code has been sent to your email" });
+  sendSuccess(res, { message: "A confirmation code has been sent to you" });
 }
 
 async function confirmDeletion(req, res) {
@@ -32,4 +42,13 @@ async function exportData(req, res) {
   sendSuccess(res, { data });
 }
 
-module.exports = { requestCode, verifyCode, completeSignup, requestDeletionCode, confirmDeletion, exportData };
+module.exports = {
+  requestCode,
+  verifyCode,
+  completeSignup,
+  requestAddEmail,
+  confirmAddEmail,
+  requestDeletionCode,
+  confirmDeletion,
+  exportData,
+};

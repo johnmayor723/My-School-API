@@ -72,6 +72,11 @@ function evaluateAgainstRule(rule, academicSnapshot, preferences, courseCompetit
     warnings,
     catchmentStatus: catchmentResult.catchmentStatus,
     catchmentReason: catchmentResult.message,
+    // Discrete scores so the UI can show "UTME: X" / "Post-UTME: Y" directly,
+    // instead of only embedded in reasons/warnings prose. postUtme is
+    // frequently unset — most institutions only publish a raw UTME cutoff.
+    utmeMinimumScore: rule.utme?.minimumScore ?? null,
+    postUtmeMinimumScore: rule.additional?.postUtmeMinimumScore ?? null,
   };
 }
 

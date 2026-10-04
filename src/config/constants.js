@@ -21,6 +21,7 @@ const OTP_CHANNEL = Object.freeze({
 const OTP_PURPOSE = Object.freeze({
   AUTHENTICATE: "authenticate", // covers both sign-up and login — see accountAuth.service.js
   ACCOUNT_DELETION: "account_deletion",
+  ADD_EMAIL: "add_email", // a phone-signed-up account attaching an email later
 });
 
 const USER_STATUS = Object.freeze({
