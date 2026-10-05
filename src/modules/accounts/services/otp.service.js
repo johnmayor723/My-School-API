@@ -20,8 +20,16 @@ function normalizeIdentifier(identifier) {
  * limiting isn't the only defense against someone spamming a victim's inbox
  * from many IPs.
  */
+function isReviewIdentifier(normalized) {
+  return Boolean(env.otp.reviewIdentifier) && normalized === normalizeIdentifier(env.otp.reviewIdentifier);
+}
+
 async function generateAndSendCode({ identifier, channel, purpose, userId }) {
   const normalized = normalizeIdentifier(identifier);
+
+  // App-store reviewer: no code is generated/sent — they sign in with the
+  // fixed OTP_REVIEW_CODE straight away. Never touches OneTimeCode.
+  if (isReviewIdentifier(normalized)) return null;
 
   const recent = await OneTimeCode.findOne({ identifier: normalized, purpose }).sort({ createdAt: -1 });
   if (recent && Date.now() - recent.createdAt.getTime() < env.otp.cooldownSeconds * 1000) {
@@ -64,6 +72,11 @@ const MAX_ATTEMPTS = 5;
  */
 async function verifyCode({ identifier, purpose, code }) {
   const normalized = normalizeIdentifier(identifier);
+
+  if (isReviewIdentifier(normalized)) {
+    if (code !== env.otp.reviewCode) throw new UnauthorizedError("Invalid or expired code");
+    return { identifier: normalized, purpose, consumedAt: new Date() };
+  }
 
   const record = await OneTimeCode.findOne({
     identifier: normalized,

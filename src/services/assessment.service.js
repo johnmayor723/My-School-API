@@ -118,8 +118,12 @@ async function getAssessment(id, requestingUser) {
   return assessment;
 }
 
-function isUnlocked(assessment) {
-  return assessment.paymentStatus === PAYMENT_STATUS_ON_ASSESSMENT.PAID;
+// Phase 1 memo §3.2/§6.3: the report is free for students in Phase 1 — a
+// paid gateway ("Online payment for counselling") is explicitly deferred to
+// Phase 2. paymentStatus is still tracked (and unlockAfterPayment still
+// works) so this just needs removing once Phase 2 payments go live.
+function isUnlocked() {
+  return true;
 }
 
 async function getRecommendations(id, requestingUser) {

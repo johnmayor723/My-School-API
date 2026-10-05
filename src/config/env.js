@@ -82,6 +82,12 @@ const env = {
     ttlMinutes: Number(optional("OTP_TTL_MINUTES", 10)),
     cooldownSeconds: Number(optional("OTP_COOLDOWN_SECONDS", 60)),
     maxPerHourPerIdentifier: Number(optional("OTP_MAX_PER_HOUR", 5)),
+    // App-store review accounts (Google Play / Apple) can't receive a real
+    // OTP, so a single identifier can be allowlisted here with a fixed code
+    // instead — unset (default) means the bypass path never triggers for
+    // anyone. Remove these two vars once the listing is approved.
+    reviewIdentifier: optional("OTP_REVIEW_IDENTIFIER", ""),
+    reviewCode: optional("OTP_REVIEW_CODE", ""),
   },
 
   // Phone is a fully supported OTP identifier (signup, login, deletion);
