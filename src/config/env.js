@@ -129,6 +129,16 @@ const env = {
     model: optional("AI_CHAT_MODEL", "gemini-3.8-flash"),
   },
 
+  // Scholarships: this app does not crawl or store scholarship data itself.
+  // /opt/scholarship-service (separate repo, separate SQLite store) is the
+  // system of record for discovery, crawling and the open/closed/verified
+  // status lifecycle. This app only proxies to it, server-side, so the
+  // scholarship-service admin key never reaches the browser.
+  scholarshipService: {
+    baseUrl: optional("SCHOLARSHIP_SERVICE_URL", "http://127.0.0.1:3080"),
+    adminApiKey: optional("SCHOLARSHIP_SERVICE_ADMIN_API_KEY", ""),
+  },
+
   seed: {
     adminEmail: optional("SEED_ADMIN_EMAIL", "admin@myschoolplacement.ng"),
     adminPassword: optional("SEED_ADMIN_PASSWORD", ""),

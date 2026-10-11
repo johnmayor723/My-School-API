@@ -52,6 +52,9 @@ const PERMISSIONS = Object.freeze({
   MANAGE_CUTOFF_SOURCES: "MANAGE_CUTOFF_SOURCES",
   REVIEW_CUTOFF_CANDIDATES: "REVIEW_CUTOFF_CANDIDATES",
   MANAGE_CUTOFF_RECORDS: "MANAGE_CUTOFF_RECORDS",
+  VERIFY_SCHOLARSHIPS: "VERIFY_SCHOLARSHIPS",
+  DELETE_SCHOLARSHIPS: "DELETE_SCHOLARSHIPS",
+  MANAGE_SCHOLARSHIP_SOURCES: "MANAGE_SCHOLARSHIP_SOURCES",
 });
 
 const ROLE_NAMES = Object.freeze({
@@ -240,6 +243,11 @@ const RESOURCE_TYPES = Object.freeze({
   CUTOFF_CANDIDATE: "CutoffCandidate",
   CUTOFF_RECORD: "CutoffRecord",
   ONE_TIME_CODE: "OneTimeCode",
+  // These two resource types live in scholarship-service's SQLite store, not
+  // this app's MongoDB -- audited here anyway so staff actions are traceable
+  // in the one place reviewers already check.
+  SCHOLARSHIP: "Scholarship",
+  SCHOLARSHIP_SOURCE: "ScholarshipSource",
 });
 
 // The 12 admission-threshold types the Cut-Off Marks Intelligence module must

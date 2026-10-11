@@ -12,5 +12,6 @@ router.use("/users", require("./user.routes"));
 router.use("/assessments", require("./assessment.routes"));
 router.use("/payments", require("./payment.routes"));
 router.use("/audit-logs", require("./auditLog.routes"));
+router.use("/scholarships", require("./scholarship.routes"));
 
 module.exports = router;
