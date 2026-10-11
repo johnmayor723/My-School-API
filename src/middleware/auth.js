@@ -26,7 +26,12 @@ async function authenticate(req, res, next) {
 
   const user = await User.findById(payload.sub).populate("roles");
   if (!user) throw new UnauthorizedError("Account no longer exists");
-  if (user.status !== USER_STATUS.ACTIVE) throw new ForbiddenError("Account is not active");
+  // INACTIVE (pending parental consent) deliberately passes through here —
+  // those students still need to reach /auth/me, /profile, and
+  // /parent-consent. requireActive is the gate for everything else.
+  if (user.status === USER_STATUS.SUSPENDED || user.status === USER_STATUS.DELETED) {
+    throw new ForbiddenError("Account is not active");
+  }
 
   req.user = user;
   req.tokenPayload = payload;
@@ -47,4 +52,16 @@ function requireStaff(req, res, next) {
   next();
 }
 
-module.exports = { authenticate, requireStudent, requireStaff };
+// Gate for features a pending-consent student shouldn't reach yet
+// (assessments, chat, payments, compare) — profile/account routes stay
+// reachable under plain authenticate() so the student can see their status.
+function requireActive(req, res, next) {
+  if (!req.user || req.user.status !== USER_STATUS.ACTIVE) {
+    throw new ForbiddenError(
+      "This account is pending parental consent. Ask a parent or guardian to verify before using this feature."
+    );
+  }
+  next();
+}
+
+module.exports = { authenticate, requireStudent, requireStaff, requireActive };

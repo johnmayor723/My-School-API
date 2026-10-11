@@ -18,4 +18,5 @@ module.exports = {
   CutoffRecord: require("./CutoffRecord"),
   ChatMessage: require("./ChatMessage"),
   OneTimeCode: require("../modules/accounts/models/OneTimeCode"),
+  ParentConsent: require("./ParentConsent"),
 };

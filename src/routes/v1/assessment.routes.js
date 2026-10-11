@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const assessmentController = require("../../controllers/assessment.controller");
 const chatController = require("../../controllers/chat.controller");
-const { authenticate, requireStudent } = require("../../middleware/auth");
+const { authenticate, requireStudent, requireActive } = require("../../middleware/auth");
 const { validate } = require("../../middleware/validate");
 const { chatLimiter } = require("../../middleware/rateLimiter");
 const { mongoIdParam } = require("../../validators/common.validators");
@@ -10,7 +10,7 @@ const { sendChatMessageValidator } = require("../../validators/chat.validators")
 
 const router = Router();
 
-router.use(authenticate, requireStudent);
+router.use(authenticate, requireStudent, requireActive);
 router.get("/", validate(listAssessmentsQueryValidator), assessmentController.list);
 router.post("/", validate(createAssessmentValidator), assessmentController.create);
 router.get("/:id", validate([mongoIdParam()]), assessmentController.getById);

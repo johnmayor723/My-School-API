@@ -3,6 +3,7 @@ const { Router } = require("express");
 const router = Router();
 
 router.use("/auth", require("./auth.routes"));
+router.use("/parent-consent", require("./parentConsent.routes"));
 router.use("/profile", require("./profile.routes"));
 router.use("/institutions", require("./institution.routes"));
 router.use("/programmes", require("./programme.routes"));

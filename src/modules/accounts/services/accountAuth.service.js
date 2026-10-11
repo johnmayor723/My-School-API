@@ -1,10 +1,19 @@
 const { User, StudentProfile } = require("../../../models");
 const otpService = require("./otp.service");
 const registrationSession = require("./registrationSession.service");
+const parentConsentService = require("./parentConsent.service");
 const tokenService = require("../../../services/token.service");
 const authService = require("../../../services/auth.service");
 const auditService = require("../../../services/audit.service");
-const { USER_TYPES, USER_STATUS, OTP_CHANNEL, OTP_PURPOSE, RESOURCE_TYPES } = require("../../../config/constants");
+const { calculateAge } = require("../../../utils/age");
+const {
+  USER_TYPES,
+  USER_STATUS,
+  OTP_CHANNEL,
+  OTP_PURPOSE,
+  RESOURCE_TYPES,
+  MINIMUM_CONSENT_AGE,
+} = require("../../../config/constants");
 const { ForbiddenError, BusinessRuleError } = require("../../../errors/AppError");
 
 function normalize(identifier) {
@@ -36,7 +45,7 @@ async function verifyCodeAndRoute({ identifier, channel, code }, { ip } = {}) {
   if (user.userType === USER_TYPES.STAFF) {
     throw new ForbiddenError("Staff accounts sign in with a password, not a one-time code");
   }
-  if (user.status !== USER_STATUS.ACTIVE) {
+  if (user.status === USER_STATUS.SUSPENDED || user.status === USER_STATUS.DELETED) {
     throw new ForbiddenError("Account is not active");
   }
 
@@ -44,11 +53,20 @@ async function verifyCodeAndRoute({ identifier, channel, code }, { ip } = {}) {
   await user.save();
 
   const tokens = await tokenService.issueTokenPair(user, { ip });
-  return { isNewAccount: false, user: user.toSafeJSON(), ...tokens };
+  return {
+    isNewAccount: false,
+    user: user.toSafeJSON(),
+    ...tokens,
+    requiresParentalConsent: user.status === USER_STATUS.INACTIVE,
+  };
 }
 
-async function completeSignup({ registrationToken, firstName, lastName, dateOfBirth, profile }, { ip } = {}) {
+async function completeSignup(
+  { registrationToken, firstName, lastName, dateOfBirth, parentName, parentEmail, parentPhone, profile },
+  { ip } = {}
+) {
   const { identifier, channel } = registrationSession.verify(registrationToken);
+  const requiresConsent = calculateAge(dateOfBirth) < MINIMUM_CONSENT_AGE;
 
   const user = await User.create({
     firstName,
@@ -58,7 +76,10 @@ async function completeSignup({ registrationToken, firstName, lastName, dateOfBi
       ? { email: identifier, emailVerified: true }
       : { phone: identifier, phoneVerified: true }),
     userType: USER_TYPES.STUDENT,
-    status: USER_STATUS.ACTIVE,
+    // Phase 1 memo §3.1: under-18 accounts can't activate without parental
+    // consent. requireActive (src/middleware/auth.js) is what actually
+    // blocks feature routes while this is INACTIVE.
+    status: requiresConsent ? USER_STATUS.INACTIVE : USER_STATUS.ACTIVE,
     dateOfBirth,
   });
 
@@ -81,10 +102,19 @@ async function completeSignup({ registrationToken, firstName, lastName, dateOfBi
     preferredOwnership: profile?.preferredOwnership,
   });
 
-  await auditService.record({ user: user._id, action: "USER_REGISTERED", resourceType: RESOURCE_TYPES.USER, resourceId: user._id });
+  if (requiresConsent) {
+    await parentConsentService.initiate(user, { parentName, parentEmail, parentPhone });
+  }
+
+  await auditService.record({
+    user: user._id,
+    action: requiresConsent ? "USER_REGISTERED_PENDING_PARENTAL_CONSENT" : "USER_REGISTERED",
+    resourceType: RESOURCE_TYPES.USER,
+    resourceId: user._id,
+  });
 
   const tokens = await tokenService.issueTokenPair(user, { ip });
-  return { user: user.toSafeJSON(), ...tokens };
+  return { user: user.toSafeJSON(), ...tokens, requiresParentalConsent: requiresConsent };
 }
 
 // Lets an account that signed up by phone (or any account without one yet)

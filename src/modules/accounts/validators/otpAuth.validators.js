@@ -5,7 +5,20 @@ const {
   OLEVEL_GRADE_SCALE,
   INSTITUTION_TYPE,
   INSTITUTION_OWNERSHIP,
+  MINIMUM_CONSENT_AGE,
 } = require("../../../config/constants");
+const { calculateAge } = require("../../../utils/age");
+
+// Computed straight from the raw body value rather than relying on the
+// dateOfBirth chain's own toDate() sanitizer having already mutated
+// req.body by the time this runs — express-validator doesn't guarantee that
+// ordering across separate chains.
+function isUnderConsentAge(req) {
+  if (!req.body.dateOfBirth) return false;
+  const dob = new Date(req.body.dateOfBirth);
+  if (Number.isNaN(dob.getTime())) return false;
+  return calculateAge(dob) < MINIMUM_CONSENT_AGE;
+}
 
 const requestCodeValidator = [
   body("identifier").isString().trim().notEmpty().withMessage("identifier is required"),
@@ -28,6 +41,22 @@ const completeSignupValidator = [
     .toDate()
     .custom((value) => value < new Date())
     .withMessage("dateOfBirth must be in the past"),
+
+  // Required only for applicants under MINIMUM_CONSENT_AGE — see
+  // parentConsent.service.js for what happens with these once collected.
+  body("parentName")
+    .if((_, { req }) => isUnderConsentAge(req))
+    .trim()
+    .notEmpty()
+    .withMessage("A parent or guardian name is required for applicants under 18"),
+  body("parentEmail").optional({ checkFalsy: true }).isEmail().withMessage("parentEmail must be a valid email"),
+  body("parentPhone").optional({ checkFalsy: true }).isString().trim(),
+  body("parentEmail").custom((_, { req }) => {
+    if (isUnderConsentAge(req) && !req.body.parentEmail && !req.body.parentPhone) {
+      throw new Error("A parent email or phone number is required for applicants under 18");
+    }
+    return true;
+  }),
 
   body("profile.fullName").optional().trim(),
   body("profile.utmeRegNumber").optional().trim(),

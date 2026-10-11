@@ -22,13 +22,28 @@ const OTP_PURPOSE = Object.freeze({
   AUTHENTICATE: "authenticate", // covers both sign-up and login — see accountAuth.service.js
   ACCOUNT_DELETION: "account_deletion",
   ADD_EMAIL: "add_email", // a phone-signed-up account attaching an email later
+  PARENT_CONSENT: "parent_consent",
 });
 
 const USER_STATUS = Object.freeze({
   ACTIVE: "active",
+  // Under-18 sign-ups land here until a parent/guardian verifies consent —
+  // see ParentConsent / parentConsent.service.js. Distinct from SUSPENDED and
+  // DELETED: authenticate() lets INACTIVE through so the student can still
+  // see their own pending status and trigger a resend; requireActive is the
+  // gate that blocks feature routes (assessments/chat/payments/compare).
   INACTIVE: "inactive",
   SUSPENDED: "suspended",
   DELETED: "deleted",
+});
+
+// Phase 1 memo §3.1: "Users under 18 cannot activate an account without
+// parental consent." Age is computed from dateOfBirth at sign-up time.
+const MINIMUM_CONSENT_AGE = 18;
+
+const PARENT_CONSENT_STATUS = Object.freeze({
+  PENDING: "pending",
+  VERIFIED: "verified",
 });
 
 const PERMISSIONS = Object.freeze({
@@ -243,6 +258,7 @@ const RESOURCE_TYPES = Object.freeze({
   CUTOFF_CANDIDATE: "CutoffCandidate",
   CUTOFF_RECORD: "CutoffRecord",
   ONE_TIME_CODE: "OneTimeCode",
+  PARENT_CONSENT: "ParentConsent",
   // These two resource types live in scholarship-service's SQLite store, not
   // this app's MongoDB -- audited here anyway so staff actions are traceable
   // in the one place reviewers already check.
@@ -304,6 +320,8 @@ const CHAT_ROLE = Object.freeze({
 module.exports = {
   USER_TYPES,
   USER_STATUS,
+  MINIMUM_CONSENT_AGE,
+  PARENT_CONSENT_STATUS,
   OTP_CHANNEL,
   OTP_PURPOSE,
   PERMISSIONS,
