@@ -19,4 +19,5 @@ module.exports = {
   ChatMessage: require("./ChatMessage"),
   OneTimeCode: require("../modules/accounts/models/OneTimeCode"),
   ParentConsent: require("./ParentConsent"),
+  SavedScholarship: require("./SavedScholarship"),
 };

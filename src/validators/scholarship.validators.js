@@ -10,12 +10,19 @@ const scholarshipIdParam = () => param("id").isMongoId().withMessage("id must be
 
 const sourceIdParam = () => param("id").isInt({ min: 1 }).withMessage("id must be a valid source id").toInt();
 
+// Comma-separated so the public directory can request e.g. "open,upcoming"
+// in one call; scholarship-service's GET /api/scholarships splits on "," too.
+const isCommaSeparatedStatusList = (value) =>
+  String(value).split(",").map(s => s.trim()).filter(Boolean).every(s => SCHOLARSHIP_STATUSES.includes(s));
+
 const listScholarshipsQueryValidator = [
   ...paginationQuery(),
   query("session").optional().isString().trim(),
-  query("status").optional().isIn(SCHOLARSHIP_STATUSES),
+  query("status").optional().isString().custom(isCommaSeparatedStatusList).withMessage("status must be one or more of: " + SCHOLARSHIP_STATUSES.join(", ")),
   query("q").optional().isString().trim(),
   query("level").optional().isString().trim(),
+  query("fundingType").optional().isString().trim(),
+  query("sourceType").optional().isIn(["official", "secondary"]),
 ];
 
 const updateScholarshipValidator = [

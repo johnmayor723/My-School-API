@@ -2,8 +2,8 @@
 
 Authoritative roadmap, stage status, and approval record for the scholarship feature. This file is the single source of truth for stage status — update it at the end of every stage, before asking for approval to proceed.
 
-**Current stage: 5 (Admin management) — DONE for the scope you asked for (verify / confirm dates / delete + source management UI). Stages 2-4 were resolved along the way, not skipped -- see note below. Stage 6 (public student-facing directory) not started.**
-**Next stage authorized: none yet beyond what's recorded below. Stage 6 requires your go-ahead.**
+**Current stage: 6 (Public directory) — DONE and verified on web + mobile. Stage 7 (student matching) not started.**
+**Next stage authorized: none yet. Stage 7 requires your go-ahead.**
 
 **2026-10-11 process note:** you directly instructed "wire up with my school placement... ensure admin can verify, confirm dates, delete... sources needs to be added on UI" rather than approving Stage 1 and waiting for Stage 2/3 write-ups one at a time. That instruction *is* the answer to Stage 1's blocking question (the source API's contract) and effectively decided Stages 2-3 by example, so this update folds Stages 1-5 into one entry rather than performing an empty ceremony of writing speculative Stage 2/3 documents for decisions you'd already made. Stages 6-10 (public directory, student matching, notifications, SEO, QA/release) were **not** touched and still need their own approval before starting.
 
@@ -16,7 +16,7 @@ Authoritative roadmap, stage status, and approval record for the scholarship fea
 | 3 | Data model and architecture | DONE (by direct instruction) | **No new Mongoose model.** `scholarshipService.client.js` proxies scholarship-service's REST API server-to-server; the admin API key never reaches the browser. `RESOURCE_TYPES.SCHOLARSHIP`/`SCHOLARSHIP_SOURCE` + 3 new permissions added for audit/authorization only. | — |
 | 4 | Ingestion and verification engine | **Not rebuilt here** -- already exists in scholarship-service (crawler + admin verify/delete endpoints). This stage's only MACL-side work was adding the two endpoints scholarship-service was missing (`DELETE /api/admin/scholarships/:id`, and `deadline`/`applicationUrl` on the verification PATCH) so "confirm dates" and "delete inaccurate record" were possible at all. | — |
 | 5 | Admin management | DONE for verify/confirm-dates/delete/source-management | MACL admin routes (`/api/v1/admin/scholarships/*`), controller, validators, `permit()`-gated on `VERIFY_SCHOLARSHIPS`/`DELETE_SCHOLARSHIPS`/`MANAGE_SCHOLARSHIP_SOURCES` (granted to `CATALOG_MANAGER` + `SUPER_ADMIN` via `PERMISSIONS.ALL`), audit-logged. Admin UI: `AdminScholarships.jsx` (verify/confirm-dates/delete) + `AdminScholarshipSources.jsx` (add source/enable-disable/run crawl/crawl history), following the `AdminUniversities.jsx` modal-CRUD convention. Verified end-to-end via curl against a real minted JWT (list/get/verify/confirm-dates/delete, audit entries confirmed in Mongo) and via `eslint` + Vite HMR for the frontend (no browser automation tool was available this session, so the UI was not click-tested in an actual browser -- flagging that gap honestly rather than claiming full UI verification). | Student acceptance: click through the UI in a real browser before fully trusting it. |
-| 6 | Public directory | NOT STARTED | Public read endpoints (`GET /api/v1/scholarships`, `/:id`) exist and were verified via curl, but there is no student-facing web page yet (no `Scholarships.jsx`/`ScholarshipDetail.jsx`, no save/bookmark UI, no mobile screen). | Requires your go-ahead |
+| 6 | Public directory | DONE | See Stage 6 section below. Verified via Playwright (web + mobile Expo-web preview) and curl. | — |
 | 7 | Student matching | NOT STARTED | — | Requires Stage 6 |
 | 8 | Notifications and jobs | NOT STARTED | — | Requires Stage 7 |
 | 9 | SEO and onboarding | NOT STARTED | — | Requires Stage 8 |
@@ -121,4 +121,76 @@ MACL proxies scholarship-service server-to-server rather than syncing/duplicatin
 - `my-school-placement-admin-repo` is a Base44-managed app (see its `AGENTS.md`) -- worth knowing before its next session.
 
 ### Commit reference
-Not yet committed in any of the three repos touched today (`my-school-placement-api`, `my-school-placement-admin-repo`, `scholarship-service`) as of 2026-10-11 -- per your standing instruction, commits happen only when you explicitly ask.
+Committed and pushed same day: `my-school-placement-api` `364b0cf`, `my-school-placement-admin-repo` `103b2f7`, `scholarship-service` `e5c807f`..`b472537`.
+
+---
+
+## Stage 6 — Public directory (SCOPING, 2026-10-11)
+
+### Objective
+Give students somewhere to actually see scholarships -- a list page with filters, a detail page, and a save/bookmark option -- mirroring the public university/course finder's existing UX conventions. Backend read access already exists (`GET /api/v1/scholarships`, `/:id`, built in Stage 5); this stage is almost entirely frontend plus one small new backend piece (save/bookmark persistence).
+
+### The blocking finding: the data isn't ready for students yet, independent of code
+Checked the live data right before writing this: of 96 crawler-discovered records, **96 are `unconfirmed` or `review_required` -- zero are `open`, `upcoming`, or verified.** They're also mostly out-of-scope overseas-study scholarships (see [[scholarship_service_crawler]]) pulled from a federal ministry's general advert archive, not Nigeria-university-specific. The only genuinely current, in-scope, student-ready records live in the separate hand-researched `/api/nigeria-scholarships` snapshot (8 records, and even that's mostly `unconfirmed`/`closed` -- only 1-2 are actually `open` right now, one of which closes same-day it was researched).
+
+**This means shipping Stage 6 against the raw `/api/scholarships` feed today would show students a page that's ~95% noise.** Two ways to handle this, your call:
+1. **Default-filter the public page to `status=open` or `status=upcoming` only** (hide unconfirmed/review_required/closed/archived by default, maybe with a "show all" toggle for transparency). Code-only fix, ships today, but the "open" set may be near-empty most of the time until the admin review backlog gets worked down.
+2. **Treat `/api/nigeria-scholarships` as the actual public source for now**, and park `/api/scholarships` as an internal admin-review queue until records get promoted/verified. Means building a promotion step (admin marks a crawler candidate "ready," which either flips its status or copies it into the curated set) -- more work, but avoids ever showing a half-verified crawler artifact to a student.
+Recommend **option 1** to start (simpler, still correct given scholarship-service's own status semantics), with the admin review backlog called out as a separate, non-code workstream (someone needs to actually work through 96 `review_required` rows).
+
+### Scope
+**Web** (`my-school-placement-admin-repo`, public routes under `PublicLayout`):
+- `src/pages/Scholarships.jsx` -- list page. Follows `Universities.jsx`'s exact pattern: hand-rolled debounced search (`useState`+`useEffect`, no library), `Select` dropdown filters, `IntersectionObserver`-based infinite scroll (not page buttons -- `page`/`PAGE_SIZE`/`sentinelRef`/`hasMore`), card grid. Filters per the Phase 1 memo item 5: country (fixed to Nigeria for now, not really a filter), study level, funding type *(not a field scholarship-service tracks today -- would need adding, or drop this filter)*, provider type (`source.type`: official/secondary), deadline range. Default `status=open` per the decision above.
+- `src/pages/ScholarshipDetail.jsx` -- 3-column info layout matching `UniversityDetail.jsx`'s convention, disclaimer box. **Must carry the memo's exact §6.2 disclaimer text** (verbatim, not the existing `MATCH_SCORE_DISCLAIMER` wording, which doesn't match): *"Information is compiled from official sources and was last verified on the date shown. Requirements and cut-off marks can change. Always confirm with the institution or JAMB before applying. MySchoolPlacement does not guarantee admission."* Shows source link + verification date prominently (scholarship-service already carries both).
+- Save/bookmark button on both pages -- **net-new UI pattern, confirmed zero precedent anywhere in the repo** (re-confirmed, matches Stage 1's finding).
+
+**Mobile** (`my-school-placement-mobile`): equivalent list + detail screens, same design-system tokens as the rest of the app ([[my_school_placement_mobile_design_system]]). Not scoped in detail here pending your go-ahead on the web approach first -- would mirror it once web is settled.
+
+**Backend** (`my-school-placement-api`): one new piece, save/bookmark persistence --
+- New Mongoose model `SavedScholarship`: `student` (ref `User`), `scholarshipId` (string -- scholarship-service's sha256-derived id, **not** a Mongo ref, since the record lives in a different database entirely), plus a **denormalized snapshot** (`title`, `deadline`, `applicationUrl` at save time) so a saved-list page still shows something useful if scholarship-service's record is later edited or deleted. Unique index on `(student, scholarshipId)`.
+- Routes: `POST /v1/scholarships/:id/save`, `DELETE /v1/scholarships/:id/save`, `GET /v1/scholarships/saved` (student's own list). All student-authenticated.
+- **Dangling-reference handling needed**: scholarship-service now has a working `DELETE` (added this session) and staff will use it. A saved-scholarship whose source record was deleted should still render from the snapshot, clearly marked ("this scholarship may have been removed or updated -- re-check the source link") rather than erroring.
+
+### Open decisions (need your call before implementation)
+1. **Default status filter for the public page** -- option 1 or 2 above (recommend option 1).
+2. **Does "save" sit behind the `requireActive` parental-consent gate?** (consistent with assessments/chat/payments/compare, per Stage 1's original flag -- recommend yes, browsing stays open to everyone but saving requires an active account, same as the rest of the app).
+3. **"Funding type" filter**: scholarship-service doesn't track this field today. Drop the filter, or add the field upstream (small scholarship-service schema change)?
+4. **Mobile scope for this stage**: build mobile screens alongside web, or web-first and mobile as a follow-up stage?
+
+### Dependencies
+Stage 5 (done). No dependency on Stages 7-10.
+
+### Explicitly not in this stage
+Matching scholarships to a student's profile (Stage 7), reminders/notifications (Stage 8), SEO/meta tags for these new pages (Stage 9 -- flagged in Stage 1 as a real gap, this repo has no SSR/react-helmet at all, so these new public pages will have the same search-invisibility problem every other public page here already has, not a new regression).
+
+### Decisions (2026-10-11, via AskUserQuestion)
+1. **Default status filter: open/upcoming only** (option 1). Admin review backlog (96 `review_required`/`unconfirmed` rows) remains a separate, non-code workstream.
+2. **Save does NOT sit behind `requireActive`** -- a deliberate, confirmed exception to the pattern assessments/compare/payments use. A student with pending parental consent can still save scholarships. Record this as an intentional deviation, not a gap, if it's ever questioned later.
+3. **Add `fundingType` to scholarship-service** -- small upstream schema change (new nullable column on `scholarships`, exposed on create/verification endpoints, filterable on `GET /api/scholarships`) before building the web/mobile filter against it.
+4. **Build web and mobile together**, not web-first.
+
+### Implementation (2026-10-11, same session as scoping)
+
+**A fifth finding surfaced mid-build, not caught during scoping:** the only genuinely current, in-scope scholarships (FAJIM, UNILAG Erasmus+, Dangote Foundation) lived *only* in the separate, non-queryable `/api/nigeria-scholarships` snapshot -- never in the actual `scholarships` table `/api/scholarships` reads from. Shipping the "default to open/upcoming" decision as planned would have shown **zero results** on day one. Fixed by replacing scholarship-service's old single-record `seedKnownCurrentSessionRecord()` with `seedNigeriaScholarshipsSnapshot()` (`src/seed.js`), which upserts all 8 snapshot records into the real table on every boot, using the same `verified_at`-guard pattern the crawler already uses so an admin's own edit always wins over a reseed. This is the kind of gap that only shows up by actually running the thing, not by reading the code -- worth remembering for future stages too.
+
+**scholarship-service**: `funding_type` column (migrated via `PRAGMA table_info` check + `ALTER TABLE`, since the live `scholarships.sqlite` predates this field), `fundingType`/`sourceType` query filters, `status` now accepts a comma-separated list (`status=open,upcoming`) so the public directory can request its default scope in one call instead of merging two paginated requests client-side.
+
+**my-school-placement-api**: `SavedScholarship` model (`student` ref + `scholarshipId` string + a title/deadline/applicationUrl snapshot, so a saved-list page still shows something useful if the source record is later edited or deleted), `POST`/`DELETE /v1/scholarships/:id/save`, `GET /v1/scholarships/saved` -- `authenticate`+`requireStudent` only, deliberately no `requireActive` per the Stage 6 decision. `fundingType`/`sourceType` passthrough on the public list endpoint; `status` validator now accepts the same comma-separated list.
+
+**Web** (`my-school-placement-admin-repo`): `Scholarships.jsx` (public, `Universities.jsx`'s exact debounced-search/infinite-scroll/card-grid pattern, 5 filters incl. an "Open opportunities only / Show all" toggle for the Stage 6 decision), `ScholarshipDetail.jsx` (`UniversityDetail.jsx`'s 3-column layout, **verbatim** §6.2 disclaimer text), `MySavedScholarships.jsx` (student sidebar). Nav links added to `PublicNavbar.jsx` and `StudentLayout.jsx`.
+
+**Mobile** (`my-school-placement-mobile`): `ScholarshipsScreen.tsx`, `ScholarshipDetailScreen.tsx`, `SavedScholarshipsScreen.tsx` -- same structural patterns as `UniversitiesScreen.tsx`/`UniversityDetailScreen.tsx`, same design-system tokens. One new icon added to `Icon.tsx` (`bookmark`) -- not sourced from the original mockup artifact (scholarships are outside its scope), hand-drawn to match the existing set's stroke/viewBox convention rather than deviating from it. Dashboard quick-action tile + Profile link added as entry points (no new bottom tab -- would have crowded an already-5-item tab bar, a bigger design call than this stage needed to make).
+
+### Tests / checks performed
+- scholarship-service: curl-verified `fundingType`/`sourceType`/comma-separated `status` filters against a disposable test record (created and deleted within the test, not a real one this time).
+- Backend save/unsave: curl round-trip with a JWT minted for a real existing student user -- save, duplicate-save (409), list, unsave, double-unsave (404), all correct.
+- Full stack, both platforms, via Playwright (same cached-Chromium setup as Stage 5, see [[sandbox_playwright_available]]): web -- public list shows exactly the 3 real open/upcoming records, detail page disclaimer text matches §6.2 verbatim, save toggles and appears on the saved-list page, zero console errors; mobile -- Expo web preview (port 8099), JWT + `localStorage` injection (now including `msp_onboarding_complete`, a gate the Stage 5 verification didn't need to clear), Dashboard tile navigates to the list screen, screens render correctly against the design system, zero console errors.
+- `eslint --quiet` (web) and `tsc --noEmit` (mobile) both clean.
+
+### Known issues / follow-ups
+- The 96-record crawler backlog (still `unconfirmed`/`review_required`) is unaffected by this stage -- it stays hidden from the default public view by design, but someone still needs to actually review it.
+- Saved-list UI doesn't yet special-case a 404 from a deleted source record (shows the stale snapshot with a generic "may have been updated" note) -- acceptable for this vertical slice, not polished.
+- SEO (Stage 9) not addressed for these new pages, consistent with every other public page in this repo.
+
+### Commit reference
+Not yet committed in any of the four repos touched this stage (`scholarship-service`, `my-school-placement-api`, `my-school-placement-admin-repo`, `my-school-placement-mobile`) as of 2026-10-11 -- per standing instruction, commits happen only when explicitly asked.
