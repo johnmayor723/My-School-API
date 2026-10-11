@@ -20,4 +20,5 @@ module.exports = {
   OneTimeCode: require("../modules/accounts/models/OneTimeCode"),
   ParentConsent: require("./ParentConsent"),
   SavedScholarship: require("./SavedScholarship"),
+  NotificationLog: require("./NotificationLog"),
 };

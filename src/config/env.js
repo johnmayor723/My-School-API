@@ -98,6 +98,15 @@ const env = {
     termiiSenderId: optional("TERMII_SENDER_ID", ""),
   },
 
+  // WhatsApp reminders/alerts (NOTIFICATIONS_AND_ADVISER_PLAN.md). Meta's
+  // WhatsApp Cloud API, chosen directly over a BSP. Same dark-launch
+  // convention as sms above: logs instead of sending until both are set.
+  whatsapp: {
+    phoneNumberId: optional("WHATSAPP_PHONE_NUMBER_ID", ""),
+    accessToken: optional("WHATSAPP_ACCESS_TOKEN", ""),
+    apiVersion: optional("WHATSAPP_API_VERSION", "v21.0"),
+  },
+
   rateLimit: {
     windowMinutes: Number(optional("RATE_LIMIT_WINDOW_MINUTES", 15)),
     max: Number(optional("RATE_LIMIT_MAX", 300)),

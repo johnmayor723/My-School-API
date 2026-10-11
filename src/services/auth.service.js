@@ -32,12 +32,14 @@ async function logout(refreshToken) {
   await tokenService.revokeRefreshToken(refreshToken);
 }
 
-async function updateAccount(userId, { firstName, lastName, phone }) {
+async function updateAccount(userId, { firstName, lastName, phone, notificationPreferences }) {
   const user = await User.findById(userId);
   if (!user) throw new UnauthorizedError("Account no longer exists");
   if (firstName !== undefined) user.firstName = firstName;
   if (lastName !== undefined) user.lastName = lastName;
   if (phone !== undefined) user.phone = phone;
+  if (notificationPreferences?.email !== undefined) user.notificationPreferences.email = notificationPreferences.email;
+  if (notificationPreferences?.whatsapp !== undefined) user.notificationPreferences.whatsapp = notificationPreferences.whatsapp;
   try {
     await user.save();
   } catch (err) {

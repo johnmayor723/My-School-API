@@ -40,6 +40,15 @@ const userSchema = new Schema(
     emailVerified: { type: Boolean, default: false },
     phoneVerified: { type: Boolean, default: false },
 
+    // Email is opt-out, WhatsApp is opt-in -- per the Phase 1 memo's §6.1
+    // note that WhatsApp consent wording needs its own legal sign-off before
+    // public launch, the more sensitive channel defaults off, not on.
+    // See NOTIFICATIONS_AND_ADVISER_PLAN.md Part A.
+    notificationPreferences: {
+      email: { type: Boolean, default: true },
+      whatsapp: { type: Boolean, default: false },
+    },
+
     lastLoginAt: { type: Date },
   },
   { timestamps: true }

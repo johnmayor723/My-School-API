@@ -13,6 +13,8 @@ const updateAccountValidator = [
   body("firstName").optional().trim().notEmpty().withMessage("firstName cannot be empty"),
   body("lastName").optional().trim().notEmpty().withMessage("lastName cannot be empty"),
   body("phone").optional().trim().isLength({ min: 7, max: 20 }).withMessage("phone must be between 7 and 20 characters"),
+  body("notificationPreferences.email").optional().isBoolean().toBoolean(),
+  body("notificationPreferences.whatsapp").optional().isBoolean().toBoolean(),
 ];
 
 module.exports = {

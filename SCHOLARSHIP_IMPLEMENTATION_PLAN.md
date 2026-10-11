@@ -2,8 +2,8 @@
 
 Authoritative roadmap, stage status, and approval record for the scholarship feature. This file is the single source of truth for stage status — update it at the end of every stage, before asking for approval to proceed.
 
-**Current stage: 6 (Public directory) — DONE and verified on web + mobile. Stage 7 (student matching) not started.**
-**Next stage authorized: none yet. Stage 7 requires your go-ahead.**
+**Current stage: 8 (Notifications and jobs) — scope moved to `NOTIFICATIONS_AND_ADVISER_PLAN.md` (grew past "the scholarship feature," now also covers the memo's adviser-enquiry item). Stage 7 (student matching) deliberately skipped for now, by direct instruction.**
+**Next stage authorized: none yet. See `NOTIFICATIONS_AND_ADVISER_PLAN.md` for the live plan and open decisions.**
 
 **2026-10-11 process note:** you directly instructed "wire up with my school placement... ensure admin can verify, confirm dates, delete... sources needs to be added on UI" rather than approving Stage 1 and waiting for Stage 2/3 write-ups one at a time. That instruction *is* the answer to Stage 1's blocking question (the source API's contract) and effectively decided Stages 2-3 by example, so this update folds Stages 1-5 into one entry rather than performing an empty ceremony of writing speculative Stage 2/3 documents for decisions you'd already made. Stages 6-10 (public directory, student matching, notifications, SEO, QA/release) were **not** touched and still need their own approval before starting.
 
@@ -17,8 +17,8 @@ Authoritative roadmap, stage status, and approval record for the scholarship fea
 | 4 | Ingestion and verification engine | **Not rebuilt here** -- already exists in scholarship-service (crawler + admin verify/delete endpoints). This stage's only MACL-side work was adding the two endpoints scholarship-service was missing (`DELETE /api/admin/scholarships/:id`, and `deadline`/`applicationUrl` on the verification PATCH) so "confirm dates" and "delete inaccurate record" were possible at all. | — |
 | 5 | Admin management | DONE for verify/confirm-dates/delete/source-management | MACL admin routes (`/api/v1/admin/scholarships/*`), controller, validators, `permit()`-gated on `VERIFY_SCHOLARSHIPS`/`DELETE_SCHOLARSHIPS`/`MANAGE_SCHOLARSHIP_SOURCES` (granted to `CATALOG_MANAGER` + `SUPER_ADMIN` via `PERMISSIONS.ALL`), audit-logged. Admin UI: `AdminScholarships.jsx` (verify/confirm-dates/delete) + `AdminScholarshipSources.jsx` (add source/enable-disable/run crawl/crawl history), following the `AdminUniversities.jsx` modal-CRUD convention. Verified end-to-end via curl against a real minted JWT (list/get/verify/confirm-dates/delete, audit entries confirmed in Mongo) and via `eslint` + Vite HMR for the frontend (no browser automation tool was available this session, so the UI was not click-tested in an actual browser -- flagging that gap honestly rather than claiming full UI verification). | Student acceptance: click through the UI in a real browser before fully trusting it. |
 | 6 | Public directory | DONE | See Stage 6 section below. Verified via Playwright (web + mobile Expo-web preview) and curl. | — |
-| 7 | Student matching | NOT STARTED | — | Requires Stage 6 |
-| 8 | Notifications and jobs | NOT STARTED | — | Requires Stage 7 |
+| 7 | Student matching | SKIPPED FOR NOW | — | Not requested yet |
+| 8 | Notifications and jobs | SCOPED, moved to `NOTIFICATIONS_AND_ADVISER_PLAN.md` | See that document -- scope grew past this plan's charter. | Awaiting decisions in that document |
 | 9 | SEO and onboarding | NOT STARTED | — | Requires Stage 8 |
 | 10 | QA and release | NOT STARTED | — | Requires Stage 9 |
 
@@ -193,4 +193,10 @@ Matching scholarships to a student's profile (Stage 7), reminders/notifications 
 - SEO (Stage 9) not addressed for these new pages, consistent with every other public page in this repo.
 
 ### Commit reference
-Not yet committed in any of the four repos touched this stage (`scholarship-service`, `my-school-placement-api`, `my-school-placement-admin-repo`, `my-school-placement-mobile`) as of 2026-10-11 -- per standing instruction, commits happen only when explicitly asked.
+Committed 2026-10-11: `scholarship-service` `75b900d`, `my-school-placement-api` `ed8c03a`, `my-school-placement-admin-repo` `60cbeca`, `my-school-placement-mobile` `3f06278`. Mobile's unrelated `eas.json`/`package.json`/`package-lock.json` `expo-dev-client` change was again left out, same as the parental-consent commit.
+
+---
+
+## Stage 8 — Notifications and jobs
+
+**Moved to its own document: `NOTIFICATIONS_AND_ADVISER_PLAN.md`.** What started as "WhatsApp reminders for saved scholarships" grew, through your own clarification, into 4 shared-plumbing student alert types plus an entirely new staff-facing feature (the adviser enquiry pipeline, memo item 7) that doesn't exist yet -- genuinely past the scope this document's own first line commits to ("the scholarship feature"). Saved-scholarship deadline reminders are still in there (Part B, row 1); see that document for the full picture, open decisions, and status.
