@@ -56,6 +56,12 @@ const SYSTEM_ROLES = [
     permissions: [PERMISSIONS.VIEW_STUDENTS, PERMISSIONS.MANAGE_STUDENTS, PERMISSIONS.VIEW_ASSESSMENTS, PERMISSIONS.VIEW_AUDIT_LOGS],
     isSystem: true,
   },
+  {
+    name: ROLE_NAMES.ADVISER,
+    description: "Handles assigned adviser enquiries (round-robin leads from the \"Speak to a MACL Adviser\" flow)",
+    permissions: [PERMISSIONS.VIEW_ADVISER_ENQUIRIES, PERMISSIONS.MANAGE_ADVISER_ENQUIRIES],
+    isSystem: true,
+  },
 ];
 
 async function upsertRoles() {

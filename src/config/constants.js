@@ -70,6 +70,8 @@ const PERMISSIONS = Object.freeze({
   VERIFY_SCHOLARSHIPS: "VERIFY_SCHOLARSHIPS",
   DELETE_SCHOLARSHIPS: "DELETE_SCHOLARSHIPS",
   MANAGE_SCHOLARSHIP_SOURCES: "MANAGE_SCHOLARSHIP_SOURCES",
+  VIEW_ADVISER_ENQUIRIES: "VIEW_ADVISER_ENQUIRIES",
+  MANAGE_ADVISER_ENQUIRIES: "MANAGE_ADVISER_ENQUIRIES",
 });
 
 const ROLE_NAMES = Object.freeze({
@@ -81,6 +83,10 @@ const ROLE_NAMES = Object.freeze({
   CATALOG_MANAGER: "CATALOG_MANAGER",
   FINANCE: "FINANCE",
   SUPPORT: "SUPPORT",
+  // Distinct from SUPPORT -- "assigned enquiries" (round-robin adviser leads)
+  // is a different responsibility from SUPPORT's existing student-account
+  // assistance scope. See NOTIFICATIONS_AND_ADVISER_PLAN.md Part C.
+  ADVISER: "ADVISER",
 });
 
 const INSTITUTION_OWNERSHIP = Object.freeze({
@@ -264,6 +270,21 @@ const RESOURCE_TYPES = Object.freeze({
   // in the one place reviewers already check.
   SCHOLARSHIP: "Scholarship",
   SCHOLARSHIP_SOURCE: "ScholarshipSource",
+  ADVISER_ENQUIRY: "AdviserEnquiry",
+});
+
+// Mirrors the memo's own wording (§3.1 item 7, §6.3) -- see
+// NOTIFICATIONS_AND_ADVISER_PLAN.md Part C.
+const ADVISER_ENQUIRY_STATUS = Object.freeze({
+  NEW: "new",
+  CONTACTED: "contacted",
+  CLIENT: "client",
+  CLOSED: "closed",
+});
+
+const ADVISER_ENQUIRY_MESSAGE_AUTHOR = Object.freeze({
+  STUDENT: "student",
+  STAFF: "staff",
 });
 
 // The 12 admission-threshold types the Cut-Off Marks Intelligence module must
@@ -325,6 +346,11 @@ const NOTIFICATION_TYPES = Object.freeze({
   PARENT_CONSENT_PENDING: "parent_consent_pending",
   UNPAID_ASSESSMENT: "unpaid_assessment",
   ADMISSION_SESSION_CLOSING: "admission_session_closing",
+  // Event-triggered, not scheduled -- a staff status change on an
+  // AdviserEnquiry, not a cron pass. Still goes through NotificationLog for
+  // the same per-channel dedup guarantee (a double-save of the same status
+  // shouldn't double-notify).
+  ADVISER_ENQUIRY_STUDENT_UPDATE: "adviser_enquiry_student_update",
 });
 
 module.exports = {
@@ -365,4 +391,6 @@ module.exports = {
   PROMOTABLE_CUTOFF_TYPES,
   CHAT_ROLE,
   NOTIFICATION_TYPES,
+  ADVISER_ENQUIRY_STATUS,
+  ADVISER_ENQUIRY_MESSAGE_AUTHOR,
 };

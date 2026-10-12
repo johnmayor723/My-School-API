@@ -21,4 +21,6 @@ module.exports = {
   ParentConsent: require("./ParentConsent"),
   SavedScholarship: require("./SavedScholarship"),
   NotificationLog: require("./NotificationLog"),
+  AdviserEnquiry: require("./AdviserEnquiry"),
+  AdviserEnquiryMessage: require("./AdviserEnquiryMessage"),
 };

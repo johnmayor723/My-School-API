@@ -44,4 +44,23 @@ const chatLimiter = rateLimit({
   message: { success: false, error: { code: "RATE_LIMITED", message: "Too many chat messages. Please slow down." } },
 });
 
-module.exports = { generalLimiter, authLimiter, otpLimiter, chatLimiter };
+// A student submitting enquiries shouldn't be spamming advisers -- loose
+// enough for a real "talk to someone" flow (not metered like AI chat), tight
+// enough to stop abuse of the synchronous staff alert this triggers.
+const adviserEnquiryLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: { code: "RATE_LIMITED", message: "Too many enquiries submitted. Please try again later." } },
+});
+
+const adviserChatLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: { code: "RATE_LIMITED", message: "Too many messages. Please slow down." } },
+});
+
+module.exports = { generalLimiter, authLimiter, otpLimiter, chatLimiter, adviserEnquiryLimiter, adviserChatLimiter };
