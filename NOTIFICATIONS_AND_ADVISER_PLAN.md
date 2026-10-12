@@ -42,6 +42,14 @@ These share one WhatsApp/email sending layer and one scheduler, so they're plann
 1. **Offsets confirmed as proposed**: parental-consent-pending at 24h + 72h after signup; unpaid-assessment at 24h after creation.
 2. **Message content/templates** -- still to draft. I'll write copy for all 4 email templates + the WhatsApp template text that needs Meta submission as part of implementation; worth your review before anything is actually submitted for approval (resubmitting a rejected template costs more lead time).
 
+### Part B -- built, 2026-10-12
+
+`scripts/reminders/run.js` + `src/services/reminders/` (one module per alert type, shared `notifyStudent.js` dispatcher). All 4 types verified end-to-end against the live dev DB (real unpaid assessments fired for real; scholarship-deadline, parent-consent, and admission-session-closing exercised with temporary synthetic fixtures, cleaned up after) -- including dedup idempotency (a second run sends nothing) and the WhatsApp dark-launch log path.
+
+One design refinement made during implementation, beyond what's in the table above: for the two day-threshold types (scholarship deadline, admission session closing), only the single nearest unmet offset fires per run, worded from the *actual* days remaining rather than the offset number itself. Checking every offset independently (as originally written) meant a scholarship saved -- or a session's endDate set/moved -- with e.g. 5 days already left would fire both the 14-day and 7-day buckets in the same run, each wrongly saying "14 days" / "7 days" instead of the true 5. This doesn't change the decided offsets (14/7/1 and 14/7 still gate which bucket can fire), just which single bucket wins when more than one would otherwise match at once.
+
+Email copy is live now (via whatever mail provider is configured); WhatsApp is still dark-launched pending the 3 templates below being submitted to and approved by Meta -- **not yet submitted**, since that's a real-world step outside this codebase. **Cron wiring (OS crontab, once daily) has deliberately not been added yet** -- this would start sending real reminder emails to real signed-up users the moment it's live, which felt like a call to check in on rather than assume.
+
 ## Part C -- Adviser enquiry pipeline (memo item 7, new feature)
 
 ### What the memo actually requires (§3.1 item 7, §6.3)
