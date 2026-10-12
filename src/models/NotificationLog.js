@@ -10,7 +10,10 @@ const notificationLogSchema = new Schema(
   {
     user: { type: Schema.Types.ObjectId, ref: "User", required: true },
     type: { type: String, required: true },
-    channel: { type: String, enum: ["email", "whatsapp"], required: true },
+    // "sms" covers the parent-consent reminder, which sends to whichever
+    // channel the parent originally chose (email or phone/SMS) -- never
+    // WhatsApp, since ParentConsent has no WhatsApp consent flow of its own.
+    channel: { type: String, enum: ["email", "whatsapp", "sms"], required: true },
     dedupeKey: { type: String, required: true },
     sentAt: { type: Date, default: Date.now },
   },

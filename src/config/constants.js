@@ -317,6 +317,16 @@ const CHAT_ROLE = Object.freeze({
   ASSISTANT: "assistant",
 });
 
+// `type` values written to NotificationLog by scripts/reminders/run.js (see
+// NOTIFICATIONS_AND_ADVISER_PLAN.md Part B) -- one per alert type, combined
+// with channel + a type-specific dedupeKey to form the log's unique index.
+const NOTIFICATION_TYPES = Object.freeze({
+  SCHOLARSHIP_DEADLINE: "scholarship_deadline",
+  PARENT_CONSENT_PENDING: "parent_consent_pending",
+  UNPAID_ASSESSMENT: "unpaid_assessment",
+  ADMISSION_SESSION_CLOSING: "admission_session_closing",
+});
+
 module.exports = {
   USER_TYPES,
   USER_STATUS,
@@ -354,4 +364,5 @@ module.exports = {
   CUTOFF_CONFIDENCE,
   PROMOTABLE_CUTOFF_TYPES,
   CHAT_ROLE,
+  NOTIFICATION_TYPES,
 };
