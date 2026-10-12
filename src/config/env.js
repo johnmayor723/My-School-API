@@ -91,11 +91,20 @@ const env = {
   },
 
   // Phone is a fully supported OTP identifier (signup, login, deletion);
-  // sendSms() logs instead of sending until these are set — no separate
-  // enabled flag, dropping in real values is enough to go live.
+  // sendSms() logs instead of sending until the selected provider is
+  // configured — no separate enabled flag, dropping in real values is
+  // enough to go live. SMS_PROVIDER picks which block below is used
+  // (see src/utils/smsSender.js + src/utils/smsProviders/).
   sms: {
-    termiiApiKey: optional("TERMII_API_KEY", ""),
-    termiiSenderId: optional("TERMII_SENDER_ID", ""),
+    provider: optional("SMS_PROVIDER", "gateway"),
+    gateway: {
+      url: optional("SMS_GATEWAY_URL", ""),
+      apiKey: optional("SMS_GATEWAY_API_KEY", ""),
+    },
+    termii: {
+      apiKey: optional("TERMII_API_KEY", ""),
+      senderId: optional("TERMII_SENDER_ID", ""),
+    },
   },
 
   // WhatsApp reminders/alerts (NOTIFICATIONS_AND_ADVISER_PLAN.md). Meta's
