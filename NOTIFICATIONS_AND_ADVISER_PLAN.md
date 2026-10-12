@@ -76,6 +76,23 @@ A "Speak to a MACL Adviser" button on every university/course/checker/scholarshi
 4. **Student gets notified on both transitions**: a short email/WhatsApp when an adviser takes the enquiry (NEW -> CONTACTED) and again when it resolves (-> CLIENT or CLOSED).
 5. Same WhatsApp-template lead-time note as Part B applies here too -- the adviser-alert and student-update templates are separate Meta submissions from the 3 Part-B templates (5 total across this whole doc).
 
+### Scope correction, 2026-10-12 (before Part C build started)
+Student↔adviser communication must be **in-app messaging**, not email/WhatsApp-only as originally scoped above. Email/WhatsApp stay as the *alerting* mechanism (staff alerted on creation, student notified on status transitions, per decisions 1-4 above, unchanged) -- but the actual back-and-forth conversation is a real in-app chat thread, added as a new `AdviserEnquiryMessage` model + `GET`/`POST .../messages` endpoints on both the student and admin routes. No websocket/live-push infra exists anywhere in this API (same finding as before), so this is a plain REST-polled thread, same pattern as the existing assessment AI chat (`ChatMessage` / `AssessmentChatScreen`) -- clients poll every 5s, not real-time push.
+
+## Part C -- built, 2026-10-12
+
+Backend (`38dd2ea`): `AdviserEnquiry` + `AdviserEnquiryMessage` models, `ADVISER` role + `VIEW_ADVISER_ENQUIRIES`/`MANAGE_ADVISER_ENQUIRIES` permissions (seeded as a system role), round-robin assignment (`count % adviserStaff.length`, not a pointer document), synchronous email+WhatsApp staff alert on creation, student notified via the existing `notifyStudent` dedup mechanism on NEW→CONTACTED and →CLIENT/CLOSED. Student-facing routes (`/v1/adviser-enquiries`) and staff routes (`/v1/admin/adviser-enquiries`) both expose the message thread. Verified end-to-end via live HTTP calls: creation + round-robin + dark-launched alerts, ownership-isolated student access (a second student 404s on someone else's enquiry), staff reply + status transition + audit logging, and validator edge cases (missing consent, missing sourcePage).
+
+Web (`32e9f2f`): student-facing `/adviser` page (consent + callback-window form, flips to the chat thread once an enquiry exists) linked from the student sidebar and a new Dashboard quick action. Admin `/admin/adviser-enquiries` list + detail page (status/notes + staff reply thread), gated server-side only (same uniform-sidebar convention as the rest of the admin console -- permission enforcement is server-side via `permit()`, not hidden in the UI).
+
+Mobile (`5a7257a`): `AdviserEnquiryScreen` replaces the dead "Book a call" CTA on Dashboard (previously just opened the marketing site's `/contact` page in a webview). Same form/chat pattern as web, styled per the mobile design system, mirroring `AssessmentChatScreen`'s bubble/poll UI.
+
+**Playwright-verified full loop, both platforms, 2026-10-12**: student submits on web → admin sees it in the list, correctly round-robin assigned → admin opens detail, replies, marks CONTACTED → student's page (polling) shows the reply and "An adviser is on this" status. Mobile: navigated in via the Dashboard banner, loaded the same open enquiry + its messages, successfully sent a new student reply.
+
+**Not yet built, per the memo's own broader ask**: the "Speak to a MACL Adviser" CTA only exists on the student Dashboard (both platforms) so far -- the memo also calls for it on every university/course/checker/scholarship page. Mechanism is proven and reusable (same `/adviser` route on web, same `AdviserEnquiry` screen+params on mobile, just needs a CTA + `sourcePage` label added per page) -- treated as a fast-follow, not re-litigated here.
+
+**Operational gap, not a code gap**: no staff member currently holds the `ADVISER` role in the live database -- round-robin assignment correctly no-ops (`assignedAdviser: null`, a warning logged) rather than crashing when this happens, but it means real enquiries will sit unassigned until a real adviser is designated. Someone needs to either grant an existing staff account the `ADVISER` role or create a dedicated one via the admin console's Users/Roles pages.
+
 ## Explicitly not in this document
 General deadline/reminder types beyond the 4 listed (e.g. per-institution application deadlines -- that data doesn't exist anywhere yet, a prerequisite of its own). The admin "unverified >12 months" dashboard flag (memo item 8) -- a UI badge question, not a notification-sending one, out of scope here.
 
