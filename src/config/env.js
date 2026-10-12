@@ -105,6 +105,11 @@ const env = {
       apiKey: optional("TERMII_API_KEY", ""),
       senderId: optional("TERMII_SENDER_ID", ""),
     },
+    infobip: {
+      baseUrl: optional("INFOBIP_BASE_URL", ""),
+      apiKey: optional("INFOBIP_API_KEY", ""),
+      sender: optional("INFOBIP_SENDER", ""),
+    },
   },
 
   // WhatsApp reminders/alerts (NOTIFICATIONS_AND_ADVISER_PLAN.md). Meta's

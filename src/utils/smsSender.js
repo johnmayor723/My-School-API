@@ -2,11 +2,12 @@ const env = require("../config/env");
 const logger = require("../config/logger");
 const gateway = require("./smsProviders/gateway");
 const termii = require("./smsProviders/termii");
+const infobip = require("./smsProviders/infobip");
 
 // SMS_PROVIDER selects which backend sendSms() dispatches to. Each provider
 // module exposes the same { isConfigured(), send(to, message) } shape, so
 // switching providers is a one-line env change — no caller-side changes.
-const PROVIDERS = { gateway, termii };
+const PROVIDERS = { gateway, termii, infobip };
 
 /**
  * Sends SMS via the configured provider (env.sms.provider); logs instead of
