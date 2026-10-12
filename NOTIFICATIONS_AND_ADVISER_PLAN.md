@@ -48,7 +48,9 @@ These share one WhatsApp/email sending layer and one scheduler, so they're plann
 
 One design refinement made during implementation, beyond what's in the table above: for the two day-threshold types (scholarship deadline, admission session closing), only the single nearest unmet offset fires per run, worded from the *actual* days remaining rather than the offset number itself. Checking every offset independently (as originally written) meant a scholarship saved -- or a session's endDate set/moved -- with e.g. 5 days already left would fire both the 14-day and 7-day buckets in the same run, each wrongly saying "14 days" / "7 days" instead of the true 5. This doesn't change the decided offsets (14/7/1 and 14/7 still gate which bucket can fire), just which single bucket wins when more than one would otherwise match at once.
 
-Email copy is live now (via whatever mail provider is configured); WhatsApp is still dark-launched pending the 3 templates below being submitted to and approved by Meta -- **not yet submitted**, since that's a real-world step outside this codebase. **Cron wiring (OS crontab, once daily) has deliberately not been added yet** -- this would start sending real reminder emails to real signed-up users the moment it's live, which felt like a call to check in on rather than assume.
+Email copy is live now (via whatever mail provider is configured); WhatsApp is still dark-launched pending the 3 templates below being submitted to and approved by Meta -- **not yet submitted**, since that's a real-world step outside this codebase.
+
+**Cron wired 2026-10-12**: `0 8 * * * cd /opt/my-school-placement-api && node scripts/reminders/run.js >> /var/log/my-school-placement-reminders.log 2>&1`. Reminder emails to real signed-up students are now live, once daily at 08:00. WhatsApp sending stays dark-launched regardless (no templates approved yet), so the WhatsApp branch of the cron run only logs.
 
 ## Part C -- Adviser enquiry pipeline (memo item 7, new feature)
 
