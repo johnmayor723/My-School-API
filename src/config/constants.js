@@ -72,6 +72,10 @@ const PERMISSIONS = Object.freeze({
   MANAGE_SCHOLARSHIP_SOURCES: "MANAGE_SCHOLARSHIP_SOURCES",
   VIEW_ADVISER_ENQUIRIES: "VIEW_ADVISER_ENQUIRIES",
   MANAGE_ADVISER_ENQUIRIES: "MANAGE_ADVISER_ENQUIRIES",
+  // Marketing/CMS content ported from michelleandanthony.net (Pages, BlogPosts,
+  // Partners, Programs nav taxonomy, HomeContent singleton).
+  MANAGE_CONTENT: "MANAGE_CONTENT",
+  VIEW_CONTACT_SUBMISSIONS: "VIEW_CONTACT_SUBMISSIONS",
 });
 
 const ROLE_NAMES = Object.freeze({
@@ -271,6 +275,12 @@ const RESOURCE_TYPES = Object.freeze({
   SCHOLARSHIP: "Scholarship",
   SCHOLARSHIP_SOURCE: "ScholarshipSource",
   ADVISER_ENQUIRY: "AdviserEnquiry",
+  PAGE: "Page",
+  BLOG_POST: "BlogPost",
+  PARTNER: "Partner",
+  PROGRAM: "Program",
+  HOME_CONTENT: "HomeContent",
+  CONTACT_SUBMISSION: "ContactSubmission",
 });
 
 // Mirrors the memo's own wording (§3.1 item 7, §6.3) -- see

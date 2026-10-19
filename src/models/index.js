@@ -23,4 +23,10 @@ module.exports = {
   NotificationLog: require("./NotificationLog"),
   AdviserEnquiry: require("./AdviserEnquiry"),
   AdviserEnquiryMessage: require("./AdviserEnquiryMessage"),
+  Page: require("./Page"),
+  BlogPost: require("./BlogPost"),
+  Partner: require("./Partner"),
+  Program: require("./Program"),
+  HomeContent: require("./HomeContent"),
+  ContactSubmission: require("./ContactSubmission"),
 };

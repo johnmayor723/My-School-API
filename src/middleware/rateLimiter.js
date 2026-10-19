@@ -63,4 +63,22 @@ const adviserChatLimiter = rateLimit({
   message: { success: false, error: { code: "RATE_LIMITED", message: "Too many messages. Please slow down." } },
 });
 
-module.exports = { generalLimiter, authLimiter, otpLimiter, chatLimiter, adviserEnquiryLimiter, adviserChatLimiter };
+// Public, unauthenticated form -- same abuse profile as adviserEnquiryLimiter
+// (no account/session to throttle against), so it gets the same treatment.
+const contactLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: { code: "RATE_LIMITED", message: "Too many messages submitted. Please try again later." } },
+});
+
+module.exports = {
+  generalLimiter,
+  authLimiter,
+  otpLimiter,
+  chatLimiter,
+  adviserEnquiryLimiter,
+  adviserChatLimiter,
+  contactLimiter,
+};
