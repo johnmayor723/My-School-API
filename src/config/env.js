@@ -43,6 +43,17 @@ const env = {
   assessmentCurrency: optional("ASSESSMENT_CURRENCY", "NGN"),
   paymentWebhookSecret: optional("PAYMENT_WEBHOOK_SECRET", ""),
 
+  // The session pass (distinct from the dormant per-assessment Payment/
+  // Assessment flow above) -- see src/services/sessionPass.service.js.
+  // Two priced tracks (domestic/international, see SESSION_PASS_SERVICE_TYPE),
+  // same currency and session length for both.
+  sessionPassPrices: {
+    domestic: Number(optional("SESSION_PASS_DOMESTIC_PRICE_NGN", 1000)),
+    international: Number(optional("SESSION_PASS_INTERNATIONAL_PRICE_NGN", 5000)),
+  },
+  sessionPassCurrency: optional("SESSION_PASS_CURRENCY", "NGN"),
+  sessionPassDurationHours: Number(optional("SESSION_PASS_DURATION_HOURS", 3)),
+
   paystack: {
     secretKey: optional("PAYSTACK_SECRET_KEY", ""),
     publicKey: optional("PAYSTACK_PUBLIC_KEY", ""),
@@ -51,6 +62,14 @@ const env = {
     secretKey: optional("FLUTTERWAVE_SECRET_KEY", ""),
     publicKey: optional("FLUTTERWAVE_PUBLIC_KEY", ""),
     secretHash: optional("FLUTTERWAVE_SECRET_HASH", ""),
+  },
+  // Scaffold only -- see src/modules/payments/providers/providus.provider.js.
+  // Test credentials shared 2026-10-22, full integration spec (endpoint
+  // paths/payloads) not yet received.
+  providus: {
+    baseUrl: optional("PROVIDUS_BASE_URL", "http://102.209.190.54:8882/appdevapi/api/"),
+    clientId: optional("PROVIDUS_CLIENT_ID", ""),
+    clientSecret: optional("PROVIDUS_CLIENT_SECRET", ""),
   },
 
   // Outbound mail goes through the shared gemfi-mail-service (same box,
@@ -110,15 +129,31 @@ const env = {
       apiKey: optional("INFOBIP_API_KEY", ""),
       sender: optional("INFOBIP_SENDER", ""),
     },
+    bulksmsnigeria: {
+      apiToken: optional("BULKSMSNIGERIA_API_TOKEN", ""),
+      senderId: optional("BULKSMSNIGERIA_SENDER_ID", ""),
+      sandbox: optional("BULKSMSNIGERIA_SANDBOX", "false") === "true",
+      gateway: optional("BULKSMSNIGERIA_GATEWAY", ""),
+    },
   },
 
-  // WhatsApp reminders/alerts (NOTIFICATIONS_AND_ADVISER_PLAN.md). Meta's
-  // WhatsApp Cloud API, chosen directly over a BSP. Same dark-launch
-  // convention as sms above: logs instead of sending until both are set.
+  // WhatsApp reminders/alerts (NOTIFICATIONS_AND_ADVISER_PLAN.md).
+  // WHATSAPP_PROVIDER picks which block below is used (see
+  // src/utils/whatsappSender.js + src/utils/whatsappProviders/). Same
+  // dark-launch convention as sms above: logs instead of sending until the
+  // selected provider is configured.
   whatsapp: {
-    phoneNumberId: optional("WHATSAPP_PHONE_NUMBER_ID", ""),
-    accessToken: optional("WHATSAPP_ACCESS_TOKEN", ""),
-    apiVersion: optional("WHATSAPP_API_VERSION", "v21.0"),
+    provider: optional("WHATSAPP_PROVIDER", "infobip"),
+    meta: {
+      phoneNumberId: optional("WHATSAPP_PHONE_NUMBER_ID", ""),
+      accessToken: optional("WHATSAPP_ACCESS_TOKEN", ""),
+      apiVersion: optional("WHATSAPP_API_VERSION", "v21.0"),
+    },
+    infobip: {
+      baseUrl: optional("INFOBIP_BASE_URL", ""),
+      apiKey: optional("INFOBIP_API_KEY", ""),
+      sender: optional("INFOBIP_WHATSAPP_SENDER", ""),
+    },
   },
 
   rateLimit: {

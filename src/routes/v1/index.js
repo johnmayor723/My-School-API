@@ -10,6 +10,7 @@ router.use("/programmes", require("./programme.routes"));
 router.use("/admission-sessions", require("./admissionSession.routes"));
 router.use("/assessments", require("./assessment.routes"));
 router.use("/payments", require("./payment.routes"));
+router.use("/session-passes", require("./sessionPass.routes"));
 router.use("/compare", require("./compare.routes"));
 router.use("/scholarships", require("./scholarship.routes"));
 router.use("/adviser-enquiries", require("./adviserEnquiry.routes"));

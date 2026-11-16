@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const { ADVISER_ENQUIRY_STATUS } = require("../config/constants");
+const { ADVISER_ENQUIRY_STATUS, SESSION_PASS_SERVICE_TYPE } = require("../config/constants");
 
 // Memo item 7 ("Speak to a MACL Adviser") -- see NOTIFICATIONS_AND_ADVISER_PLAN.md
 // Part C. No calendar/availability system exists anywhere in this app, so
@@ -12,6 +12,12 @@ const adviserEnquirySchema = new Schema(
     // from, for adviser context -- a free label, not a ref, since the
     // source could be any of several unrelated page types.
     sourcePage: { type: String, required: true, trim: true, maxlength: 200 },
+    // Domestic vs international advisory track -- gates creation/new
+    // messages behind a SessionPass of this same type (see
+    // middleware/sessionPass.js + adviserEnquiryMessage.service.js).
+    serviceType: { type: String, enum: Object.values(SESSION_PASS_SERVICE_TYPE), required: true },
+    // The specific pass that paid for this enquiry, for audit/ops visibility.
+    sessionPass: { type: Schema.Types.ObjectId, ref: "SessionPass", required: true },
     profileConsent: { type: Boolean, required: true },
     preferredCallbackWindow: { type: String, trim: true, maxlength: 200, default: "" },
     status: { type: String, enum: Object.values(ADVISER_ENQUIRY_STATUS), default: ADVISER_ENQUIRY_STATUS.NEW },

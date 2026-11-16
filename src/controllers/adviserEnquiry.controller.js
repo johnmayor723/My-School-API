@@ -3,8 +3,14 @@ const messageService = require("../services/adviserEnquiryMessage.service");
 const { sendSuccess } = require("../responses/ApiResponse");
 
 async function create(req, res) {
-  const { sourcePage, profileConsent, preferredCallbackWindow } = req.body;
-  const enquiry = await adviserEnquiryService.create(req.user, { sourcePage, profileConsent, preferredCallbackWindow });
+  const { sourcePage, serviceType, profileConsent, preferredCallbackWindow } = req.body;
+  const enquiry = await adviserEnquiryService.create(req.user, {
+    sourcePage,
+    serviceType,
+    sessionPass: req.sessionPass,
+    profileConsent,
+    preferredCallbackWindow,
+  });
   sendSuccess(res, { statusCode: 201, message: "Enquiry submitted", data: enquiry });
 }
 

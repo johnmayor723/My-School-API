@@ -38,6 +38,31 @@ async function authenticate(req, res, next) {
   next();
 }
 
+// Same token handling as authenticate(), but never throws -- a missing,
+// malformed, or expired token just leaves req.user unset rather than
+// rejecting the request. For public routes (scholarship list/detail) that
+// unlock extra fields for a logged-in, paid-up student but stay reachable
+// by anyone.
+async function authenticateOptional(req, res, next) {
+  const token = extractToken(req);
+  if (!token) return next();
+
+  let payload;
+  try {
+    payload = jwt.verify(token, env.jwtSecret);
+  } catch {
+    return next();
+  }
+  if (payload.type !== "access") return next();
+
+  const user = await User.findById(payload.sub).populate("roles");
+  if (!user || user.status === USER_STATUS.SUSPENDED || user.status === USER_STATUS.DELETED) return next();
+
+  req.user = user;
+  req.tokenPayload = payload;
+  next();
+}
+
 function requireStudent(req, res, next) {
   if (!req.user || req.user.userType !== USER_TYPES.STUDENT) {
     throw new ForbiddenError("This action is only available to students");
@@ -64,4 +89,4 @@ function requireActive(req, res, next) {
   next();
 }
 
-module.exports = { authenticate, requireStudent, requireStaff, requireActive };
+module.exports = { authenticate, authenticateOptional, requireStudent, requireStaff, requireActive };

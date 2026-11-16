@@ -1,6 +1,8 @@
 const { AdviserEnquiry, AdviserEnquiryMessage } = require("../models");
 const { ADVISER_ENQUIRY_MESSAGE_AUTHOR, ADVISER_ENQUIRY_STATUS } = require("../config/constants");
-const { NotFoundError, BusinessRuleError } = require("../errors/AppError");
+const { NotFoundError, BusinessRuleError, PaymentRequiredError } = require("../errors/AppError");
+const sessionPassService = require("./sessionPass.service");
+const env = require("../config/env");
 
 const CLOSED_STATUSES = new Set([ADVISER_ENQUIRY_STATUS.CLIENT, ADVISER_ENQUIRY_STATUS.CLOSED]);
 
@@ -10,10 +12,23 @@ async function listForStudent(enquiryId, student) {
   return AdviserEnquiryMessage.find({ enquiry: enquiry._id }).sort({ createdAt: 1 });
 }
 
+// History stays readable after the pass that started the enquiry expires
+// (listForStudent above has no pass check) -- only *sending a new message*
+// re-requires a currently-active pass of the enquiry's own serviceType, same
+// "locks after the session ends" rule as starting a new enquiry.
 async function sendFromStudent(enquiryId, student, content) {
   const enquiry = await AdviserEnquiry.findOne({ _id: enquiryId, student: student._id });
   if (!enquiry) throw new NotFoundError("Enquiry not found");
   if (CLOSED_STATUSES.has(enquiry.status)) throw new BusinessRuleError("This enquiry is closed to new messages");
+
+  const hasActivePass = await sessionPassService.hasActivePass(student._id, enquiry.serviceType);
+  if (!hasActivePass) {
+    throw new PaymentRequiredError("Your session pass has expired -- buy a new one to keep chatting with your adviser", {
+      serviceType: enquiry.serviceType,
+      price: env.sessionPassPrices[enquiry.serviceType],
+      currency: env.sessionPassCurrency,
+    });
+  }
 
   return AdviserEnquiryMessage.create({
     enquiry: enquiry._id,

@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const adviserEnquiryController = require("../../controllers/adviserEnquiry.controller");
 const { authenticate, requireStudent, requireActive } = require("../../middleware/auth");
+const { requireSessionPass } = require("../../middleware/sessionPass");
 const { validate } = require("../../middleware/validate");
 const { adviserEnquiryLimiter, adviserChatLimiter } = require("../../middleware/rateLimiter");
 const { mongoIdParam } = require("../../validators/common.validators");
@@ -10,7 +11,13 @@ const router = Router();
 
 router.use(authenticate, requireStudent, requireActive);
 
-router.post("/", adviserEnquiryLimiter, validate(createAdviserEnquiryValidator), adviserEnquiryController.create);
+router.post(
+  "/",
+  adviserEnquiryLimiter,
+  validate(createAdviserEnquiryValidator),
+  requireSessionPass((req) => req.body.serviceType),
+  adviserEnquiryController.create
+);
 router.get("/mine", adviserEnquiryController.listMine);
 router.get("/:id", validate([mongoIdParam()]), adviserEnquiryController.getMine);
 router.get("/:id/messages", validate([mongoIdParam()]), adviserEnquiryController.listMessages);

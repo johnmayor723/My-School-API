@@ -1,21 +1,35 @@
 const scholarshipClient = require("../services/scholarshipService.client");
 const savedScholarshipService = require("../services/savedScholarship.service");
+const scholarshipMatching = require("../services/scholarshipMatching");
+const scholarshipRedaction = require("../services/scholarshipRedaction");
+const sessionPassService = require("../services/sessionPass.service");
+const { StudentProfile, Programme } = require("../models");
 const { sendSuccess } = require("../responses/ApiResponse");
 
-// Public, read-only: thin pass-through to scholarship-service's own public
-// endpoints. No MACL-side filtering -- scholarship-service already withholds
-// nothing on these routes (every status, including unconfirmed/review_required,
-// is visible), so students can see provenance/verification state too.
+// Any active session pass (either track) unlocks the full, non-redacted
+// fields -- scholarship assistance isn't domestic/international-specific.
+async function isUnlocked(req) {
+  if (!req.user) return false;
+  return sessionPassService.hasActivePass(req.user._id);
+}
+
+// Public, read-only, reachable by anonymous visitors (authenticateOptional).
+// No MACL-side filtering on status/provenance -- every status, including
+// unconfirmed/review_required, stays visible so students can judge source
+// quality themselves. The only thing withheld pre-payment is application_url
+// and deadline (see scholarshipRedaction.js).
 async function list(req, res) {
   const { page, limit, session, status, q, level, fundingType, sourceType } = req.query;
   const offset = page && limit ? (page - 1) * limit : undefined;
   const result = await scholarshipClient.listScholarships({ session, status, q, level, fundingType, sourceType, limit, offset });
-  sendSuccess(res, { data: result.data, meta: result.meta });
+  const unlocked = await isUnlocked(req);
+  sendSuccess(res, { data: scholarshipRedaction.redactList(result.data, unlocked), meta: result.meta });
 }
 
 async function getById(req, res) {
   const result = await scholarshipClient.getScholarship(req.params.id);
-  sendSuccess(res, { data: result.data, meta: result.meta });
+  const unlocked = await isUnlocked(req);
+  sendSuccess(res, { data: scholarshipRedaction.redact(result.data, unlocked), meta: result.meta });
 }
 
 // Save/unsave/list deliberately sit behind only authenticate+requireStudent,
@@ -38,4 +52,19 @@ async function listSaved(req, res) {
   sendSuccess(res, { data: saved });
 }
 
-module.exports = { list, getById, saveScholarship, unsaveScholarship, listSaved };
+// Free -- matching itself is not the paid feature, only the exact
+// application_url/deadline are (same redaction as list/getById above).
+// Filters/sorts the scholarship-service list against the student's own
+// profile via scholarshipMatching.js, rather than inventing a new scoring system.
+async function personalized(req, res) {
+  const profile = await StudentProfile.findOne({ user: req.user._id });
+  const programme = profile?.preferredProgramme ? await Programme.findById(profile.preferredProgramme) : null;
+
+  const result = await scholarshipClient.listScholarships({ status: "open,upcoming", limit: 100 });
+  const personalizedList = scholarshipMatching.personalize(result.data, profile || {}, programme);
+  const unlocked = await isUnlocked(req);
+
+  sendSuccess(res, { data: scholarshipRedaction.redactList(personalizedList, unlocked) });
+}
+
+module.exports = { list, getById, saveScholarship, unsaveScholarship, listSaved, personalized };

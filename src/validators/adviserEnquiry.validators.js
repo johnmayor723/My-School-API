@@ -1,8 +1,11 @@
 const { body, query } = require("express-validator");
-const { ADVISER_ENQUIRY_STATUS } = require("../config/constants");
+const { ADVISER_ENQUIRY_STATUS, SESSION_PASS_SERVICE_TYPE } = require("../config/constants");
 
 const createAdviserEnquiryValidator = [
   body("sourcePage").isString().trim().notEmpty().isLength({ max: 200 }).withMessage("sourcePage is required"),
+  body("serviceType")
+    .isIn(Object.values(SESSION_PASS_SERVICE_TYPE))
+    .withMessage(`serviceType must be one of: ${Object.values(SESSION_PASS_SERVICE_TYPE).join(", ")}`),
   body("profileConsent")
     .isBoolean()
     .withMessage("profileConsent must be a boolean")

@@ -56,7 +56,7 @@ async function alertAdviser(adviser, enquiry, student) {
   }
 }
 
-async function create(student, { sourcePage, profileConsent, preferredCallbackWindow }) {
+async function create(student, { sourcePage, serviceType, sessionPass, profileConsent, preferredCallbackWindow }) {
   if (!profileConsent) throw new ValidationAppError("Profile consent is required to submit an enquiry");
 
   const assignedAdviser = await pickNextAdviser();
@@ -64,6 +64,8 @@ async function create(student, { sourcePage, profileConsent, preferredCallbackWi
   const enquiry = await AdviserEnquiry.create({
     student: student._id,
     sourcePage,
+    serviceType,
+    sessionPass: sessionPass._id,
     profileConsent,
     preferredCallbackWindow,
     assignedAdviser: assignedAdviser ? assignedAdviser._id : null,

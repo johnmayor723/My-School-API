@@ -165,6 +165,17 @@ const PAYMENT_PROVIDERS = Object.freeze({
   MOCK: "mock",
   PAYSTACK: "paystack",
   FLUTTERWAVE: "flutterwave",
+  // Scaffold only -- see src/modules/payments/providers/providus.provider.js.
+  PROVIDUS: "providus",
+});
+
+// Two priced tracks for scholarship/admissions assistance -- domestic
+// (Nigerian scholarships + admissions) and international (manual, no
+// foreign-school API yet). Each SessionPass and AdviserEnquiry is tagged
+// with exactly one of these; they don't unlock each other.
+const SESSION_PASS_SERVICE_TYPE = Object.freeze({
+  DOMESTIC: "domestic",
+  INTERNATIONAL: "international",
 });
 
 const MATCH_CATEGORY = Object.freeze({
@@ -269,6 +280,7 @@ const RESOURCE_TYPES = Object.freeze({
   CUTOFF_RECORD: "CutoffRecord",
   ONE_TIME_CODE: "OneTimeCode",
   PARENT_CONSENT: "ParentConsent",
+  SESSION_PASS: "SessionPass",
   // These two resource types live in scholarship-service's SQLite store, not
   // this app's MongoDB -- audited here anyway so staff actions are traceable
   // in the one place reviewers already check.
@@ -383,6 +395,7 @@ module.exports = {
   PAYMENT_STATUS_ON_ASSESSMENT,
   PAYMENT_STATUS,
   PAYMENT_PROVIDERS,
+  SESSION_PASS_SERVICE_TYPE,
   MATCH_CATEGORY,
   ELIGIBILITY_STATUS,
   CATCHMENT_STATUS,

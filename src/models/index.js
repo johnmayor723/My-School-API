@@ -12,6 +12,7 @@ module.exports = {
   Assessment: require("./Assessment"),
   AssessmentRecommendation: require("./AssessmentRecommendation"),
   Payment: require("./Payment"),
+  SessionPass: require("./SessionPass"),
   AuditLog: require("./AuditLog"),
   CutoffSource: require("./CutoffSource"),
   CutoffCandidate: require("./CutoffCandidate"),

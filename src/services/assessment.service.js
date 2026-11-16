@@ -1,6 +1,7 @@
 const { Assessment, AssessmentRecommendation, StudentProfile, AdmissionSession } = require("../models");
 const { runMatching } = require("../modules/matching-engine/matchingEngine");
 const auditService = require("./audit.service");
+const sessionPassService = require("./sessionPass.service");
 const env = require("../config/env");
 const { NotFoundError, ForbiddenError, PaymentRequiredError, BusinessRuleError } = require("../errors/AppError");
 const { RESOURCE_TYPES, ASSESSMENT_STATUS, PAYMENT_STATUS_ON_ASSESSMENT } = require("../config/constants");
@@ -118,20 +119,20 @@ async function getAssessment(id, requestingUser) {
   return assessment;
 }
 
-// Phase 1 memo §3.2/§6.3: the report is free for students in Phase 1 — a
-// paid gateway ("Online payment for counselling") is explicitly deferred to
-// Phase 2. paymentStatus is still tracked (and unlockAfterPayment still
-// works) so this just needs removing once Phase 2 payments go live.
-function isUnlocked() {
-  return true;
+// Phase 2: gated by the ₦1,000/24h session pass (src/services/sessionPass.service.js)
+// rather than the old per-assessment Payment/Assessment flow -- that flow's
+// price/paymentStatus/unlockAfterPayment fields are left in the model as dead
+// fields (out of scope to remove), simply no longer consulted here.
+async function isUnlocked(requestingUser) {
+  return sessionPassService.hasActivePass(requestingUser._id);
 }
 
 async function getRecommendations(id, requestingUser) {
   const assessment = await getAssessment(id, requestingUser);
-  if (!isUnlocked(assessment)) {
-    throw new PaymentRequiredError("Payment is required to view the full recommendations for this assessment", {
-      price: assessment.price,
-      currency: assessment.currency,
+  if (!(await isUnlocked(requestingUser))) {
+    throw new PaymentRequiredError("An active session pass is required to view the full recommendations for this assessment", {
+      price: env.sessionPassPrices.domestic,
+      currency: env.sessionPassCurrency,
     });
   }
   const recommendations = await AssessmentRecommendation.find({ assessment: id })
