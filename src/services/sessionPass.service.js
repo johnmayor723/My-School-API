@@ -1,11 +1,11 @@
 const { v4: uuid } = require("uuid");
-const { SessionPass } = require("../models");
+const { SessionPass, ProvidusSettlementLog } = require("../models");
 const { getProvider } = require("../modules/payments/paymentProvider.factory");
 const auditService = require("./audit.service");
 const logger = require("../config/logger");
 const env = require("../config/env");
 const { NotFoundError, ForbiddenError, ValidationAppError } = require("../errors/AppError");
-const { RESOURCE_TYPES, PAYMENT_STATUS, SESSION_PASS_SERVICE_TYPE } = require("../config/constants");
+const { RESOURCE_TYPES, PAYMENT_STATUS, PAYMENT_PROVIDERS, SESSION_PASS_SERVICE_TYPE } = require("../config/constants");
 
 function assertOwnerOrStaff(pass, requestingUser) {
   const isOwner = String(pass.user) === String(requestingUser._id);
@@ -42,6 +42,11 @@ async function initializePass(user, req, serviceType) {
     reference,
     providerReference: providerResult.providerReference,
     authorizationUrl: providerResult.authorizationUrl,
+    // Only Providus returns this today (a reserved virtual account has no
+    // authorizationUrl to redirect to) -- kept so it isn't silently dropped
+    // before any checkout UI exists to display it. applyVerificationResult
+    // overwrites metadata once the pass actually settles.
+    metadata: providerResult.bankDetails,
   });
 
   await auditService.record({
@@ -150,6 +155,71 @@ async function handleWebhook(providerName, rawBody, signatureHeader) {
   return { handled: true, pass };
 }
 
+// ProvidusBank "Settlement Notification" webhook -- distinct from
+// handleWebhook above because the contract is entirely different: no
+// reference we generated, a fixed static signature rather than a body HMAC,
+// mandatory dedupe by settlementId, and a response body whose exact shape
+// (requestSuccessful/sessionId/responseMessage/responseCode) the bank
+// parses, so errors can never be allowed to fall through to the app's
+// generic error envelope -- every path below returns a well-formed object
+// for the controller to send as-is as a 200.
+//
+// A reserved virtual account's number is matched against
+// SessionPass.providerReference (same field every other provider stores
+// its own transaction reference in) -- intentional reuse, not a new
+// concept, see initialize()/providus.provider.js for why that field is
+// still never populated for Providus yet: reserving an account requires
+// GetProvidusAccount, which the bank hasn't spec'd. Until it is, every real
+// notification will correctly fall into the "unknown account" branch below
+// and come back rejected (02) -- that is expected, not a bug.
+function buildSettlementResponse(sessionId, responseCode, responseMessage, requestSuccessful = true) {
+  return { requestSuccessful, sessionId, responseMessage, responseCode };
+}
+
+async function handleProvidusSettlementNotification(body, signatureHeader) {
+  const sessionId = body?.sessionId;
+  try {
+    const provider = getProvider(PAYMENT_PROVIDERS.PROVIDUS);
+    if (!provider.verifyWebhookSignature(null, signatureHeader)) {
+      logger.warn("Rejected Providus settlement notification with invalid signature", { sessionId });
+      return buildSettlementResponse(sessionId, "02", "rejected transaction");
+    }
+
+    const { settlementId, accountNumber } = body || {};
+    if (!settlementId || !accountNumber) {
+      logger.warn("Rejected Providus settlement notification with missing settlementId/accountNumber", { sessionId });
+      return buildSettlementResponse(sessionId, "02", "rejected transaction");
+    }
+
+    const existing = await ProvidusSettlementLog.findOne({ settlementId });
+    if (existing) {
+      return buildSettlementResponse(sessionId, "01", "duplicate transaction");
+    }
+
+    const pass = await SessionPass.findOne({ provider: PAYMENT_PROVIDERS.PROVIDUS, providerReference: accountNumber });
+    if (!pass) {
+      logger.warn("Providus settlement notification for an unknown virtual account", { sessionId, accountNumber, settlementId });
+      await ProvidusSettlementLog.create({ settlementId, accountNumber, responseCode: "02", rawPayload: body });
+      return buildSettlementResponse(sessionId, "02", "rejected transaction");
+    }
+
+    await applyVerificationResult(pass, { status: PAYMENT_STATUS.SUCCESS, channel: "bank_transfer", raw: body });
+    await ProvidusSettlementLog.create({ settlementId, accountNumber, sessionPass: pass._id, responseCode: "00", rawPayload: body });
+    await auditService.record({
+      user: pass.user,
+      action: "SESSION_PASS_PROVIDUS_SETTLED",
+      resourceType: RESOURCE_TYPES.SESSION_PASS,
+      resourceId: pass._id,
+      newValue: { settlementId, accountNumber, settledAmount: body.settledAmount, expiresAt: pass.expiresAt },
+    });
+
+    return buildSettlementResponse(sessionId, "00", "success");
+  } catch (err) {
+    logger.error("Providus settlement notification handling failed", { sessionId, error: err.message });
+    return buildSettlementResponse(sessionId, "03", "system failure", false);
+  }
+}
+
 module.exports = {
   initializePass,
   verifyPass,
@@ -157,4 +227,5 @@ module.exports = {
   getActivePass,
   hasActivePass,
   handleWebhook,
+  handleProvidusSettlementNotification,
 };

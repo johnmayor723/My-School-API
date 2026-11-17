@@ -25,4 +25,12 @@ async function webhook(req, res) {
   res.status(200).json({ received: true });
 }
 
-module.exports = { initialize, verify, getActive, webhook };
+// ProvidusBank calls this directly -- no app auth, no shared error envelope.
+// The response body's exact shape is the contract; always 200, the bank
+// reads responseCode to decide success/duplicate/rejected/retry.
+async function providusSettlementNotification(req, res) {
+  const result = await sessionPassService.handleProvidusSettlementNotification(req.body, req.headers["x-auth-signature"]);
+  res.status(200).json(result);
+}
+
+module.exports = { initialize, verify, getActive, webhook, providusSettlementNotification };

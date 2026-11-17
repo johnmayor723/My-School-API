@@ -13,6 +13,7 @@ module.exports = {
   AssessmentRecommendation: require("./AssessmentRecommendation"),
   Payment: require("./Payment"),
   SessionPass: require("./SessionPass"),
+  ProvidusSettlementLog: require("./ProvidusSettlementLog"),
   AuditLog: require("./AuditLog"),
   CutoffSource: require("./CutoffSource"),
   CutoffCandidate: require("./CutoffCandidate"),

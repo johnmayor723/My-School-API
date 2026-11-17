@@ -8,6 +8,11 @@ const { referenceParamValidator, initializeValidator, getActiveQueryValidator } 
 const router = Router();
 
 router.post("/webhook/:provider", validate([param("provider").isString().trim().notEmpty()]), sessionPassController.webhook);
+// ProvidusBank's Settlement Notification call -- path shared with the bank
+// as our merchant endpoint. Deliberately not using the generic
+// /webhook/:provider route above: Providus's auth/dedupe/response contract
+// is entirely different (see sessionPass.service.js).
+router.post("/providus/settlement-notification", sessionPassController.providusSettlementNotification);
 
 router.use(authenticate, requireStudent, requireActive);
 router.post("/initialize", validate(initializeValidator), sessionPassController.initialize);
