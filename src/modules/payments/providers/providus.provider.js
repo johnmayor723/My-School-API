@@ -20,9 +20,14 @@ const { AppError } = require("../../../errors/AppError");
 //   confirmed+whitelisted for us.)
 //
 // Confirmed so far:
-// - BaseUrl: PROVIDUS_BASE_URL (test: http://102.209.190.54:8882/appdevapi/api/)
-//   -- reachability verified 2026-11-17 (TCP connect + HTTP 404 from Tomcat,
-//   i.e. our IP 155.117.183.133 is already whitelisted on their test env).
+// - BaseUrl: PROVIDUS_BASE_URL (test: http://102.209.190.54:8088/appdevapi/api/)
+//   -- 2026-11-17's confirmed base URL (port 8882) turned out to be wrong;
+//   it only ever served a dead Tomcat 404. The bank's engineers corrected
+//   it to port 8088 on 2026-11-23, and PiPCreateReservedAccountNumber now
+//   returns a real 200 (responseCode "00", a generated account_number) --
+//   first genuinely live-verified call on this integration. The IIS server
+//   on 8088 also took ~25s to respond on that first call, well past the
+//   15s axios timeout below, so the timeout was raised to stay safe.
 // - Client-Id header: PROVIDUS_CLIENT_ID (sent as-is, already base64)
 // - X-Auth-Signature header: SHA512("ClientId:ClientSecret") hex, compared
 //   case-insensitively -- ClientSecret itself is never sent on the wire,
@@ -59,21 +64,15 @@ const { AppError } = require("../../../errors/AppError");
 // lookups -- those are outbound-transfer and BVN-verification capabilities,
 // unrelated to this session-pass collection flow, not scaffolded here.
 //
-// UNCONFIRMED LIVE, 2026-11-17: coded exactly per the "Virtual Payment
-// Service Endpoint" doc the bank shared, but a real test call to
-// PROVIDUS_BASE_URL + "PiPCreateReservedAccountNumber" returned a plain
-// Tomcat 404 (both POST per-spec and a bare GET), not an auth/validation
-// error -- i.e. that path isn't actually deployed at our confirmed base
-// URL. Consistent with the bank's own separate statement that
-// "GetProvidusAccount would be shared later" -- the doc may be generic
-// reference material whose example base URLs (192.168.1.210:8088,
-// localhost:54356) are illustrative only, with our actual account-reservation
-// endpoint still pending provisioning/a confirmed path. Do not treat
-// initialize() as working until a real 200 is seen -- and don't keep
-// guessing alternate paths against the bank's test server without them
-// confirming one; this is a live partner integration, not a sandbox to
-// fuzz. verify() is equally unconfirmed (same base URL question applies to
-// PiPverifyTransaction_settlementid).
+// LIVE-VERIFIED 2026-11-23: initialize() -> PiPCreateReservedAccountNumber
+// against the corrected port-8088 base URL returns a real 200
+// (requestSuccessful: true, responseCode "00", a generated account_number).
+// The 2026-11-17 404 was simply the wrong port (8882), not a missing/
+// unprovisioned endpoint -- no alternate paths were guessed; the bank's
+// own engineers supplied the correction. verify() -> PiPverifyTransaction_
+// settlementid has NOT been live-tested yet (needs a real settled
+// transaction/settlementId to call it against); treat it as unconfirmed
+// until reconciliation is actually exercised end to end.
 
 function buildAuthHeaders() {
   if (!env.providus.clientId || !env.providus.clientSecret) {
@@ -94,7 +93,8 @@ function client() {
   return axios.create({
     baseURL: env.providus.baseUrl,
     headers: { ...buildAuthHeaders(), "Content-Type": "application/json" },
-    timeout: 15000,
+    // The bank's IIS test server took ~25s to answer the first live call.
+    timeout: 45000,
   });
 }
 

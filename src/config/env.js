@@ -63,11 +63,11 @@ const env = {
     publicKey: optional("FLUTTERWAVE_PUBLIC_KEY", ""),
     secretHash: optional("FLUTTERWAVE_SECRET_HASH", ""),
   },
-  // Scaffold only -- see src/modules/payments/providers/providus.provider.js.
-  // Test credentials shared 2026-10-22, full integration spec (endpoint
-  // paths/payloads) not yet received.
+  // See src/modules/payments/providers/providus.provider.js. Confirmed test
+  // base URL is port 8088 (bank's engineers corrected this 2026-11-23; 8882
+  // was a dead Tomcat 404).
   providus: {
-    baseUrl: optional("PROVIDUS_BASE_URL", "http://102.209.190.54:8882/appdevapi/api/"),
+    baseUrl: optional("PROVIDUS_BASE_URL", "http://102.209.190.54:8088/appdevapi/api/"),
     clientId: optional("PROVIDUS_CLIENT_ID", ""),
     clientSecret: optional("PROVIDUS_CLIENT_SECRET", ""),
   },
